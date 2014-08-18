@@ -1,0 +1,978 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>格物学院</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" type="image/png" href="favicon.png">
+  
+<link href="css/style.css" rel="stylesheet">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<style>
+.navbar .nav > li:hover .dropdown-menu {
+	display: block;}
+.navbar .nav > li> ul> li:hover > div {display:block; position:absolute; left:158px; top:0;}
+.navbar .nav > li> ul> li > div {display:none;}
+#goTopBtn {  
+    POSITION: fixed; TEXT-ALIGN: center; LINE-HEIGHT: 30px; WIDTH: 10px; BOTTOM: 65px; HEIGHT: 13px; FONT-SIZE: 12px; CURSOR: pointer; RIGHT: 100px; _position: absolute; _right: auto;z-index:1 
+}  
+</style>
+<script>
+$(document).ready(function(){
+if($(".signup-container").height()<$(window).height()){
+		$(".signup-container").height($(window).height());
+	}
+$(".signup-container").width($(document.body).outerWidth());
+$(window).resize(function(){
+	$(".signup-container").width($(document.body).outerWidth());
+	if($(".signup-container").height()<$(window).height()){
+		$(".signup-container").height($(window).height());
+	}
+});
+$(".weibo-signup").click(function(){
+window.location.href="https://api.weibo.com/oauth2/authorize?client_id=2463745741&redirect_uri=http%3A%2F%2Fpassport.chuanke.com%2Flogin%2FsinaLogin%2Fret%2F&response_type=code&forcelogin=false";
+});
+$(".QQ-signup").click(function(){
+window.location.href="http://openapi.qzone.qq.com/oauth/show?which=Login&display=pc&response_type=code&client_id=100262522&redirect_uri=http%3A%2F%2Fpassport.chuanke.com%2Flogin%2FqqLogin%2Fret%2FaHR0cDovL2NodWFua2UuY29tLw%3D%3D&scope=get_user_info,get_info,add_pic_t,add_idol";
+});
+$("#register0").click(function(){
+				//判断用户名是否为空
+				if($("#usernameId0").val()==""){
+				$(".regist-verify0").text("用户名未填写");
+				if($(".regist-verify0").is(":hidden")){$(".regist-verify0").show();}
+				$("#usernameId0").focus();
+				return false;
+				}
+				
+				//判断邮件是否为空
+				if($("#emailId0").val()==""){
+				$(".regist-verify0").text("电子邮件未填写");
+				if($(".regist-verify0").is(":hidden")){$(".regist-verify0").show();}
+				$("#emailId0").focus();
+				return false;
+				}else{                        //判断邮件格式是否正确
+				var reg = new RegExp("^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$");
+				if(!reg.test($("#emailId0").val())){
+				$(".regist-verify0").text("请输入正确的电子邮件");
+				if($(".regist-verify0").is(":hidden")){$(".regist-verify0").show();}
+				$("#emailId0").focus();
+				return false;
+				}
+				}
+				
+				//判断密码是否为空
+				if($("#passwordId0").val()==""){
+				$(".regist-verify0").text("未设置密码，密码必须包含字母和数字，6位到16位之间");
+				if($(".regist-verify0").is(":hidden")){$(".regist-verify0").show();}
+				$("#passwordId0").focus();
+				return false;
+				}else{                            //判断密码格式：包含字母和数字，位数在6-16位之间
+				var reg = new RegExp("^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$");
+				if(!reg.test($("#passwordId0").val())){
+				$(".regist-verify0").text("密码必须包含字母和数字，6位到16位之间");
+				if($(".regist-verify0").is(":hidden")){$(".regist-verify0").show();}
+				$("#passwordId0").focus();
+				return false;
+				}
+				}
+				
+				//判断密码是否一致
+				if($("#repasswordId0").val()==""){
+				$(".regist-verify0").text("请再次输入密码！");
+				if($(".regist-verify0").is(":hidden")){$(".regist-verify0").show();}
+				$("#repasswordId0").focus();
+				return false;
+				}
+				if($("#passwordId0").val()!=$("#repasswordId0").val()){
+				$(".regist-verify0").text("两次密码输入不一致");
+				if($(".regist-verify0").is(":hidden")){$(".regist-verify0").show();}
+				$("#repasswordId0").focus();
+				return false;
+				}
+				
+				//关闭提示框
+				if(!$(".regist-verify0").is(":hidden")){$(".regist-verify0").hide();}
+				
+				var params = {
+				"category":$("#categoryId0").val(),
+				"username":$("#usernameId0").val(),
+				"email" : $("#emailId0").val(),
+				"password" : $("#passwordId0").val(),
+				"repassword":$("#repasswordId0").val()
+			      };
+ 
+			      $.ajax({
+				    type: "POST",
+				url: "../user/user_save.html",
+			 	data:params,
+				//async: false,
+			       	dataType:"json",
+				success:function(data){ 
+				 	var msg="此邮箱已经注册过，请直接登录";
+					var msgok="注册成功，请到邮箱激活认证";
+					if(data.erroMessage==msg){
+					alert(data.erroMessage);
+				 	//$("#emailId").val(data.erroMessage);
+					return false;
+					}
+					if (data.erroMessage==msgok){
+					alert(data.erroMessage);
+					window.location.href=data.prePage;
+					}
+				},
+				error: function(data){
+				  
+
+				  return false;
+				}
+				});
+			});
+});
+
+</script>
+</head>
+<body>
+<div>
+  <div class="clearfix">
+			<div class="col-md-12 column">
+				<div class="row clearfix">       
+		<nav class="navbar navbar-default nav-collapse navbar-fixed-top" role="navigation">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="index.html">格物学院</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">所有课程<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li >
+									<a href="#" >数学<span class="glyphicon glyphicon-chevron-right" style="float:right"></span></a>				
+	<div class="container subject math">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<h3 style="color:white;">数学</h3>
+			<hr />
+		</div>
+	</div>
+	<!--div class="row clearfix">
+		<div class="col-md-12 column">
+			<h5>Subject</h5>
+		</div>
+	</div-->
+	<div class="row clearfix">
+		<div class="col-md-4 column">
+			<ul>
+				<li class="level1">
+					<a href="#">一年级</a>
+				</li>
+				<li class="level1">
+					<a href="/WEB-INF/pages/math/2_grade" >二年级</a>
+				</li>
+				<li class="level1">
+					<a href="/WEB-INF/pages/math/3_grade" >三年级</a>
+				</li>
+				<li class="level1">
+					<a href="/WEB-INF/pages/math/4_grade" >四年级</a>
+				</li>
+				<li class="level1">
+					<a href="<%=request.getContextPath()%>/WEB-INF/pages/math/5_grade" >五年级</a>
+				</li>
+				<li class="level1">
+					<a href="<%=request.getContextPath()%>/WEB-INF/pages/math/6_grade" >六年级</a>
+				</li>
+				<li class="level1">
+					<a href="<%=request.getContextPath()%>/WEB-INF/pages/math/7_grade" >七年级</a>
+				</li>
+				<li class="level1">
+					<a href="<%=request.getContextPath()%>/WEB-INF/pages/math/8_grade" >八年级</a>
+				</li>
+				<li class="level1">
+					<a href="<%=request.getContextPath()%>/WEB-INF/pages/math/9_grade" >九年级</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col-md-4 column .col-md-offset-4">
+			<ul >
+				<li class="level1">
+					<a href="#">必修一</a>
+                </li>
+                <li class="level1">
+                  <a href="#">必修二</a>
+				</li>
+				<li class="level1">
+				  <a href="<%=request.getContextPath()%>/WEB-INF/pages/math/bixiu3" >必修三</a>
+				</li>
+				<li class="level1">
+                  <a href="<%=request.getContextPath()%>/WEB-INF/pages/math/bixiu4" >必修四</a>
+				</li>
+				<li class="level1">
+				  <a href="<%=request.getContextPath()%>/WEB-INF/pages/math/bixiu5" >必修五</a>
+				</li>
+				<li class="level1">
+				  <a href="<%=request.getContextPath()%>/WEB-INF/pages/math/xuanxiu1-1" >选修1-1</a>
+				</li>
+				<li class="level1">
+				  <a href="<%=request.getContextPath()%>/WEB-INF/pages/math/xuanxiu1-2" >选修1-2</a>
+				</li>
+				<li class="level1">
+                  <a href="<%=request.getContextPath()%>/WEB-INF/pages/math/xuanxiu2-1" >选修2-1</a>
+				</li>
+				<li class="level1">
+				  <a href="<%=request.getContextPath()%>/WEB-INF/pages/math/xuanxiu2-2" >选修2-2</a>
+				</li>
+				<li class="level1">
+				  <a href="<%=request.getContextPath()%>/WEB-INF/pages/math/xuanxiu2-3" >选修2-3</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col-md-4 column .col-md-offset-8">
+			<ul >
+			    <li class="level1">
+                    <a href="<%=request.getContextPath()%>/WEB-INF/pages/math/xuanxiu3-1" >选修3-1</a>
+                </li>
+				<li class="level1">
+                    <a href="<%=request.getContextPath()%>/WEB-INF/pages/math/xuanxiu3-3" >选修3-3</a>
+                </li>
+				<li class="level1">
+                    <a href="<%=request.getContextPath()%>/WEB-INF/pages/math/xuanxiu3-4" >选修3-4</a>
+                </li>
+				<li class="level1">
+                    <a href="<%=request.getContextPath()%>/WEB-INF/pages/math/xuanxiu4-1" >选修4-1</a>
+                </li>
+				<li class="level1">
+                    <a href="<%=request.getContextPath()%>/WEB-INF/pages/math/xuanxiu4-2" >选修4-2</a>
+                </li>
+				<li class="level1">
+                    <a href="<%=request.getContextPath()%>/WEB-INF/pages/math/xuanxiu4-4" >选修4-4</a>
+                </li>
+				<li class="level1">
+                    <a href="<%=request.getContextPath()%>/WEB-INF/pages/math/xuanxiu4-5" >选修4-5</a>
+                </li>
+				<li class="level1">
+                    <a href="<%=request.getContextPath()%>/WEB-INF/pages/math/xuanxiu4-6" >选修4-6</a>
+                </li>
+				<li class="level1">
+                    <a href="<%=request.getContextPath()%>/WEB-INF/pages/math/xuanxiu4-7" >选修4-7</a>
+                </li>
+				<li class="level1">
+                    <a href="<%=request.getContextPath()%>/WEB-INF/pages/math/xuanxiu4-9" >选修4-9</a>
+                </li>
+			</ul>
+		</div>
+	</div>
+       <!--hr style="filter:progid:DXImageTransform.Microsoft.Glow(color=#996666,strength=10);width:500px;background-color:#996666;height:1px" /-->
+	<!--<div class="row clearfix">
+		<div class="col-md-12 column">
+		<strong>Grade level (U.S.):</strong>
+              
+                <a href="/math/early-math" >K–2</a>
+              
+                <a href="/math/cc-third-grade-math" >3</a>
+              
+                <a href="/math/cc-fourth-grade-math" >4</a>
+              
+                <a href="/math/cc-fifth-grade-math" >5</a>
+              
+                <a href="/math/cc-sixth-grade-math" >6</a>
+              
+                <a href="/math/cc-seventh-grade-math" >7</a>
+              
+                <a href="/math/cc-eighth-grade-math" >8</a>
+		</div>
+	</div>
+	-->
+</div> 
+</li>           
+								<li>
+									<a href="#">语文<span class="glyphicon glyphicon-chevron-right" style="float:right"></span></a>
+									<div class="container subject yuwen">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<h3 style="color:white;">
+				语文
+			</h3>
+			<hr />
+		</div>
+	</div>
+	<div class="row clearfix">
+		<div class="col-md-4 column">
+			<ul >
+				<li class="level1">
+					<a href="<%=request.getContextPath()%>/WEB-INF/pages/chinese/1_grade/" >一年级</a>
+				</li>
+				<li class="level1">
+					<a href="<%=request.getContextPath()%>/WEB-INF/pages/chinese/2_grade" >二年级</a>
+				</li>
+				<li class="level1">
+					<a href="<%=request.getContextPath()%>/WEB-INF/pages/chinese/3_grade" >三年级</a>
+				</li>
+				<li class="level1">
+					<a href="<%=request.getContextPath()%>/WEB-INF/pages/chinese/4_grade" >四年级</a>
+				</li>
+				<li class="level1">
+					<a href="/WEB-INF/pages/chinese/5_grade" >五年级</a>
+				</li>
+				<li class="level1">
+					<a href="<%=request.getContextPath()%>/WEB-INF/pages/chinese/6_grade" >六年级</a>
+				</li>
+				<li class="level1">
+					<a href="<%=request.getContextPath()%>/WEB-INF/pages/chinese/7_grade" >七年级</a>
+				</li>
+				<li class="level1">
+					<a href="<%=request.getContextPath()%>/WEB-INF/pages/chinese/8_grade" >八年级</a>
+				</li>
+				<li class="level1">
+					<a href="<%=request.getContextPath()%>/WEB-INF/pages/chinese/9_grade" >九年级</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col-md-4 column .col-md-offset-4">
+			<ul >
+				<li class="level1">
+                  <a href="#">必修一</a>
+                </li>
+                <li class="level1">
+                  <a href="<%=request.getContextPath()%>/WEB-INF/pages/chinese/bixiu2" >必修二</a>
+				</li>
+				<li class="level1">
+				  <a href="<%=request.getContextPath()%>/WEB-INF/pages/chinese/bixiu3" >必修三</a>
+				</li>
+				<li class="level1">
+                  <a href="/WEB-INF/pages/chinese/bixiu4" >必修四</a>
+				</li>
+				<li class="level1">
+				  <a href="<%=request.getContextPath()%>/WEB-INF/pages/chinese/bixiu5" >必修五</a>
+				</li>
+				<li class="level1">
+				  <a href="<%=request.getContextPath()%>/WEB-INF/pages/chinese/xuanxiu1-1" >中外传记作品选读</a>
+				</li>
+				<li class="level1">
+				  <a href="<%=request.getContextPath()%>/WEB-INF/pages/chinese/xuanxiu1-2" >外国小说欣赏</a>
+				</li>
+				<li class="level1">
+                  <a href="/WEB-INF/pages/chinese/xuanxiu2-1" >中国古代诗歌散文欣赏</a>
+				</li>
+				<li class="level1">
+				  <a href="<%=request.getContextPath()%>/WEB-INF/pages/chinese/xuanxiu2-2" >中国现代诗歌散文欣赏</a>
+				</li>
+				<li class="level1">
+				  <a href="<%=request.getContextPath()%>/WEB-INF/pages/chinese/xuanxiu2-3" >语言文字应用</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col-md-4 column .col-md-offset-8">
+			<ul >
+			    <li class="level1">
+                    <a href="<%=request.getContextPath()%>/WEB-INF/pages/chinese/xuanxiu3-1" >先秦诸子选读</a>
+                </li>
+				<li class="level1">
+                    <a href="<%=request.getContextPath()%>/WEB-INF/pages/chinese/xuanxiu3-3" >中国小说欣赏</a>
+                </li>
+				<li class="level1">
+                    <a href="<%=request.getContextPath()%>/WEB-INF/pages/chinese/xuanxiu3-4" >文章写作与修改</a>
+                </li>
+				<li class="level1">
+                    <a href="<%=request.getContextPath()%>/WEB-INF/pages/chinese/xuanxiu4-1" >影视名作欣赏</a>
+                </li>
+				<li class="level1">
+                    <a href="<%=request.getContextPath()%>/WEB-INF/pages/chinese/xuanxiu4-2" >中外戏剧名作欣赏</a>
+                </li>
+				<li class="level1">
+                    <a href="<%=request.getContextPath()%>/WEB-INF/pages/chinese/xuanxiu4-4" >外国诗歌散文欣赏</a>
+                </li>
+				<li class="level1">
+                    <a href="<%=request.getContextPath()%>/WEB-INF/pages/chinese/xuanxiu4-5" >演讲与辩论</a>
+                </li>
+				<li class="level1">
+                    <a href="<%=request.getContextPath()%>/WEB-INF/pages/chinese/xuanxiu4-6" >中国文化经典研读</a>
+                </li>
+				<li class="level1">
+                    <a href="<%=request.getContextPath()%>/WEB-INF/pages/chinese/xuanxiu4-7" >新闻阅读与实践</a>
+                </li>
+				<li class="level1">
+                    <a href="<%=request.getContextPath()%>/WEB-INF/pages/chinese/xuanxiu4-9" >中国民俗文化</a>
+                </li>
+			</ul>
+		</div>
+	</div>
+</div> 
+</li>
+		<li>
+			<a href="#">英语<span class="glyphicon glyphicon-chevron-right" style="float:right"></span></a>
+			<div class="container subject english">
+				<div class="row clearfix">
+					<div class="col-md-12 column">
+						<h3 style="color:white;">英语</h3>
+						<hr />
+					</div>
+				</div>
+				<div class="row clearfix">
+					<div class="col-md-4 column">
+						<ul >
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/English/3_grade/" >三年级</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/English/4_grade" >四年级</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/English/5_grade" >五年级</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/English/6_grade" >六年级</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/English/7_grade" >七年级</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/English/8_grade" >八年级</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/English/9_grade" >九年级</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-md-4 column .col-md-offset-4">
+						<ul >
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/English/bixiu1" >必修一</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/English/bixiu2" >必修二</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/English/bixiu3" >必修三</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/English/bixiu4" >必修四</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/English/bixiu5" >必修五</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/English/bixiu5" >必修五</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/English/xuanxiu6" >选修六</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/English/xuanxiu7" >选修七</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/English/xuanxiu8" >选修八</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-md-4 column .col-md-offset-8">
+						<ul >
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/English/xuanxiu9" >选修九</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/English/xuanxiu10" >选修十</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/English/xuanxiu11" >选修十一</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/English/writing" >英语写作</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/English/computer_english" >计算机英语</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/English/chujicaijingyingyu" >初级财经英语</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/English/xiaoshuoxinshangrumen" >小说欣赏入门</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/English/gaozhongyingyuyufayucihui" >高中英语语法与词汇</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</li>
+		
+		<li class="divider"></li>
+		
+		<li>
+			<a href="#">物理<span class="glyphicon glyphicon-chevron-right" style="float:right"></span></a>
+			<div class="container subject physics">
+				<div class="row clearfix">
+					<div class="col-md-12 column">
+						<h3 style="color:white">物理</h3>
+						<hr />
+					</div>
+				</div>
+				<div class="row clearfix">
+					<div class="col-md-6 column">
+						<ul >
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/physics/8_grade/" >八年级</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/physics/9_grade" >九年级</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/physics/bixiu1" >必修一</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/physics/bixiu2" >必修二</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/physics/xuanxiu1-1" >选修1-1</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/physics/xuanxiu1-2" >选修1-2</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/physics/xuanxiu2-1" >选修2-1</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/physics/xuanxiu2-2" >选修2-2</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/physics/xuanxiu2-3" >选修2-3</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-md-6 column .col-md-offset-6">
+						<ul >
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/physics/xuanxiu3-1" >选修3-1</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/physics/xuanxiu3-2" >选修3-2</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/physics/xuanxiu3-3" >选修3-3</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/physics/xuanxiu3-4" >选修3-4</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/physics/xuanxiu3-5" >选修3-5</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</li>	
+		<li>
+			<a href="#">化学<span class="glyphicon glyphicon-chevron-right" style="float:right"></span></a>
+			<div class="container subject chemistry">
+				<div class="row clearfix">
+					<div class="col-md-12 column">
+						<h3 style="color:white">化学</h3>
+						<hr />
+					</div>
+				</div>
+				<div class="row clearfix">
+					<div class="col-md-6 column">
+						<ul >
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/chemistry/9_grade" >九年级</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/chemistry/bixiu1" >必修一</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/chemistry/bixiu2" >必修二</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/chemistry/xuanxiu1" >选修一</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/chemistry/xuanxiu2" >选修二</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-md-6 column .col-md-offset-6">
+						<ul >
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/chemistry/xuanxiu3" >选修三</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/chemistry/xuanxiu3-2" >选修四</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/chemistry/xuanxiu3-3" >选修五</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/chemistry/xuanxiu3-4" >选修六</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</li>
+		
+		<li>
+			<a href="#">生物<span class="glyphicon glyphicon-chevron-right" style="float:right"></span></a>
+			<div class="container subject biology">
+				<div class="row clearfix">
+					<div class="col-md-12 column">
+						<h3 style="color:white">生物</h3>
+						<hr />
+					</div>
+				</div>
+				<div class="row clearfix">
+					<div class="col-md-6 column">
+						<ul >
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/biology/7_grade" >七年级</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/biology/8_grade" >八年级</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/biology/bixiu1" >分子与细胞</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/biology/bixiu2" >遗传与进化</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/biology/bixiu3" >稳态与环境</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-md-6 column .col-md-offset-6">
+						<ul >
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/biology/xuanxiu1" >生物技术实践</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/biology/xuanxiu2" >生物科学与社会</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/biology/xuanxiu3" >现代生物科技专题</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</li>
+		
+		<li class="divider"></li>
+		
+		<li>
+			<a href="#">政治<span class="glyphicon glyphicon-chevron-right" style="float:right"></span></a>
+			<div class="container subject politics">
+				<div class="row clearfix">
+					<div class="col-md-12 column">
+						<h3 style="color:white">政治</h3>
+						<hr />
+					</div>
+				</div>
+				<div class="row clearfix">
+					<div class="col-md-6 column">
+						<ul >
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/politics/7_grade" >七年级</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/politics/8_grade" >八年级</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/politics/9_grade" >九年级</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/politics/bixiu1" >必修1</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/politics/bixiu2" >必修2</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/politics/bixiu3" >必修3</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-md-6 column .col-md-offset-6">
+						<ul >
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/politics/xuanxiu1" >选秀1</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/politics/xuanxiu2" >选修2</a>
+							</li>
+							<li class="level1">
+								<a href="/WEB-INF/pages/politics/xuanxiu3" >选修3</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/politics/xuanxiu4" >选修4</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/politics/xuanxiu5" >选修5</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/politics/xuanxiu6" >选修6</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</li>
+		<li>
+			<a href="#">历史<span class="glyphicon glyphicon-chevron-right" style="float:right"></span></a>
+			<div class="container subject history">
+				<div class="row clearfix">
+					<div class="col-md-12 column">
+						<h3 style="color:white">历史</h3>
+						<hr />
+					</div>
+				</div>
+				<div class="row clearfix">
+					<div class="col-md-6 column">
+						<ul >
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/history/7_grade" >七年级</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/history/8_grade" >八年级</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/history/9_grade" >九年级</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/history/bixiu1" >必修1</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/history/bixiu2" >必修2</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/history/bixiu3" >必修3</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-md-6 column .col-md-offset-6">
+						<ul >
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/history/xuanxiu1" >选秀1</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/history/xuanxiu2" >选修2</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/history/xuanxiu3" >选修3</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/history/xuanxiu4" >选修4</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/history/xuanxiu5" >选修5</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/history/xuanxiu6" >选修6</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</li>
+		<li>
+			<a href="#">地理<span class="glyphicon glyphicon-chevron-right" style="float:right"></span></a>
+			<div class="container subject geography">
+				<div class="row clearfix">
+					<div class="col-md-12 column">
+						<h3 style="color:white">地理</h3>
+						<hr />
+					</div>
+				</div>
+				<div class="row clearfix">
+					<div class="col-md-6 column">
+						<ul >
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/Geography/7_grade" >七年级</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/Geography/8_grade" >八年级</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/Geography/bixiu1" >必修1</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/Geography/bixiu2" >必修2</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/Geography/bixiu3" >必修3</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/Geography/xuanxiu1" >选修1</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-md-6 column .col-md-offset-6">
+						<ul >
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/Geography/xuanxiu2" >选修2</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/Geography/xuanxiu3" >选修3</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/Geography/xuanxiu4" >选修4</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/Geography/xuanxiu5" >选修5</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/Geography/xuanxiu6" >选修6</a>
+							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/Geography/xuanxiu7" >选修7</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</li>
+</ul>
+</li>
+<li><a href="WEB-INF/footer.html">关于我们</a></li>
+<li><a href="WEB-INF/about.html">加入我们</a></li>
+<li><a href="WEB-INF/about.html">常见问题</a></li>
+</ul>
+</div>
+</nav>
+</div>
+			</div>
+	</div>
+<div class="page-content">
+  <div class="signup-container-outer">
+  <div class="signup-container">
+    <div class="signup-wrapper">
+    <div class="signup-wrapper-container">
+      <div class="index-signup-content">
+        <div class="study-quotes">
+          <div class="student-signup">
+            <p>在无边的时空宇宙中，我们都是如此渺小；唯有知识，让我们与众不同。</p>
+		  </div>
+        </div>
+        <div class="index-signup-widget">
+          <h3 class="text-center">免费注册加入格物学院</h3>
+          <hr style="width:90%;max-width:400px;"/> 	
+		  <form>
+		  <div style="text-align:center;">
+		  <label for="id">我是</label>
+		  <select  id="categoryId0"  style="width:100px">
+		     <option value="student">学生</option>
+		    <option value="teacher">老师</option>
+			<option value="teacher">家长</option>
+		  </select>
+		  </div>
+		  <div class="input-group user-email">
+			<span class="input-group-addon" style="color:#000;">用户名</span>
+			<input id="usernameId0" type="text" class="form-control" autocomplete='on'>
+		  </div>
+		  <div class="input-group user-email">
+			<span class="input-group-addon" style="color:#000;">电子邮件</span>
+			<input id="emailId0" type="text" class="form-control" autocomplete='on'>
+		  </div>
+		  <div class="input-group user-password">
+			<span class="input-group-addon" style="color:#000;">密码</span>
+			<input id="passwordId0" type="password" class="form-control">
+		  </div>
+		   <div class="input-group user-password">
+			<span class="input-group-addon" style="color:#000;">确认密码</span>
+			<input id="repasswordId0" type="password" class="form-control">
+		  </div>
+		  <div class="alert alert-danger regist-verify0" role="alert"></div>
+		  <div class="signup-button">
+		    <button id="register0" type="button" class="btn btn-primary" style="width:100%">加入格物学院</button>
+		  </div>
+		</form>
+		  <div class="hr-with-words">
+		    或者
+		  </div>
+		  <div class="sign-up-with-sn">
+			  <button type="button" class="btn btn-info QQ-signup"><span class="login_byQQ"></span>用QQ帐号登录</button>
+			  <button type="button" class="btn btn-warning weibo-signup"><span class="login_bysina"></span>用新浪微博登录</button>
+		  </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  </div>
+  <div class="container" id="introduction-container">
+	<div class="row student-introduction-container">
+		<div class="col-xs-6 student-anim">
+		  <img src="img/student.png" alt="我是学生" class="student-img">
+		</div>
+		<div class="col-xs-6 student-intro">
+			<h1 style="font-weight:bold;">自主学习</h1>
+			<p class="student-intro-text">
+			  <ul>
+				<li>选择喜欢的课程，按自己的进度学习；</li>
+				<li>和各地的同学讨论知识，分享知识；</li>
+				<li>随时随地提问，夯实加深对知识的理解。</li>
+			  </ul>
+			</p>
+		</div>
+	</div>
+	<hr class="hr-gradient">
+
+	<div class="row teacher-introduction-container">
+		<div class="col-xs-6 teacher-intro">
+			<h1 style="font-weight:bold;">新时代，新老师</h1>
+			<p class="teacher-intro-text">
+			  <ul>
+			    <li>优质资源，你我共享；</li>
+				<li>尊重学生多样个性，改善传统无聊课堂；</li>
+				<li>融合线上线下教育方式，提高教学效率。</li>
+			  </ul>
+			</p>
+		</div>
+		<div class="col-xs-6 teacher-anim" id="">
+			<div class="tracks-anim">
+				<img class="teacher-img" src="img/teacher.jpg" alt="我是老师">	
+			</div>
+		</div>
+	</div>
+
+	<hr class="hr-gradient">
+
+	<div class="row parent-introduction-container">
+		<div class="col-xs-6 parent-anim" id="">
+		  <img src="img/parent.png" alt="我是家长" class="parent-img">
+		</div>
+		<div class="col-xs-6 parent-intro">
+			<h1 style="font-weight:bold;">家长的自我修养</h1>
+			<p class="parent-intro-text">
+			  <ul>
+				<li>注册或关联自己的孩子，详实了解孩子的学习情况；</li>
+				<li>和老师一同为孩子答疑解惑；</li>
+				<li>消除与孩子、老师的隔阂。</li>
+			  </ul>
+			</p>
+		</div>
+	</div>
+</div>
+	<div class="clearfix">
+		<div class="col-md-12 column">
+			<div id="footer">
+	<span class="footer-item">
+	 <a href="pages/about.html">关于我们</a>
+	</span>
+	<span class="footer-item">
+	  <a href="pages/join-us.html">加入我们</a>
+	</span>
+	<span class="footer-item">
+	  <a href="pages/faq.html">常见问题</a>
+	</span>
+	<span class="footer-item">
+	  <a href="pages/advise.html">给我们建议</a>
+	</span>
+</div>
+		</div>
+	</div>
+</div>
+</div>
+</body>
+</html>
