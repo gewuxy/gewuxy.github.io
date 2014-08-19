@@ -23,6 +23,9 @@ width:50%;
 float:right;
 overflow:hidden;
 }
+.right a:hover{
+text-decoration:none;
+}
 .chapter{
 width:30%;
 height:auto;
@@ -48,6 +51,9 @@ clear:both;
 }
 .tutorial-container:first-child{
 margin-top:20px;
+}
+.tutorial-container:last-child{
+border-bottom:2px solid #ddd;
 }
 .tutorial-container .tutorial-overview {
 color: #555;
@@ -90,6 +96,9 @@ border-top:0px;
 display: block;
 position: absolute;
 width: 40px;
+}
+.video-item-icon{
+margin-left:20px;
 }
 .video-item-icon .pipe-bottom{
 height:26px;
@@ -489,6 +498,9 @@ height:40px;
 line-height:40px;
 width:100%;
 }
+li.tutorial-nav-node>span{
+padding-left:60px;
+}
 .tutorial-tab-link{
 padding-top:10px;
 padding-bottom:10px;
@@ -503,7 +515,7 @@ display:none;
 .section-item-link:first-child div.pipe-top{
 display:none;
 }
-li.tutorial-nav-node:hover{
+li.tutorial-nav-node:hover,.tutorial-nav-node.active{
 background-color:#0c6;
 color:#fff;
 }
@@ -517,7 +529,7 @@ color:#fff;
 }
 .tutorial-nav-content ul{
 list-style:none;
-margin-left:-1em;
+-webkit-padding-start: 0;
 }
 textarea.ask-question-tab{
 margin-left:10px;
@@ -1325,6 +1337,33 @@ background-color:#669966;
 }
 .subject.geography{
 background-color:#66CC99;
+}
+.book.math{
+background-color:#2b758a;
+}
+.book.yuwen{
+background-color:#8080b0;
+}
+.book.english{
+background-color:#8382d0;
+}
+.book.physics{
+background-color:#66AAa9;
+}
+.book.chemistry{
+background-color:#89CC99;
+}
+.book.biology{
+background-color:#99cD88;
+}
+.book.politics{
+background-color:#668966;
+}
+.book.history{
+background-color:#44AA67;
+}
+.book.geography{
+background-color:#66bC99;
 }
 .subject ul{
 list-style-type:none;
