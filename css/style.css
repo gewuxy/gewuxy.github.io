@@ -955,25 +955,13 @@ position: relative;
 .signup-wrapper{
 width: 100%;
 }
-.signup-wrapper-container{
-height: 300px;
-margin: 0 auto;
-padding-bottom: 50px;
-padding-top: 100px;
-position: relative;
-}
-.index-signup-content{
-margin-bottom: 10px;
-width: 100%;
-}
 .study-quotes{
-width:48%;
-float:left;
+width:760px;
+margin:0 auto;
+padding-top:100px;
+}
+a.course-tab{
 color:white;
-font-size:2em;
-padding-left:10%;
-box-sizing: border-box;
-padding-top:15%;
 }
 .student-signup{
 vertical-align:middle;
