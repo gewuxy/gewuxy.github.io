@@ -33,104 +33,186 @@ $(window).resize(function(){
 		$(".signup-container").height($(window).height());
 	}
 });
-$(".weibo-signup").click(function(){
-window.location.href="https://api.weibo.com/oauth2/authorize?client_id=2463745741&redirect_uri=http%3A%2F%2Fpassport.chuanke.com%2Flogin%2FsinaLogin%2Fret%2F&response_type=code&forcelogin=false";
+$(".math-tab").click(function(){
+	$("#yuwen-table").hide();
+	$("#english-table").hide();
+	$("#physics-table").hide();
+	$("#chemistry-table").hide();
+	$("#biology-table").hide();
+	$("#politics-table").hide();
+	$("#history-table").hide();
+	$("Z#geography-table").hide();
+	$(".yuwen-tab").removeClass("active");
+	$(".english-tab").removeClass("active");
+	$(".physics-tab").removeClass("active");
+	$(".chemistry-tab").removeClass("active");
+	$(".politics-tab").removeClass("active");
+	$(".biology-tab").removeClass("active");
+	$(".geography-tab").removeClass("active");
+	$(".history-tab").removeClass("active");
+	$(".math-tab").addClass("active");
+	$("#math-table").show();
 });
-$(".QQ-signup").click(function(){
-window.location.href="http://openapi.qzone.qq.com/oauth/show?which=Login&display=pc&response_type=code&client_id=100262522&redirect_uri=http%3A%2F%2Fpassport.chuanke.com%2Flogin%2FqqLogin%2Fret%2FaHR0cDovL2NodWFua2UuY29tLw%3D%3D&scope=get_user_info,get_info,add_pic_t,add_idol";
+$(".yuwen-tab").click(function(){
+	$("#math-table").hide();
+	$("#english-table").hide();
+	$("#physics-table").hide();
+	$("#chemistry-table").hide();
+	$("#biology-table").hide();
+	$("#politics-table").hide();
+	$("#history-table").hide();
+	$("#geography-table").hide();
+	$(".math-tab").removeClass("active");
+	$(".english-tab").removeClass("active");
+	$(".physics-tab").removeClass("active");
+	$(".chemistry-tab").removeClass("active");
+	$(".politics-tab").removeClass("active");
+	$(".biology-tab").removeClass("active");
+	$(".geography-tab").removeClass("active");
+	$(".history-tab").removeClass("active");
+	$(".yuwen-tab").addClass("active");
+	$("#yuwen-table").show();
 });
-$("#register0").click(function(){
-				//判断用户名是否为空
-				if($("#usernameId0").val()==""){
-				$(".regist-verify0").text("用户名未填写");
-				if($(".regist-verify0").is(":hidden")){$(".regist-verify0").show();}
-				$("#usernameId0").focus();
-				return false;
-				}
-				
-				//判断邮件是否为空
-				if($("#emailId0").val()==""){
-				$(".regist-verify0").text("电子邮件未填写");
-				if($(".regist-verify0").is(":hidden")){$(".regist-verify0").show();}
-				$("#emailId0").focus();
-				return false;
-				}else{                        //判断邮件格式是否正确
-				var reg = new RegExp("^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$");
-				if(!reg.test($("#emailId0").val())){
-				$(".regist-verify0").text("请输入正确的电子邮件");
-				if($(".regist-verify0").is(":hidden")){$(".regist-verify0").show();}
-				$("#emailId0").focus();
-				return false;
-				}
-				}
-				
-				//判断密码是否为空
-				if($("#passwordId0").val()==""){
-				$(".regist-verify0").text("未设置密码，密码必须包含字母和数字，6位到16位之间");
-				if($(".regist-verify0").is(":hidden")){$(".regist-verify0").show();}
-				$("#passwordId0").focus();
-				return false;
-				}else{                            //判断密码格式：包含字母和数字，位数在6-16位之间
-				var reg = new RegExp("^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$");
-				if(!reg.test($("#passwordId0").val())){
-				$(".regist-verify0").text("密码必须包含字母和数字，6位到16位之间");
-				if($(".regist-verify0").is(":hidden")){$(".regist-verify0").show();}
-				$("#passwordId0").focus();
-				return false;
-				}
-				}
-				
-				//判断密码是否一致
-				if($("#repasswordId0").val()==""){
-				$(".regist-verify0").text("请再次输入密码！");
-				if($(".regist-verify0").is(":hidden")){$(".regist-verify0").show();}
-				$("#repasswordId0").focus();
-				return false;
-				}
-				if($("#passwordId0").val()!=$("#repasswordId0").val()){
-				$(".regist-verify0").text("两次密码输入不一致");
-				if($(".regist-verify0").is(":hidden")){$(".regist-verify0").show();}
-				$("#repasswordId0").focus();
-				return false;
-				}
-				
-				//关闭提示框
-				if(!$(".regist-verify0").is(":hidden")){$(".regist-verify0").hide();}
-				
-				var params = {
-				"category":$("#categoryId0").val(),
-				"username":$("#usernameId0").val(),
-				"email" : $("#emailId0").val(),
-				"password" : $("#passwordId0").val(),
-				"repassword":$("#repasswordId0").val()
-			      };
- 
-			      $.ajax({
-				    type: "POST",
-				url: "../user/user_save.html",
-			 	data:params,
-				//async: false,
-			       	dataType:"json",
-				success:function(data){ 
-				 	var msg="此邮箱已经注册过，请直接登录";
-					var msgok="注册成功，请到邮箱激活认证";
-					if(data.erroMessage==msg){
-					alert(data.erroMessage);
-				 	//$("#emailId").val(data.erroMessage);
-					return false;
-					}
-					if (data.erroMessage==msgok){
-					alert(data.erroMessage);
-					window.location.href=data.prePage;
-					}
-				},
-				error: function(data){
-				  
-
-				  return false;
-				}
-				});
-			});
+$(".english-tab").click(function(){
+	$("#math-table").hide();
+	$("#yuwen-table").hide();
+	$("#physics-table").hide();
+	$("#chemistry-table").hide();
+	$("#biology-table").hide();
+	$("#politics-table").hide();
+	$("#history-table").hide();
+	$("#geography-table").hide();
+	$(".math-tab").removeClass("active");
+	$(".yuwen-tab").removeClass("active");
+	$(".physics-tab").removeClass("active");
+	$(".chemistry-tab").removeClass("active");
+	$(".politics-tab").removeClass("active");
+	$(".biology-tab").removeClass("active");
+	$(".geography-tab").removeClass("active");
+	$(".history-tab").removeClass("active");
+	$(".english-tab").addClass("active");
+	$("#english-table").show();
+});
+$(".physics-tab").click(function(){
+	$("#math-table").hide();
+	$("#yuwen-table").hide();
+	$("#english-table").hide();
+	$("#chemistry-table").hide();
+	$("#biology-table").hide();
+	$("#politics-table").hide();
+	$("#history-table").hide();
+	$("#geography-table").hide();
+	$(".math-tab").removeClass("active");
+	$(".yuwen-tab").removeClass("active");
+	$(".english-tab").removeClass("active");
+	$(".chemistry-tab").removeClass("active");
+	$(".politics-tab").removeClass("active");
+	$(".biology-tab").removeClass("active");
+	$(".geography-tab").removeClass("active");
+	$(".history-tab").removeClass("active");
+	$(".physics-tab").addClass("active");
+	$("#physics-table").show();
+});
+$(".chemistry-tab").click(function(){
+	$("#math-table").hide();
+	$("#yuwen-table").hide();
+	$("#physics-table").hide();
+	$("#english-table").hide();
+	$("#biology-table").hide();
+	$("#politics-table").hide();
+	$("#history-table").hide();
+	$("#geography-table").hide();
+	$(".math-tab").removeClass("active");
+	$(".yuwen-tab").removeClass("active");
+	$(".physics-tab").removeClass("active");
+	$(".english-tab").removeClass("active");
+	$(".politics-tab").removeClass("active");
+	$(".biology-tab").removeClass("active");
+	$(".geography-tab").removeClass("active");
+	$(".history-tab").removeClass("active");
+	$(".chemistry-tab").addClass("active");
+	$("#chemistry-table").show();
+});
+$(".biology-tab").click(function(){
+	$("#math-table").hide();
+	$("#yuwen-table").hide();
+	$("#physics-table").hide();
+	$("#chemistry-table").hide();
+	$("#english-table").hide();
+	$("#politics-table").hide();
+	$("#history-table").hide();
+	$("#geography-table").hide();
+	$(".math-tab").removeClass("active");
+	$(".yuwen-tab").removeClass("active");
+	$(".physics-tab").removeClass("active");
+	$(".chemistry-tab").removeClass("active");
+	$(".politics-tab").removeClass("active");
+	$(".english-tab").removeClass("active");
+	$(".geography-tab").removeClass("active");
+	$(".history-tab").removeClass("active");
+	$(".biology-tab").addClass("active");
+	$("#biology-table").show();
+});
+$(".politics-tab").click(function(){
+	$("#math-table").hide();
+	$("#yuwen-table").hide();
+	$("#physics-table").hide();
+	$("#chemistry-table").hide();
+	$("#biology-table").hide();
+	$("#english-table").hide();
+	$("#history-table").hide();
+	$("#geography-table").hide();
+	$(".math-tab").removeClass("active");
+	$(".yuwen-tab").removeClass("active");
+	$(".physics-tab").removeClass("active");
+	$(".chemistry-tab").removeClass("active");
+	$(".english-tab").removeClass("active");
+	$(".biology-tab").removeClass("active");
+	$(".geography-tab").removeClass("active");
+	$(".history-tab").removeClass("active");
+	$(".politics-tab").addClass("active");
+	$("#politics-table").show();
+});
+$(".history-tab").click(function(){
+	$("#math-table").hide();
+	$("#yuwen-table").hide();
+	$("#physics-table").hide();
+	$("#chemistry-table").hide();
+	$("#biology-table").hide();
+	$("#politics-table").hide();
+	$("#english-table").hide();
+	$("#geography-table").hide();
+	$(".math-tab").removeClass("active");
+	$(".yuwen-tab").removeClass("active");
+	$(".physics-tab").removeClass("active");
+	$(".chemistry-tab").removeClass("active");
+	$(".politics-tab").removeClass("active");
+	$(".biology-tab").removeClass("active");
+	$(".geography-tab").removeClass("active");
+	$(".english-tab").removeClass("active");
+	$(".history-tab").addClass("active");
+	$("#history-table").show();
+});
+$(".geography-tab").click(function(){
+	$("#math-table").hide();
+	$("#yuwen-table").hide();
+	$("#physics-table").hide();
+	$("#chemistry-table").hide();
+	$("#biology-table").hide();
+	$("#politics-table").hide();
+	$("#history-table").hide();
+	$("#english-table").hide();
+	$(".math-tab").removeClass("active");
+	$(".yuwen-tab").removeClass("active");
+	$(".physics-tab").removeClass("active");
+	$(".chemistry-tab").removeClass("active");
+	$(".politics-tab").removeClass("active");
+	$(".biology-tab").removeClass("active");
+	$(".english-tab").removeClass("active");
+	$(".history-tab").removeClass("active");
+	$(".geography-tab").addClass("active");
+	$("#geography-table").show();
+});
 });
 
 </script>
@@ -454,9 +536,6 @@ $("#register0").click(function(){
 								<a href="<%=request.getContextPath()%>/WEB-INF/pages/English/bixiu5" >必修五</a>
 							</li>
 							<li class="level1">
-								<a href="<%=request.getContextPath()%>/WEB-INF/pages/English/bixiu5" >必修五</a>
-							</li>
-							<li class="level1">
 								<a href="<%=request.getContextPath()%>/WEB-INF/pages/English/xuanxiu6" >选修六</a>
 							</li>
 							<li class="level1">
@@ -691,12 +770,15 @@ $("#register0").click(function(){
 							<li class="level1">
 								<a href="<%=request.getContextPath()%>/WEB-INF/pages/politics/bixiu3" >必修3</a>
 							</li>
+							<li class="level1">
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/politics/bixiu4" >必修4</a>
+							</li>
 						</ul>
 					</div>
 					<div class="col-md-6 column .col-md-offset-6">
 						<ul >
 							<li class="level1">
-								<a href="<%=request.getContextPath()%>/WEB-INF/pages/politics/xuanxiu1" >选秀1</a>
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/politics/xuanxiu1" >选修1</a>
 							</li>
 							<li class="level1">
 								<a href="<%=request.getContextPath()%>/WEB-INF/pages/politics/xuanxiu2" >选修2</a>
@@ -753,7 +835,7 @@ $("#register0").click(function(){
 					<div class="col-md-6 column .col-md-offset-6">
 						<ul >
 							<li class="level1">
-								<a href="<%=request.getContextPath()%>/WEB-INF/pages/history/xuanxiu1" >选秀1</a>
+								<a href="<%=request.getContextPath()%>/WEB-INF/pages/history/xuanxiu1" >选修1</a>
 							</li>
 							<li class="level1">
 								<a href="<%=request.getContextPath()%>/WEB-INF/pages/history/xuanxiu2" >选修2</a>
@@ -852,49 +934,279 @@ $("#register0").click(function(){
           <p style="text-align:center;font-size:2em;color:white;">在无边的时空宇宙中，我们都是如此渺小；唯有知识，让我们与众不同。</p>
 		</div>
 		<ul class="nav nav-tabs nav-justified" role="tablist">
-		  <li role="presentation" class="active"><a href="#" class="course-tab">数学</a></li>
-		  <li role="presentation"><a href="#" class="course-tab">语文</a></li>
-		  <li role="presentation"><a href="#" class="course-tab">英语</a></li>
-		  <li role="presentation"><a href="#" class="course-tab">物理</a></li>
-		  <li role="presentation"><a href="#" class="course-tab">化学</a></li>
-		  <li role="presentation"><a href="#" class="course-tab">生物</a></li>
-		  <li role="presentation"><a href="#" class="course-tab">政治</a></li>
-		  <li role="presentation"><a href="#" class="course-tab">历史</a></li>
-		  <li role="presentation"><a href="#" class="course-tab">地理</a></li>
+		  <li role="presentation" class="math-tab active"><a href="#" class="course-tab">数学</a></li>
+		  <li role="presentation" class="yuwen-tab"><a href="#" class="course-tab">语文</a></li>
+		  <li role="presentation" class="english-tab"><a href="#" class="course-tab">英语</a></li>
+		  <li role="presentation" class="physics-tab"><a href="#" class="course-tab">物理</a></li>
+		  <li role="presentation" class="chemistry-tab"><a href="#" class="course-tab">化学</a></li>
+		  <li role="presentation" class="biology-tab"><a href="#" class="course-tab">生物</a></li>
+		  <li role="presentation" class="politics-tab"><a href="#" class="course-tab">政治</a></li>
+		  <li role="presentation" class="history-tab"><a href="#" class="course-tab">历史</a></li>
+		  <li role="presentation" class="geography-tab"><a href="#" class="course-tab">地理</a></li>
 		</ul>
-		<div class="table-responsive" style="padding-top:40px;">
-      <table class="table table-bordered table-hover">
+	<div id="math-table" class="table-responsive course-table">
+      <table class="table table-bordered">
         <tbody>
-          <tr class="warning">
+          <tr>
             <td>小学</td>
-            <a href="#"><td>一年级</td></a>
-            <td>二年级</td>
-            <td>三年级</td>
-            <td>四年级</td>
-            <td>五年级</td>
-            <td>六年级</td>
+            <td><a href="#">一年级</a></td>
+            <td><a href="#">二年级</a></td>
+            <td><a href="#">三年级</a></td>
+            <td><a href="#">四年级</a></td>
+            <td><a href="#">五年级</a></td>
+            <td><a href="#">六年级</a></td>
           </tr>
-          <tr class="info">
+          <tr>
             <td>初中</td>
-            <td>七年级</td>
-            <td>八年级</td>
-            <td>九年级</td>
+            <td><a href="#">七年级</a></td>
+            <td><a href="#">八年级</a></td>
+            <td><a href="#">九年级</a></td>
           </tr>
-          <tr class="warning">
-            <td rowspan="2">高中</td>
-            <td>必修一</td>
-            <td>必修二</td>
-            <td>必修三</td>
-            <td>必修四</td>
-            <td>必修五</td>
+          <tr>
+            <td rowspan="2" >高中</td>
+            <td><a href="#">必修一</a></td>
+            <td><a href="#">必修二</a></td>
+            <td><a href="#">必修三</a></td>
+            <td><a href="#">必修四</a></td>
+            <td><a href="#">必修五</a></td>
           </tr>
 		  <tr>
-            <td>选修1-1</td>
-            <td>选修1-2</td>
-            <td>选修2-1</td>
-            <td>选修2-2</td>
-            <td>选修2-3</td>
-            <td>选修4-1</td>
+            <td style="font-weight:normal;font-size:1em;"><a href="#">选修1-1</a></td>
+            <td><a href="#">选修1-2</a></td>
+            <td><a href="#">选修2-1</a></td>
+            <td><a href="#">选修2-2</a></td>
+            <td><a href="#">选修2-3</a></td>
+            <td><a href="#">选修4-1</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+	
+	<div id="yuwen-table" class="table-responsive course-table" style="display:none;">
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <td>小学</td>
+            <td><a href="#">一年级</a></td>
+            <td><a href="#">二年级</a></td>
+            <td><a href="#">三年级</a></td>
+            <td><a href="#">四年级</a></td>
+            <td><a href="#">五年级</a></td>
+            <td><a href="#">六年级</a></td>
+          </tr>
+          <tr>
+            <td>初中</td>
+            <td><a href="#">七年级</a></td>
+            <td><a href="#">八年级</a></td>
+            <td><a href="#">九年级</a></td>
+          </tr>
+          <tr>
+            <td rowspan="2" >高中</td>
+            <td><a href="#">必修一</a></td>
+            <td><a href="#">必修二</a></td>
+            <td><a href="#">必修三</a></td>
+            <td><a href="#">必修四</a></td>
+            <td><a href="#">必修五</a></td>
+          </tr>
+		  <tr>
+            <td style="font-weight:normal;font-size:1em;"><a href="#">中外传记作品选读</a></td>
+            <td><a href="#">外国小说欣赏</a></td>
+            <td><a href="#">中国古代诗歌散文欣赏</a></td>
+            <td><a href="#">中国现代诗歌散文欣赏</a></td>
+            <td><a href="#">语言文字应用</a></td>
+            <td><a href="#">先秦诸子选读</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+	
+	<div id="english-table" class="table-responsive course-table" style="display:none;">
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <td>小学</td>
+            <td><a href="#">三年级</a></td>
+            <td><a href="#">四年级</a></td>
+            <td><a href="#">五年级</a></td>
+            <td><a href="#">六年级</a></td>
+          </tr>
+          <tr>
+            <td>初中</td>
+            <td><a href="#">七年级</a></td>
+            <td><a href="#">八年级</a></td>
+            <td><a href="#">九年级</a></td>
+          </tr>
+          <tr>
+            <td rowspan="2" >高中</td>
+            <td><a href="#">必修一</a></td>
+            <td><a href="#">必修二</a></td>
+            <td><a href="#">必修三</a></td>
+            <td><a href="#">必修四</a></td>
+            <td><a href="#">必修五</a></td>
+          </tr>
+		  <tr>
+            <td style="font-weight:normal;font-size:1em;"><a href="#">选修六</a></td>
+            <td><a href="#">选修七</a></td>
+            <td><a href="#">选修八</a></td>
+            <td><a href="#">选修九</a></td>
+            <td><a href="#">选修十</a></td>
+            <td><a href="#">选修十一</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+	
+	<div id="physics-table" class="table-responsive course-table" style="display:none;">
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <td>初中</td>
+            <td><a href="#">八年级</a></td>
+            <td><a href="#">九年级</a></td>
+          </tr>
+          <tr>
+            <td rowspan="2" >高中</td>
+            <td><a href="#">必修一</a></td>
+            <td><a href="#">必修二</a></td>
+            <td><a href="#">选修1-1</a></td>
+            <td><a href="#">选修1-2</a></td>
+            <td><a href="#">选修2-1</a></td>
+			<td><a href="#">选修2-2</a></td>
+          </tr>
+		  <tr>
+            <td style="font-weight:normal;font-size:1em;"><a href="#">选修2-3</a></td>
+            <td><a href="#">选修3-1</a></td>
+            <td><a href="#">选修3-2</a></td>
+            <td><a href="#">选修3-3</a></td>
+            <td><a href="#">选修3-4</a></td>
+            <td><a href="#">选修3-5</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+	
+	<div id="chemistry-table" class="table-responsive course-table" style="display:none;">
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <td>初中</td>
+            <td><a href="#">九年级</a></td>
+          </tr>
+          <tr>
+            <td rowspan="2" >高中</td>
+            <td><a href="#">必修一</a></td>
+            <td><a href="#">必修二</a></td>
+            <td><a href="#">选修一</a></td>
+            <td><a href="#">选修二</a></td>
+          </tr>
+		  <tr>
+            <td style="font-weight:normal;font-size:1em;"><a href="#">选修三</a></td>
+            <td><a href="#">选修四</a></td>
+            <td><a href="#">选修五</a></td>
+            <td><a href="#">选修六</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+	
+	<div id="biology-table" class="table-responsive course-table" style="display:none;">
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <td>初中</td>
+            <td><a href="#">七年级</a></td>
+            <td><a href="#">八年级</a></td>
+          </tr>
+          <tr>
+            <td>高中</td>
+            <td><a href="#">必修一</a></td>
+            <td><a href="#">必修二</a></td>
+            <td><a href="#">必修三</a></td>
+            <td><a href="#">选修一</a></td>
+            <td><a href="#">选修二</a></td>
+			<td><a href="#">选修三</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+	
+	<div id="politics-table" class="table-responsive course-table" style="display:none;">
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <td>初中</td>
+            <td><a href="#">七年级</a></td>
+            <td><a href="#">八年级</a></td>
+			<td><a href="#">九年级</a></td>
+          </tr>
+          <tr>
+            <td rowspan="2" >高中</td>
+            <td><a href="#">必修一</a></td>
+            <td><a href="#">必修二</a></td>
+            <td><a href="#">必修三</a></td>
+			<td><a href="#">必修四</a></td>
+            <td><a href="#">选修一</a></td>
+          </tr>
+		  <tr>
+            <td style="font-weight:normal;font-size:1em;"><a href="#">选修二</a></td>
+			<td><a href="#">选修三</a></td>
+            <td><a href="#">选修四</a></td>
+            <td><a href="#">选修五</a></td>
+            <td><a href="#">选修六</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+	
+	<div id="history-table" class="table-responsive course-table" style="display:none;">
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <td>初中</td>
+            <td><a href="#">七年级</a></td>
+            <td><a href="#">八年级</a></td>
+			<td><a href="#">九年级</a></td>
+          </tr>
+          <tr>
+            <td rowspan="2" >高中</td>
+            <td><a href="#">必修一</a></td>
+            <td><a href="#">必修二</a></td>
+            <td><a href="#">必修三</a></td>
+            <td><a href="#">选修一</a></td>
+            <td><a href="#">选修二</a></td>
+          </tr>
+		  <tr>
+            <td style="font-weight:normal;font-size:1em;"><a href="#">选修三</a></td>
+            <td><a href="#">选修四</a></td>
+            <td><a href="#">选修五</a></td>
+            <td><a href="#">选修六</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+	
+	<div id="geography-table" class="table-responsive course-table" style="display:none;">
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <td>初中</td>
+            <td><a href="#">七年级</a></td>
+            <td><a href="#">八年级</a></td>
+          </tr>
+          <tr>
+            <td rowspan="2" >高中</td>
+            <td><a href="#">必修一</a></td>
+            <td><a href="#">必修二</a></td>
+            <td><a href="#">必修三</a></td>
+            <td><a href="#">选修一</a></td>
+            <td><a href="#">选修二</a></td>
+          </tr>
+		  <tr>
+            <td style="font-weight:normal;font-size:1em;"><a href="#">选修三</a></td>
+            <td><a href="#">选修四</a></td>
+            <td><a href="#">选修五</a></td>
+            <td><a href="#">选修六</a></td>
+			<td><a href="#">选修七</a></td>
           </tr>
         </tbody>
       </table>

@@ -944,7 +944,7 @@ border-radius: 0 0 4px 4px;
 position: absolute;
 }
 .signup-container-outer{
-background-color:#5e84a8;
+background-color:#6699CC;
 }
 .signup-container{
 height: 600px;
@@ -959,6 +959,23 @@ width: 100%;
 width:760px;
 margin:0 auto;
 padding-top:100px;
+}
+.course-table{
+padding-top:40px;
+}
+tr td:first-child{
+font-weight:bold;
+color:#fff;
+font-size:1.2em;
+}
+td:hover{
+background-color:#39c;
+}
+td a{
+color:#fff;
+}
+td a:hover{
+text-decoration:none;
 }
 a.course-tab{
 color:white;
