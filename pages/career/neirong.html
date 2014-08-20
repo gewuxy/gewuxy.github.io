@@ -8,15 +8,28 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-<link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet">
-<link rel="shortcut icon" type="image/png" href="<%=request.getContextPath()%>/favicon.png">
+<link href="../../css/style.css" rel="stylesheet">
+<link href="../../css/bootstrap.min.css" rel="stylesheet">
+
+<script type="text/javascript" src="../../js/jquery.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<link href="../../css/style.css" rel="stylesheet">
+<link rel="shortcut icon" type="image/png" href="../../favicon.png">
+<script>
+$(document).ready(function(){
+$.get("../../header.html",function(data){
+$("#header").html(data);
+});
+$.get("../../footer.html",function(data){
+$("#footer").html(data);
+});
+});
+</script>
 </head>
 
 <body>
   <div class="clearfix">
-	<div class="col-md-12 column">
-	  <%@include file="/WEB-INF/pages/common/head.jsp"%>
-	</div>
+	<div id="header" class="col-md-12 column"></div>
   </div>
   <div class="jobs">
 	  <h1>加入格物学院</h1>
@@ -58,7 +71,7 @@
   </div>
   </div>
   <div style="clear:both;">
-	  <%@include file="/WEB-INF/pages/common/footer.jsp"%>
+	  <div id="footer"></div>
   </div> 
 </body>
 </html>
