@@ -18,13 +18,22 @@
 
 <script>
 $(document).ready(function(){
-$.get("../../../header.html",function(data){
-$("#header").html(data);
-});
-$.get("../../../footer.html",function(data){
-$("#footer").html(data);
-});
-
+$.get("../book_template.html",function(data){
+$(".book").html(data);
+var srcArray = ["bixiu1_chapter1.html","bixiu1_chapter2.html","bixiu1_chapter3.html","bixiu1_chapter4.html","bixiu1_chapter5.html",
+"bixiu1_chapter6.html","bixiu1_chapter7.html","bixiu1_chapter8.html"];
+var bookArray = ["第一单元　古代中国的政治制度","第二单元　古代希腊罗马的政治制度","第三单元　近代西方资本主义政治制度的确立与发展",
+"第四单元　近代中国反侵略、求民主的潮流","第五单元　从科学社会主义理论到社会主义制度的建立","第六单元　现代中国的政治建设与祖国统一",
+"第七单元　现代中国的对外关系","第八单元　当今世界政治格局的多极化趋势"];
+for(var i = 0;i< bookArray.length-1;i++){
+	$("#section-outter").clone(true).appendTo("ul");
+}
+for(var i = 0;i< bookArray.length;i++){
+	$("ul a li #section-text").eq(i).text(bookArray[i]);
+	$("ul a").eq(i).attr("href",srcArray[i]);
+}
+$(".subject-title").text("高中历史必修一");
+$(".subject-description").text("高中历史必修一知识点简介");
 if($(".right").height()<$(window).height()-100){
 $(".right").height($(window).height()-100);
 };
@@ -32,6 +41,13 @@ $(window).resize(function(){
   if($(".right").height()<$(window).height()-100){
     $(".right").height($(window).height()-100);
   }
+});
+});
+$.get("../../../header.html",function(data){
+$("#header").html(data);
+});
+$.get("../../../footer.html",function(data){
+$("#footer").html(data);
 });
 });
 </script>
@@ -43,58 +59,11 @@ $(window).resize(function(){
   </div>
   
   <div class="book history">
-    <div class="row-fluid" >
-	  <div class="left">
-		<div class="subject-container">
-		  <div class="subject-info">
-			<h1 class="subject-title">高中历史必修一</h1>
-			<hr style="color:#333333;"/>
-			<div class="subject-description">高中历史必修一知识点简介</div>
-		  </div>
-		</div>
-	  </div>
-	  <div class="right">
-	  <ul>
-	   <hr color=#de3456/>
-          <a  href="#">
-			<li class="section" ><span class="glyphicon glyphicon-book tutorial-nav-node-icon"></span>第一单元　古代中国的政治制度</li>
-		  </a>
-		<hr color=#de3456/>
-		  <a  href="#">
-			<li class="section" ><span class="glyphicon glyphicon-book tutorial-nav-node-icon"></span>第二单元　古代希腊罗马的政治制度</li>
-		  </a>
-		<hr color=#de3456/>
-		  <a  href="#">
-			<li class="section" ><span class="glyphicon glyphicon-book tutorial-nav-node-icon"></span>第三单元　近代西方资本主义政治制度的确立与发展</li>
-		  </a>
-		<hr color=#de3456/>
-		<a  href="#">
-		  <li class="section" ><span class="glyphicon glyphicon-book tutorial-nav-node-icon"></span>第四单元　近代中国反侵略、求民主的潮流</li>
-		</a>
-		<hr color=#de3456/>
-		<a  href="#">
-		  <li class="section" ><span class="glyphicon glyphicon-book tutorial-nav-node-icon"></span>第五单元　从科学社会主义理论到社会主义制度的建立</li>
-		</a>
-		<hr color=#de3456/>
-		<a  href="#">
-		  <li class="section" ><span class="glyphicon glyphicon-book tutorial-nav-node-icon"></span>第六单元　现代中国的政治建设与祖国统一</li>
-		</a>
-		<hr color=#de3456/>
-		<a  href="#">
-		  <li class="section" ><span class="glyphicon glyphicon-book tutorial-nav-node-icon"></span>第七单元　现代中国的对外关系</li>
-		</a>
-		<hr color=#de3456/>
-		<a  href="#">
-		  <li class="section" ><span class="glyphicon glyphicon-book tutorial-nav-node-icon"></span>第八单元　当今世界政治格局的多极化趋势</li>
-		</a>
-	  </ul>
-	</div>
-	</div>
   </div>
   
   <hr />
   <div style="clear:both;width:100%;">
-		<div style="margin-top:-60px;">
+		<div style="margin-top:-40px;">
 			<div id="footer"></div>
 		</div>
 	</div>  
