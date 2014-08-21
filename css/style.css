@@ -977,6 +977,7 @@ background-color:#39c;
 }
 td a{
 color:#fff;
+display:block;
 }
 td a:hover{
 text-decoration:none;
