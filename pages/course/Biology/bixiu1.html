@@ -18,13 +18,19 @@
 
 <script>
 $(document).ready(function(){
-$.get("../../../header.html",function(data){
-$("#header").html(data);
-});
-$.get("../../../footer.html",function(data){
-$("#footer").html(data);
-});
-
+$.get("../book_template.html",function(data){
+$(".book").html(data);
+var srcArray = ["bixiu1_chapter1.html","bixiu1_chapter2.html","bixiu1_chapter3.html","bixiu1_chapter4.html","bixiu1_chapter5.html","bixiu1_chapter6.html"];
+var bookArray = ["第一章 走近细胞","第二章 组成细胞的分子","第三章 细胞的基本结构","第四章 细胞的物质输入和输出","第五章 细胞的能量供应和利用","第六章 细胞的生命历程"];
+for(var i = 0;i< bookArray.length-1;i++){
+	$("#section-outter").clone(true).appendTo("ul");
+}
+for(var i = 0;i< bookArray.length;i++){
+	$("ul a li #section-text").eq(i).text(bookArray[i]);
+	$("ul a").eq(i).attr("href",srcArray[i]);
+}
+$(".subject-title").text("分子与细胞");
+$(".subject-description").text("高中生物必修一知识点简介");
 if($(".right").height()<$(window).height()-100){
 $(".right").height($(window).height()-100);
 };
@@ -34,6 +40,15 @@ $(window).resize(function(){
   }
 });
 });
+
+$.get("../../../footer.html",function(data){
+$("#footer").html(data);
+});
+$.get("../../../header.html",function(data){
+$("#header").html(data);
+});
+
+});
 </script>
 </head>
 
@@ -41,49 +56,7 @@ $(window).resize(function(){
   <div class="clearfix">
 	<div id="header" class="col-md-12 column"></div>
   </div>
-  
-  <div class="book biology">
-    <div class="row-fluid" >
-	  <div class="left">
-		<div class="subject-container">
-		  <div class="subject-info">
-			<h1 class="subject-title">分子与细胞</h1>
-			<hr style="color:#333333;"/>
-			<div class="subject-description">高中生物必修一知识点简介</div>
-		  </div>
-		</div>
-	  </div>
-	  <div class="right">
-	  <ul>
-	   <hr color=#de3456/>
-          <a  href="#">
-			<li class="section" ><span class="glyphicon glyphicon-book tutorial-nav-node-icon"></span>第一章 走近细胞</li>
-		  </a>
-		<hr color=#de3456/>
-		  <a  href="#">
-			<li class="section" ><span class="glyphicon glyphicon-book tutorial-nav-node-icon"></span>第二章 组成细胞的分子</li>
-		  </a>
-		<hr color=#de3456/>
-		  <a  href="#">
-			<li class="section" ><span class="glyphicon glyphicon-book tutorial-nav-node-icon"></span>第三章 细胞的基本结构</li>
-		  </a>
-		<hr color=#de3456/>
-		  <a  href="#">
-			<li class="section" ><span class="glyphicon glyphicon-book tutorial-nav-node-icon"></span>第四章 细胞的物质输入和输出</li>
-		  </a>
-		<hr color=#de3456/>
-		<a  href="#">
-		  <li class="section" ><span class="glyphicon glyphicon-book tutorial-nav-node-icon"></span>第五章 细胞的能量供应和利用</li>
-		</a>
-		<hr color=#de3456/>
-		<a  href="#">
-		  <li class="section" ><span class="glyphicon glyphicon-book tutorial-nav-node-icon"></span>第六章 细胞的生命历程</li>
-		</a>
-	  </ul>
-	</div>
-	</div>
-  </div>
-  
+  <div class="book biology"></div>
   <hr />
   <div style="clear:both;width:100%;">
 		<div style="margin-top:-60px;">

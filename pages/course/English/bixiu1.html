@@ -18,13 +18,19 @@
 
 <script>
 $(document).ready(function(){
-$.get("../../../header.html",function(data){
-$("#header").html(data);
-});
-$.get("../../../footer.html",function(data){
-$("#footer").html(data);
-});
-
+$.get("../book_template.html",function(data){
+$(".book").html(data);
+var srcArray = ["bixiu1_chapter1.html","bixiu1_chapter2.html","bixiu1_chapter3.html","bixiu1_chapter4.html","bixiu1_chapter5.html"];
+var bookArray = ["Unit 1  Friendship","Unit 2  English around the world","Unit 3  Tracel journal","Unit 4  Earthquakes","Unit 5  Nelson Mandela - a modern hero"];
+for(var i = 0;i< bookArray.length-1;i++){
+	$("#section-outter").clone(true).appendTo("ul");
+}
+for(var i = 0;i< bookArray.length;i++){
+	$("ul a li #section-text").eq(i).text(bookArray[i]);
+	$("ul a").eq(i).attr("href",srcArray[i]);
+}
+$(".subject-title").text("高中英语必修一");
+$(".subject-description").text("高中英语必修一知识点简介");
 if($(".right").height()<$(window).height()-100){
 $(".right").height($(window).height()-100);
 };
@@ -33,6 +39,14 @@ $(window).resize(function(){
     $(".right").height($(window).height()-100);
   }
 });
+});
+$.get("../../../header.html",function(data){
+$("#header").html(data);
+});
+$.get("../../../footer.html",function(data){
+$("#footer").html(data);
+});
+
 });
 </script>
 </head>
@@ -43,46 +57,11 @@ $(window).resize(function(){
   </div>
   
   <div class="book english">
-    <div class="row-fluid" >
-	  <div class="left">
-		<div class="subject-container">
-		  <div class="subject-info">
-			<h1 class="subject-title">高中英语必修一</h1>
-			<hr style="color:#333333;"/>
-			<div class="subject-description">高中英语必修一知识点简介</div>
-		  </div>
-		</div>
-	  </div>
-	  <div class="right">
-	  <ul>
-	   <hr color=#de3456/>
-          <a  href="#">
-			<li class="section" ><span class="glyphicon glyphicon-book tutorial-nav-node-icon"></span>Unit 1  Friendship</li>
-		  </a>
-		<hr color=#de3456/>
-		  <a  href="#">
-			<li class="section" ><span class="glyphicon glyphicon-book tutorial-nav-node-icon"></span>Unit 2  English around the world</li>
-		  </a>
-		<hr color=#de3456/>
-		  <a  href="#">
-			<li class="section" ><span class="glyphicon glyphicon-book tutorial-nav-node-icon"></span>Unit 3  Tracel journal</li>
-		  </a>
-		<hr color=#de3456/>
-		  <a  href="#">
-			<li class="section" ><span class="glyphicon glyphicon-book tutorial-nav-node-icon"></span>Unit 4  Earthquakes</li>
-		  </a>
-		<hr color=#de3456/>
-		  <a  href="#">
-			<li class="section" ><span class="glyphicon glyphicon-book tutorial-nav-node-icon"></span>Unit 5  Nelson Mandela - a modern hero</li>
-		  </a>
-	  </ul>
-	</div>
-	</div>
   </div>
   
   <hr />
   <div style="clear:both;width:100%;">
-		<div style="margin-top:-60px;">
+		<div style="margin-top:-40px;">
 			<div id="footer"></div>
 		</div>
 	</div>  
