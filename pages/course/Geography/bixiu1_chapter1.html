@@ -16,12 +16,28 @@
 <link rel="shortcut icon" type="image/png" href="../../../favicon.png">
 <script>
 $(document).ready(function(){
-$.get("../../../header.html",function(data){
-$("#header").html(data);
-});
-$.get("../../../footer.html",function(data){
-$("#footer").html(data);
-});
+$.get("../chapter_template.html",function(data){
+$(".book").html(data);
+$("h2.chapter-title").text("行星地球");
+$(".subject-description").text("行星地球章节描述");
+var srcArray = [["bixiu1_chapter1_turtorial1-1.html","bixiu1_chapter1_turtorial1-2.html","bixiu1_chapter1_turtorial1-3.html","bixiu1_chapter1_turtorial1-4.html"]];
+var bookArray = [["宇宙中的地球","太阳对地球的影响","地球的运动","地球的圈层结构"]];
+for(var i = 0;i< bookArray.length;i++){
+	if(i < bookArray.length-1){
+		$("#tutorial-container").clone(true).appendTo("div.content-lists");
+	}
+	for(var j = 0;j< bookArray[i].length-1;j++){
+		$("#section-item-link").clone(true).appendTo("ul.section-container");
+	}
+}
+for(var i = 0;i< bookArray.length;i++){
+	for(var j = 0;j< bookArray[i].length;j++){
+		$("span.section-item-title").eq(i*bookArray.length+j).text(bookArray[i][j]);
+		$("ul a").eq(i*bookArray.length+j).attr("href",srcArray[i][j]);
+	}
+	$(".tutorial-overview h3").eq(i).text("行星地球");
+	$(".tutorial-overview .tutorial-description").eq(i).text("行星地球章节描述");
+}
 
 if($(".content-lists").height()<$(window).height()-100){
 $(".content-lists").height($(window).height()-100);
@@ -32,6 +48,13 @@ $(window).resize(function(){
   }
 });
 });
+$.get("../../../header.html",function(data){
+$("#header").html(data);
+});
+$.get("../../../footer.html",function(data){
+$("#footer").html(data);
+});
+});
 </script>
 </head>
 
@@ -40,81 +63,10 @@ $(window).resize(function(){
 	<div id="header" class="col-md-12 column"></div>
   </div>
   
-<div class="book geography">
-    <div class="row-fluid">
-	  <div class="chapter" >
-		<div class="subject-container">
-		  <div class="chapter-info">
-		    <div class="chapter-backto-subject">
-			  <a class="subject-link" href="bixiu1.html"><--返回课本</a>
-			</div>			
-            <h2 class="chapter-title">行星地球</h2>
-			<hr style="color:#333333;"/>
-			<div class="subject-description">行星地球章节描述</div>
-		  </div>
-		  </div>
-		</div>
-	<div class="content-lists">
-	  <div class="tutorial-container">
-	    <div class="tutorial-overview">
-		  <h3>行星地球</h3>
-		  <div class="tutorial-description">
-		    行星地球章节描述
-		  </div>
-		</div>
-		<div class="tutorial-contents">
-		  <div class="contents-box">
-		    <ul class="section-container">
-			  <a class="section-item-link" style="text-decoration:none">
-			    <li class="section-item">
-			      <div class="section-item-icon">
-				    <div class="pipe-top"></div>
-				    <div class="video-item"><span class="glyphicon glyphicon-play-circle"> </span></div>
-				    <div class="exercise-icon" style="display:none"><span class=""></span></div>
-				  </div>
-				  <span class="section-item-title">宇宙中的地球</span>
-			    </li>
-			  </a>
-			  <a class="section-item-link" style="text-decoration:none">
-			    <li class="section-item">
-			      <div class="section-item-icon">
-				    <div class="pipe-top"></div>
-				    <div class="video-item"><span class="glyphicon glyphicon-play-circle"> </span></div>
-				    <div class="exercise-icon" style="display:none"><span class=""></span></div>
-				  </div>
-				  <span class="section-item-title">太阳对地球的影响</span>
-			    </li>
-			  </a>
-			  <a class="section-item-link" style="text-decoration:none">
-			    <li class="section-item">
-			      <div class="section-item-icon">
-				    <div class="pipe-top"></div>
-				    <div class="video-item"><span class="glyphicon glyphicon-play-circle"> </span></div>
-				    <div class="exercise-icon" style="display:none"><span class=""></span></div>
-				  </div>
-				  <span class="section-item-title">地球的运动</span>
-			    </li>
-			  </a>
-			  <a class="section-item-link" style="text-decoration:none">
-			    <li class="section-item">
-			      <div class="section-item-icon">
-				    <div class="pipe-top"></div>
-				    <div class="video-item"><span class="glyphicon glyphicon-play-circle"> </span></div>
-				    <div class="exercise-icon" style="display:none"><span class=""></span></div>
-				  </div>
-				  <span class="section-item-title">地球的圈层结构</span>
-			    </li>
-			  </a>
-			</ul>
-		  </div>
-		</div>
-	  </div> 
-	</div>
-  </div>
-  </div>    
+<div class="book geography"></div>    
 	<hr />
 <div style="clear:both;width:100%;">
-		<div style="margin-top:-50px;">
+		<div style="margin-top:-40px;">
 			<div id="footer"></div>
 		</div>
 	</div>  

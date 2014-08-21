@@ -43,7 +43,7 @@ float:right;
 overflow:hidden;
 padding-right:40px;
 }
-.tutorial-container {
+#tutorial-container {
 border-top:2px solid #ddd;
 height:auto !important;
 margin-right: 40px;
@@ -53,30 +53,30 @@ min-height: 30px;
 width: 100%;
 clear:both;
 }
-.tutorial-container:first-child{
+#tutorial-container:first-child{
 margin-top:20px;
 }
-.tutorial-container:last-child{
+#tutorial-container:last-child{
 border-bottom:2px solid #ddd;
 }
-.tutorial-container .tutorial-overview {
+#tutorial-container .tutorial-overview {
 color: #555;
 margin-top: 14px;
 padding: 30px 30px 30px 20px;
 width: 40%;
 float:left;
 }
-.tutorial-container .tutorial-overview .tutorial-description {
+#tutorial-container .tutorial-overview .tutorial-description {
 font-size: 14px;
 
 }
-.tutorial-container .tutorial-contents {
+#tutorial-container .tutorial-contents {
 display: inline-block;
 vertical-align: top;
 
 width: 60%;
 }
-.tutorial-container .tutorial-contents .contents-box {
+#tutorial-container .tutorial-contents .contents-box {
 margin: 15px 20px;
 }
 .section-container{
@@ -516,7 +516,7 @@ text-decoration:none;
 .tutorial-tab-link:last-child  div.pipe-bottom{
 display:none;
 }
-.section-item-link:first-child div.pipe-top{
+#section-item-link:first-child div.pipe-top{
 display:none;
 }
 li.tutorial-nav-node:hover,.tutorial-nav-node.active{
