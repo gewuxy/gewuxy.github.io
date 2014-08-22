@@ -16,38 +16,6 @@
 <script type="text/javascript" src="../../../js/bootstrap.min.js"></script>
 <link rel="shortcut icon" type="image/png" href="../../../favicon.png">
 
-<script>
-$(document).ready(function(){
-$.get("../book_template.html",function(data){
-$(".book").html(data);
-$(".subject-title").text("高中数学必修一");
-$(".subject-description").text("高中数学必修一知识点简介");
-if($(".right").height()<$(window).height()-100){
-$(".right").height($(window).height()-100);
-};
-var srcArray = ["bixiu1_chapter1.html","bixiu1_chapter2.html","bixiu1_chapter3.html"];
-var bookArray = ["集合与函数概念","基本初等函数","函数的应用"];
-for(var i = 0;i< bookArray.length-1;i++){
-	$("#section-outter").clone(true).appendTo("ul");
-}
-for(var i = 0;i< bookArray.length;i++){
-	$("ul a li #section-text").eq(i).text(bookArray[i]);
-	$("ul a").eq(i).attr("href",srcArray[i]);
-}
-$(window).resize(function(){
-  if($(".right").height()<$(window).height()-100){
-    $(".right").height($(window).height()-100);
-  }
-});
-});
-$.get("../../../header.html",function(data){
-$("#header").html(data);
-});
-$.get("../../../footer.html",function(data){
-$("#footer").html(data);
-});
-});
-</script>
 </head>
 
 <body>
@@ -56,7 +24,6 @@ $("#footer").html(data);
   </div>
   
   <div class="book math">
-    
   </div>
   
   <hr />
@@ -64,6 +31,14 @@ $("#footer").html(data);
 		<div style="margin-top:-40px;">
 			<div id="footer"></div>
 		</div>
-	</div>  
+	</div> 
+  
+  <script type="text/javascript">
+	var subject_title = "高中数学必修一";
+	var subject_description = "高中数学必修一知识点简介";
+	var srcArray = ["bixiu1_chapter1.html","bixiu1_chapter2.html","bixiu1_chapter3.html"];
+	var bookArray = ["集合与函数概念","基本初等函数","函数的应用"];
+  </script>
+  <script type="text/javascript" src="../../../js/book.js"></script>	
 </body>
 </html>

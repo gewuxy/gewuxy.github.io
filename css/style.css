@@ -12,8 +12,8 @@ font-family:SimSun;
 .row-fluid{
 width:100%;
 height:auto;
-padding:0px;
-margin-left:0px;
+padding:0;
+margin-left:0;
 }
 .left{
 width:50%;

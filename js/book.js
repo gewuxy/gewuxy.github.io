@@ -1,0 +1,28 @@
+$(document).ready(function(){
+$.get("../book_template.html",function(data){
+$(".book").html(data);
+$(".subject-title").text(subject_title);
+$(".subject-description").text(subject_description);
+if($(".right").height()<$(window).height()-100){
+$(".right").height($(window).height()-100);
+};
+for(var i = 0;i< bookArray.length-1;i++){
+	$("#section-outter").clone(true).appendTo("ul");
+}
+for(var i = 0;i< bookArray.length;i++){
+	$("ul a li #section-text").eq(i).text(bookArray[i]);
+	$("ul a").eq(i).attr("href",srcArray[i]);
+}
+$(window).resize(function(){
+  if($(".right").height()<$(window).height()-100){
+    $(".right").height($(window).height()-100);
+  }
+});
+});
+$.get("../../../header.html",function(data){
+$("#header").html(data);
+});
+$.get("../../../footer.html",function(data){
+$("#footer").html(data);
+});
+});
