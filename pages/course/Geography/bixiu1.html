@@ -20,8 +20,7 @@
 $(document).ready(function(){
 $.get("../book_template.html",function(data){
 $(".book").html(data);
-var srcArray = ["bixiu1_chapter1.html","bixiu1_chapter2.html","bixiu1_chapter3.html","bixiu1_chapter4.html","bixiu1_chapter5.html"];
-var bookArray = ["第一章　行星地球","第二章　地球上的大气","第三章　地球上的水","第四章　地表形态的塑造","第五章　自然地理环境的整体性与差异性"];
+
 for(var i = 0;i< bookArray.length-1;i++){
 	$("#section-outter").clone(true).appendTo("ul");
 }
@@ -55,15 +54,19 @@ $("#footer").html(data);
   <div class="clearfix">
 	<div id="header" class="col-md-12 column"></div>
   </div>
-  
-  <div class="book geography">
-  </div>
-  
+  <div class="book geography"> </div> 
   <hr />
   <div style="clear:both;width:100%;">
 		<div style="margin-top:-40px;">
 			<div id="footer"></div>
 		</div>
 	</div>  
+  <script type="text/javascript">
+	var subject_title = "高中地理必修一";
+	var subject_description = "高中地理必修一知识点简介";
+	var srcArray = ["bixiu1_chapter1.html","bixiu1_chapter2.html","bixiu1_chapter3.html","bixiu1_chapter4.html","bixiu1_chapter5.html"];
+	var bookArray = ["第一章　行星地球","第二章　地球上的大气","第三章　地球上的水","第四章　地表形态的塑造","第五章　自然地理环境的整体性与差异性"];
+  </script>
+  <script type="text/javascript" src="../../../js/book.js"></script>
 </body>
 </html>

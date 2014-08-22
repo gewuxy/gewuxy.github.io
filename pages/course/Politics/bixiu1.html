@@ -15,40 +15,6 @@
 <script type="text/javascript" src="../../../js/jquery.min.js"></script>
 <script type="text/javascript" src="../../../js/bootstrap.min.js"></script>
 <link rel="shortcut icon" type="image/png" href="../../../favicon.png">
-
-<script>
-$(document).ready(function(){
-$.get("../book_template.html",function(data){
-$(".book").html(data);
-var srcArray = ["bixiu1_chapter1.html","bixiu1_chapter2.html","bixiu1_chapter3.html","bixiu1_chapter4.html"];
-var bookArray = ["第一单元　生活与消费","第二单元　生产、劳动与经营","第三单元　收入与分配","第四单元　发展社会主义市场经济"];
-for(var i = 0;i< bookArray.length-1;i++){
-	$("#section-outter").clone(true).appendTo("ul");
-}
-for(var i = 0;i< bookArray.length;i++){
-	$("ul a li #section-text").eq(i).text(bookArray[i]);
-	$("ul a").eq(i).attr("href",srcArray[i]);
-}
-$(".subject-title").text("经济生活");
-$(".subject-description").text("高中政治必修一知识点简介");
-if($(".right").height()<$(window).height()-100){
-$(".right").height($(window).height()-100);
-};
-$(window).resize(function(){
-  if($(".right").height()<$(window).height()-100){
-    $(".right").height($(window).height()-100);
-  }
-});
-});
-$.get("../../../header.html",function(data){
-$("#header").html(data);
-});
-$.get("../../../footer.html",function(data){
-$("#footer").html(data);
-});
-
-});
-</script>
 </head>
 
 <body>
@@ -64,6 +30,13 @@ $("#footer").html(data);
 		<div style="margin-top:-40px;">
 			<div id="footer"></div>
 		</div>
-	</div>  
+	</div> 
+  <script type="text/javascript">
+	var subject_title = "经济生活";
+	var subject_description = "高中政治必修一知识点简介";
+	var srcArray = ["bixiu1_chapter1.html","bixiu1_chapter2.html","bixiu1_chapter3.html","bixiu1_chapter4.html"];
+	var bookArray = ["第一单元　生活与消费","第二单元　生产、劳动与经营","第三单元　收入与分配","第四单元　发展社会主义市场经济"];
+  </script>
+  <script type="text/javascript" src="../../../js/book.js"></script>	
 </body>
 </html>
