@@ -16,48 +16,21 @@
 <script type="text/javascript" src="../../../js/bootstrap.min.js"></script>
 <link rel="shortcut icon" type="image/png" href="../../../favicon.png">
 <script>
-$(document).ready(function(){
-$.get("../turtorial_template.html",function(data){
-$("body").html(data);
-});
-$.get("../../../header.html",function(data){
-$("#header").html(data);
-});
-$.get("../../../footer.html",function(data){
-$("#footer").html(data);
-});
 
-	if($(".tutorial-wrap").width()-250>500){
-$(".flash-box").width($(".tutorial-wrap").width()-250);
-}else{
-$(".flash-box").width("500");
-}
-$(window).resize(function(){
-if($(".tutorial-wrap").width()-250>500){
-  if(!$(".tutorial-nav").is(":hidden")){
-	$(".flash-box").width($(".tutorial-wrap").width()-250);
-  }else{
-    $(".flash-box").width("100%");
-  }
-}else{
-$(".flash-box").width("500");
-}
-});
-$(".hidelist").click(function(){
-  if(!$(".tutorial-nav").is(":hidden")){
-	$(".tutorial-nav").hide();
-	$(".flash-box").width("100%");
-	$(this).text("显示列表");
-  }else{
-    $(".tutorial-nav").show();
-	$(".flash-box").width($(".tutorial-wrap").width()-250);
-	$(this).text("收起列表");
-  }
-});
-});
 </script>
 </head>
 <body>
-  
+  <div class="clearfix">
+	<div id="header" class="col-md-12 column"></div>
+  </div> 
+  <div class="flash-page"></div>  
+  <div style="margin-top:0px;visibility:hidden;">sorry to use you to adjust layout</div>
+  <div style="clear:both;width:100%;">
+	<div style="margin-top:-30px;">
+		<div id="footer"></div>
+	</div>
+  </div>
+<script type="text/javascript" src="../../../js/turtorial.js"></script>  
+
 </body>
 </html>
