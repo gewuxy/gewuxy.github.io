@@ -14,25 +14,6 @@
 <script type="text/javascript" src="../../../js/jquery.min.js"></script>
 <script type="text/javascript" src="../../../js/bootstrap.min.js"></script>
 <link rel="shortcut icon" type="image/png" href="../../../favicon.png">
-<script>
-$(document).ready(function(){
-$.get("../../../header.html",function(data){
-$("#header").html(data);
-});
-$.get("../../../footer.html",function(data){
-$("#footer").html(data);
-});
-
-if($(".content-lists").height()<$(window).height()-100){
-$(".content-lists").height($(window).height()-100);
-};
-$(window).resize(function(){
-  if($(".content-lists").height()<$(window).height()-100){
-    $(".content-lists").height($(window).height()-100);
-  }
-});
-});
-</script>
 </head>
 
 <body>  
@@ -40,138 +21,22 @@ $(window).resize(function(){
 	<div id="header" class="col-md-12 column"></div>
   </div>
   
-<div class="book math">
-    <div class="row-fluid">
-	  <div class="chapter" >
-		<div class="subject-container">
-		  <div class="chapter-info">
-		    <div class="chapter-backto-subject">
-			  <a class="subject-link" href="bixiu1.html"><--返回课本</a>
-			</div>			
-            <h2 class="chapter-title">基本初等函数</h2>
-			<hr style="color:#333333;"/>
-			<div class="subject-description">基本初等函数章节描述</div>
-		  </div>
-		  </div>
-		</div>
-	<div class="content-lists">
-	  <div class="tutorial-container">
-	    <div class="tutorial-overview">
-		  <h3>指数篇</h3>
-		  <div class="tutorial-description">
-		    指数篇描述
-		  </div>
-		</div>
-		<div class="tutorial-contents">
-		  <div class="contents-box">
-		    <ul class="section-container">
-			  <a href="bixiu1_chapter2_turtorial1.html" class="section-item-link" style="text-decoration:none">
-			    <li class="section-item">
-			      <div class="section-item-icon">
-				    <div class="pipe-top"></div>
-				    <div class="video-item"><span class="glyphicon glyphicon-play-circle"> </span></div>
-				    <div class="exercise-icon" style="display:none"><span class=""></span></div>
-				  </div>
-				  <span class="section-item-title">认识指数</span>
-			    </li>
-			  </a>
-			  <a class="section-item-link" style="text-decoration:none">
-			    <li class="section-item">
-			      <div class="section-item-icon">
-				    <div class="pipe-top"></div>
-				    <div class="video-item"><span class="glyphicon glyphicon-play-circle"> </span></div>
-				    <div class="exercise-icon" style="display:none"><span class=""></span></div>
-				  </div>
-				  <span class="section-item-title">指数运算</span>
-			    </li>
-			  </a>
-			  <a class="section-item-link" style="text-decoration:none">
-			    <li class="section-item">
-			      <div class="section-item-icon">
-				    <div class="pipe-top"></div>
-				    <div class="video-item"><span class="glyphicon glyphicon-play-circle"> </span></div>
-				    <div class="exercise-icon" style="display:none"><span class=""></span></div>
-				  </div>
-				  <span class="section-item-title">指数函数</span>
-			    </li>
-			  </a>
-			</ul>
-		  </div>
-		</div>
-	  </div> 
-	  
-	  <div class="tutorial-container">
-	    <div class="tutorial-overview">
-		  <h3>对数篇</h3>
-		  <div class="tutorial-description">
-		    对数篇描述
-		  </div>
-		</div>
-		<div class="tutorial-contents">
-		  <div class="contents-box">
-		    <ul class="section-container">
-			  <a class="section-item-link" style="text-decoration:none">
-			    <li class="section-item">
-			      <div class="section-item-icon">
-				    <div class="pipe-top"></div>
-				    <div class="video-item"><span class="glyphicon glyphicon-play-circle"> </span></div>
-				    <div class="exercise-icon" style="display:none"><span class=""></span></div>
-				  </div>
-				  <span class="section-item-title">认识对数</span>
-			    </li>
-			  </a>
-			  <a class="section-item-link" style="text-decoration:none">
-			    <li class="section-item">
-			      <div class="section-item-icon">
-				    <div class="pipe-top"></div>
-				    <div class="video-item"><span class="glyphicon glyphicon-play-circle"> </span></div>
-				    <div class="exercise-icon" style="display:none"><span class=""></span></div>
-				  </div>
-				  <span class="section-item-title">对数运算</span>
-			    </li>
-			  </a>
-			  <a class="section-item-link" style="text-decoration:none">
-			    <li class="section-item">
-			      <div class="section-item-icon">
-				    <div class="pipe-top"></div>
-				    <div class="video-item"><span class="glyphicon glyphicon-play-circle"> </span></div>
-				    <div class="exercise-icon" style="display:none"><span class=""></span></div>
-				  </div>
-				  <span class="section-item-title">对数运算2</span>
-			    </li>
-			  </a>
-			  <a class="section-item-link" style="text-decoration:none">
-			    <li class="section-item">
-			      <div class="section-item-icon">
-				    <div class="pipe-top"></div>
-				    <div class="video-item"><span class="glyphicon glyphicon-play-circle"> </span></div>
-				    <div class="exercise-icon" style="display:none"><span class=""></span></div>
-				  </div>
-				  <span class="section-item-title">对数函数</span>
-			    </li>
-			  </a>
-			  <a class="section-item-link" style="text-decoration:none">
-			    <li class="section-item">
-			      <div class="section-item-icon">
-				    <div class="pipe-top"></div>
-				    <div class="video-item"><span class="glyphicon glyphicon-play-circle"> </span></div>
-				    <div class="exercise-icon" style="display:none"><span class=""></span></div>
-				  </div>
-				  <span class="section-item-title">对数函数2</span>
-			    </li>
-			  </a>
-			</ul>
-		  </div>
-		</div>
-	  </div> 
-	</div>
-  </div>
-  </div>    
-	<hr />
-<div style="clear:both;width:100%;">
-		<div style="margin-top:-50px;">
+	<div class="book math"></div>    
+	<div style="clear:both;width:100%;">
+		<div style="margin-top:-30px;">
 			<div id="footer"></div>
 		</div>
 	</div>  
+<script>
+	var chapter_title = "基本初等函数",subject_description = "基本初等函数章节描述";
+	var tutorial_overview = ["指数篇","对数篇"],tutorial_description = ["指数篇描述","对数篇描述"];
+	var srcArray = [["bixiu1_chapter2_turtorial1-1.html","bixiu1_chapter2_turtorial1-2.html","bixiu1_chapter2_turtorial1-3.html"],
+		["bixiu1_chapter2_turtorial2-1.html","bixiu1_chapter2_turtorial2-2.html","bixiu1_chapter2_turtorial2-3.html","bixiu1_chapter2_turtorial2-4.html","bixiu1_chapter2_turtorial2-5.html"]
+	];
+	var bookArray = [["认识指数","指数运算","指数函数"],
+		["认识对数","对数运算","对数运算2","对数函数","对数函数2"]
+	];
+</script>  
+<script type="text/javascript" src="../../../js/chapter.js"></script>
 </body>
 </html>
