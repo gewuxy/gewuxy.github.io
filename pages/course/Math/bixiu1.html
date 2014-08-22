@@ -20,6 +20,11 @@
 $(document).ready(function(){
 $.get("../book_template.html",function(data){
 $(".book").html(data);
+$(".subject-title").text("高中数学必修一");
+$(".subject-description").text("高中数学必修一知识点简介");
+if($(".right").height()<$(window).height()-100){
+$(".right").height($(window).height()-100);
+};
 var srcArray = ["bixiu1_chapter1.html","bixiu1_chapter2.html","bixiu1_chapter3.html"];
 var bookArray = ["集合与函数概念","基本初等函数","函数的应用"];
 for(var i = 0;i< bookArray.length-1;i++){
@@ -29,11 +34,6 @@ for(var i = 0;i< bookArray.length;i++){
 	$("ul a li #section-text").eq(i).text(bookArray[i]);
 	$("ul a").eq(i).attr("href",srcArray[i]);
 }
-$(".subject-title").text("高中数学必修一");
-$(".subject-description").text("高中数学必修一知识点简介");
-if($(".right").height()<$(window).height()-100){
-$(".right").height($(window).height()-100);
-};
 $(window).resize(function(){
   if($(".right").height()<$(window).height()-100){
     $(".right").height($(window).height()-100);
