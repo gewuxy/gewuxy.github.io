@@ -1173,10 +1173,10 @@ padding-left:20px;
 padding-top:3px;
 padding-bottom:3px;
 }
-.level1 a{
+.level1 a,.other-subjects a{
 color:white;
 }
-.level1 a:hover{
+.level1 a:hover,.other-subjects a:hover{
 color:white;
 text-decoration:none;
 }
@@ -1318,7 +1318,7 @@ padding-left: 20px;
 }
 .subject{
 width:550px;
-height:400px; 
+height:430px; 
 }
 .subject.math{
 background-color:#1c758a;
