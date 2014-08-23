@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
 $.get("../turtorial_template.html",function(data){
 $(".flash-page").html(data);
@@ -67,6 +68,18 @@ if($(".tutorial-wrap").width()-250>500){
 }else{
 $(".flash-box").width("500");
 }
+}); 
 });
-
-});
+var jiathis_config={
+	siteNum:6,
+	sm:"tsina,qzone,weixin,renren,cqq,douban",
+	summary:"我看到了一个很好的视频课，分享给大家["+tutorial_title+"]"+"——来自格物学院（www.gewuxy.com）",
+	title:" ",
+	boldNum:0,
+	appkey:{
+		"tsina":"weibo",
+		"tqq":"tencent-weibo"
+	},
+	shortUrl:false,
+	hideMore:true
+};
