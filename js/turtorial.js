@@ -18,6 +18,8 @@ for(var i = 0;i< turtorialArray.length;i++){
 if(tutorial_nav_next[0] != ""){
 	$('.tutorial-nav-next-label').text(tutorial_nav_next[0]);
 	$('.tutorial-nav-next a').attr("href",tutorial_nav_next[1]);
+}else{
+	$('.tutorial-nav-next').hide();
 }
 //jiathis分享开始
 
