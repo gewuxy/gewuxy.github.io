@@ -1,6 +1,9 @@
 $(document).ready(function(){
-$.get("../chapter_template.html",function(data){
-$(".book").html(data);
+$.ajax({
+  url: "../chapter_template.html",
+  async: false,
+  success: function(data){
+	$(".book").html(data);
 $('a.subject-link').attr("href",back_book);
 $("h2.chapter-title").text(chapter_title);
 $(".subject-description").text(subject_description);
@@ -29,6 +32,8 @@ $(window).resize(function(){
     $(".content-lists").height($(window).height()-100);
   }
 });
+  },
+
 });
 $.get("../../../header.html",function(data){
 $("#header").html(data);

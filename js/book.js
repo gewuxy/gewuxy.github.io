@@ -1,10 +1,7 @@
 $(document).ready(function(){
 $.ajax({
-
   url: "../book_template.html",
-
   async: false,
-
   success: function(data){
 	$(".book").html(data);
 $(".subject-title").text(subject_title);
