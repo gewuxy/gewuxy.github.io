@@ -1,7 +1,24 @@
 $(document).ready(function(){
 $.get("../turtorial_template.html",function(data){
 $(".flash-page").html(data);
-
+$('.tutorial-title').text(tutorial_title);
+$('iframe').attr("src",src);
+for(var i = 0;i< turtorialArray.length;i++){
+  if(i < turtorialArray.length-1){
+	$("#tutorial-tab-link").clone(true).appendTo("ul.tutorial-nav-content-list");
+  }
+  $("ul>a>li>span").eq(i).text(turtorialArray[i]);
+  $("ul.tutorial-nav-content-list a").eq(i).attr("href",srcArray[i]);
+}
+for(var i = 0;i< turtorialArray.length;i++){
+  if(turtorialArray[i] == tutorial_title){
+	$('ul>a>li').eq(i).addClass("active");
+  }
+}
+if(tutorial_nav_next[0] != ""){
+	$('.tutorial-nav-next-label').text(tutorial_nav_next[0]);
+	$('.tutorial-nav-next a').attr("href",tutorial_nav_next[1]);
+}
 //jiathis分享开始
 
 jQuery.ajax({

@@ -505,15 +505,15 @@ width:100%;
 li.tutorial-nav-node>span{
 padding-left:60px;
 }
-.tutorial-tab-link{
+#tutorial-tab-link{
 padding-top:10px;
 padding-bottom:10px;
 font-size:17px;
 }
-.tutorial-tab-link:hover{
+#tutorial-tab-link:hover{
 text-decoration:none;
 }
-.tutorial-tab-link:last-child  div.pipe-bottom{
+#tutorial-tab-link:last-child  div.pipe-bottom{
 display:none;
 }
 #section-item-link:first-child div.pipe-top{
