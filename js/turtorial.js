@@ -74,7 +74,7 @@ $(".flash-box").width("500");
 var jiathis_config={
 	siteNum:6,
 	sm:"tsina,qzone,weixin,renren,cqq,douban",
-	summary:"我看到了一个很好的视频课，分享给大家["+tutorial_title+"]"+"——来自格物学院（www.gewuxy.com）",
+	summary:"我看到了一个很好的视频课，分享给大家【"+tutorial_title+"】"+"——来自格物学院（www.gewuxy.com）",
 	title:" ",
 	boldNum:0,
 	appkey:{
