@@ -1,6 +1,7 @@
 $(document).ready(function(){
 $.get("../chapter_template.html",function(data){
 $(".book").html(data);
+$('a.subject-link').attr("href",back_book);
 $("h2.chapter-title").text(chapter_title);
 $(".subject-description").text(subject_description);
 var n = 0;
