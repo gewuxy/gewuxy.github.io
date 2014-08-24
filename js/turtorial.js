@@ -54,6 +54,9 @@ $(".hidelist").click(function(){
 $.get("/footer.html",function(data){
 $("#footer").html(data);
 });
+$('.ds-thread').attr("data-title",tutorial_title);
+$('.ds-thread').attr("data-thread-key",tutorial_title);
+$('.ds-thread').attr("data-url",window.location.href);
 });
 $.get("../../../header.html",function(data){
 $("#header").html(data);
