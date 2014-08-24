@@ -569,21 +569,11 @@ float:right;
 color:white;
 margin-right:10px;
 }
-.tutorial-footer{
+.video-discussion{
 width:980px;
 margin:0 auto;
 }
-.tutorial-footer-container{
-position: relative;
-}
-.video-discussion{
-padding: 0 1% 0 10px;
-margin-top: 10px;
-margin-left: -10px;
-min-height: 200px;
-width: 79%;
-float: left;
-}
+
 .discussion-guideline{
 float: right;
 margin-bottom: 15px;
