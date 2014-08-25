@@ -486,11 +486,19 @@ text-align:left;
 background-color:#fff;
 border-left:1px solid #ccc;
 }
-.back-to-section{
+#section-title{
+text-decoration:none;
 }
 .tutorial-title{
 color: #4b565e;
+font-size:1.6em;
 font-weight:bold;
+padding-top:10px;
+}
+.publisher{
+color:#888;
+font-family:Microsoft YaHei;
+padding-bottom:10px;
 }
 .tutorial-nav-body{
 overflow: hidden;

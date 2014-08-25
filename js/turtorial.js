@@ -4,6 +4,7 @@ $.get("../turtorial_template.html",function(data){
 $(".flash-page").html(data);
 $('a#section-title').attr("href",back_chapter);
 $('.tutorial-title').text(tutorial_title);
+$('.publisher .teacher').text(publisher);
 $('iframe').attr("src",src);
 for(var i = 0;i< turtorialArray.length;i++){
   if(i < turtorialArray.length-1){
