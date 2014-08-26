@@ -369,6 +369,57 @@ switch(turId){
 		turtorialArray = ["黎明前的黑夜","文艺复兴","三次方程的求解与符号体系的建立","透视学与航海图","三角学和天文学","开普勒与行星运动三大定律"];
 		tutorial_nav_next = ["",""];
 		break;
+	case MATH_HISTORY_CHAPTER5_TUR1_1:
+		back_chapter = "history_chapter5.html";
+		tutorial_title = "对数的发明";
+		publisher = "罗老师";
+		src = "https://www.showme.com/sma/embed/?s=aQKqano";
+		srcArray = ["javascript:void(0);","history_chapter5_turtorial1-2.html","history_chapter5_turtorial1-3.html","history_chapter5_turtorial1-4.html"
+			,"history_chapter5_turtorial1-5.html"];
+		turtorialArray = ["对数的发明","解析几何的诞生","微积分的诞生","牛顿的流术数","莱布尼茨的微积分"];
+		tutorial_nav_next = ["",""];
+		break;
+	case MATH_HISTORY_CHAPTER5_TUR1_2:
+		back_chapter = "history_chapter5.html";
+		tutorial_title = "解析几何的诞生";
+		publisher = "罗老师";
+		src = "https://www.showme.com/sma/embed/?s=Hzc5cu0";
+		srcArray = ["history_chapter5_turtorial1-1.html","javascript:void(0);","history_chapter5_turtorial1-3.html","history_chapter5_turtorial1-4.html"
+			,"history_chapter5_turtorial1-5.html"];
+		turtorialArray = ["对数的发明","解析几何的诞生","微积分的诞生","牛顿的流术数","莱布尼茨的微积分"];
+		tutorial_nav_next = ["",""];
+		break;
+	case MATH_HISTORY_CHAPTER5_TUR1_3:
+		back_chapter = "history_chapter5.html";
+		tutorial_title = "微积分的诞生";
+		publisher = "罗老师";
+		src = "https://www.showme.com/sma/embed/?s=PNYzBY0";
+		srcArray = ["history_chapter5_turtorial1-1.html","history_chapter5_turtorial1-2.html","javascript:void(0);","history_chapter5_turtorial1-4.html"
+			,"history_chapter5_turtorial1-5.html"];
+		turtorialArray = ["对数的发明","解析几何的诞生","微积分的诞生","牛顿的流术数","莱布尼茨的微积分"];
+		tutorial_nav_next = ["",""];
+		break;
+	case MATH_HISTORY_CHAPTER5_TUR1_4:
+		back_chapter = "history_chapter5.html";
+		tutorial_title = "微积分的诞生2--牛顿的流术数";
+		publisher = "罗老师";
+		src = "https://www.showme.com/sma/embed/?s=1hHn42C";
+		srcArray = ["history_chapter5_turtorial1-1.html","history_chapter5_turtorial1-2.html","history_chapter5_turtorial1-3.html","javascript:void(0);"
+			,"history_chapter5_turtorial1-5.html"];
+		turtorialArray = ["对数的发明","解析几何的诞生","微积分的诞生","牛顿的流术数","莱布尼茨的微积分"];
+		tutorial_nav_next = ["",""];
+		break;
+	case MATH_HISTORY_CHAPTER5_TUR1_5:
+		back_chapter = "history_chapter5.html";
+		tutorial_title = "微积分的诞生3--莱布尼茨的微积分";
+		publisher = "罗老师";
+		src = "https://www.showme.com/sma/embed/?s=e10awQC";
+		srcArray = ["history_chapter5_turtorial1-1.html","history_chapter5_turtorial1-2.html","history_chapter5_turtorial1-3.html","history_chapter5_turtorial1-4.html"
+			,"javascript:void(0);"];
+		turtorialArray = ["对数的发明","解析几何的诞生","微积分的诞生","牛顿的流术数","莱布尼茨的微积分"];
+		tutorial_nav_next = ["",""];
+		break;
+	
 	
 	default:
 		break;
