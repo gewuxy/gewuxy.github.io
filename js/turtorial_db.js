@@ -3,6 +3,7 @@ var srcArray = new Array();
 var turtorialArray = new Array();
 var tutorial_nav_next = new Array();
 switch(turId){
+	//数学必修一
 	case MATH_BIXIU1_CHAPTER1_TUR1_1:
 		back_chapter = "bixiu1_chapter1.html";
 		tutorial_title = "认识集合";
@@ -127,6 +128,17 @@ switch(turId){
 		src = "https://www.educreations.com/lesson/embed/22100239/";
 		srcArray = ["bixiu1_chapter2_turtorial2-1.html","bixiu1_chapter2_turtorial2-2.html","bixiu1_chapter2_turtorial2-3.html","bixiu1_chapter2_turtorial2-5.html","javascript:void(0);"];
 		turtorialArray = ["认识对数","对数运算","对数运算2","对数函数","对数函数2"];
+		tutorial_nav_next = ["",""];
+		break;
+	
+	//数学简史部分
+	case MATH_HISTORY_CHAPTER1_TUR1_1:
+		back_chapter = "history_chapter1.html";
+		tutorial_title = "数的起源";
+		publisher = "罗老师";
+		src = "https://www.showme.com/sma/embed/?s=tEWQ8JM";
+		srcArray = ["javascript:void(0);","history_chapter1_turtorial1-2.html","history_chapter1_turtorial1-3.html"];
+		turtorialArray = ["数的起源","古巴比伦文明","古埃及文明"];
 		tutorial_nav_next = ["",""];
 		break;
 	default:
