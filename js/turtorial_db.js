@@ -141,6 +141,34 @@ switch(turId){
 		turtorialArray = ["数的起源","古巴比伦文明","古埃及文明"];
 		tutorial_nav_next = ["",""];
 		break;
+	case MATH_HISTORY_CHAPTER1_TUR1_2:
+		back_chapter = "history_chapter1.html";
+		tutorial_title = "古巴比伦文明";
+		publisher = "罗老师";
+		src = "https://www.showme.com/sma/embed/?s=GuncFvM";
+		srcArray = ["history_chapter1_turtorial1-1.html","javascript:void(0);","history_chapter1_turtorial1-3.html"];
+		turtorialArray = ["数的起源","古巴比伦文明","古埃及文明"];
+		tutorial_nav_next = ["",""];
+		break;
+	case MATH_HISTORY_CHAPTER1_TUR1_3:
+		back_chapter = "history_chapter1.html";
+		tutorial_title = "古埃及文明";
+		publisher = "罗老师";
+		src = "https://www.showme.com/sma/embed/?s=yp8RWHQ";
+		srcArray = ["history_chapter1_turtorial1-1.html","history_chapter1_turtorial1-2.html","javascript:void(0);"];
+		turtorialArray = ["数的起源","古巴比伦文明","古埃及文明"];
+		tutorial_nav_next = ["",""];
+		break;
+	case MATH_HISTORY_CHAPTER2_TUR1_1:
+		back_chapter = "history_chapter2.html";
+		tutorial_title = "神秘的学派";
+		publisher = "罗老师";
+		src = "https://www.showme.com/sma/embed/?s=dHFhnnc";
+		srcArray = ["javascript:void(0);","history_chapter2_turtorial1-2.html","history_chapter2_turtorial1-3.html","history_chapter2_turtorial1-4.html"
+		,"history_chapter2_turtorial1-5.html","history_chapter2_turtorial1-6.html","history_chapter2_turtorial1-7.html","history_chapter2_turtorial1-8.html"];
+		turtorialArray = ["神秘的学派","公理舞台上起舞的逻辑","三大几何难题","演绎之王","撬动地球的人","圆锥曲线论","托勒密地心说","最后的回光"];
+		tutorial_nav_next = ["",""];
+		break;
 	default:
 		break;
 }
