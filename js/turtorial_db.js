@@ -169,6 +169,80 @@ switch(turId){
 		turtorialArray = ["神秘的学派","公理舞台上起舞的逻辑","三大几何难题","演绎之王","撬动地球的人","圆锥曲线论","托勒密地心说","最后的回光"];
 		tutorial_nav_next = ["",""];
 		break;
+	case MATH_HISTORY_CHAPTER2_TUR1_2:
+		back_chapter = "history_chapter2.html";
+		tutorial_title = "公理舞台上起舞的逻辑";
+		publisher = "罗老师";
+		src = "https://www.showme.com/sma/embed/?s=QmCYS5g";
+		srcArray = ["history_chapter2_turtorial1-1.html","javascript:void(0);","history_chapter2_turtorial1-3.html","history_chapter2_turtorial1-4.html"
+		,"history_chapter2_turtorial1-5.html","history_chapter2_turtorial1-6.html","history_chapter2_turtorial1-7.html","history_chapter2_turtorial1-8.html"];
+		turtorialArray = ["神秘的学派","公理舞台上起舞的逻辑","三大几何难题","演绎之王","撬动地球的人","圆锥曲线论","托勒密地心说","最后的回光"];
+		tutorial_nav_next = ["",""];
+		break;
+	case MATH_HISTORY_CHAPTER2_TUR1_3:
+		back_chapter = "history_chapter2.html";
+		tutorial_title = "三大几何难题";
+		publisher = "罗老师";
+		src = "https://www.showme.com/sma/embed/?s=YVD2ExU";
+		srcArray = ["history_chapter2_turtorial1-1.html","history_chapter2_turtorial1-2.html","javascript:void(0);","history_chapter2_turtorial1-4.html"
+		,"history_chapter2_turtorial1-5.html","history_chapter2_turtorial1-6.html","history_chapter2_turtorial1-7.html","history_chapter2_turtorial1-8.html"];
+		turtorialArray = ["神秘的学派","公理舞台上起舞的逻辑","三大几何难题","演绎之王","撬动地球的人","圆锥曲线论","托勒密地心说","最后的回光"];
+		tutorial_nav_next = ["",""];
+		break;
+	case MATH_HISTORY_CHAPTER2_TUR1_4:
+		back_chapter = "history_chapter2.html";
+		tutorial_title = "演绎之王";
+		publisher = "罗老师";
+		src = "https://www.showme.com/sma/embed/?s=4O0Tkbw";
+		srcArray = ["history_chapter2_turtorial1-1.html","history_chapter2_turtorial1-2.html","history_chapter2_turtorial1-3.html","javascript:void(0);"
+		,"history_chapter2_turtorial1-5.html","history_chapter2_turtorial1-6.html","history_chapter2_turtorial1-7.html","history_chapter2_turtorial1-8.html"];
+		turtorialArray = ["神秘的学派","公理舞台上起舞的逻辑","三大几何难题","演绎之王","撬动地球的人","圆锥曲线论","托勒密地心说","最后的回光"];
+		tutorial_nav_next = ["",""];
+		break;
+	case MATH_HISTORY_CHAPTER2_TUR1_5:
+		back_chapter = "history_chapter2.html";
+		tutorial_title = "撬动地球的人";
+		publisher = "罗老师";
+		src = "https://www.showme.com/sma/embed/?s=p3MxZMu";
+		srcArray = ["history_chapter2_turtorial1-1.html","history_chapter2_turtorial1-2.html","history_chapter2_turtorial1-3.html","history_chapter2_turtorial1-4.html"
+		,"javascript:void(0);","history_chapter2_turtorial1-6.html","history_chapter2_turtorial1-7.html","history_chapter2_turtorial1-8.html"];
+		turtorialArray = ["神秘的学派","公理舞台上起舞的逻辑","三大几何难题","演绎之王","撬动地球的人","圆锥曲线论","托勒密地心说","最后的回光"];
+		tutorial_nav_next = ["",""];
+		break;
+	case MATH_HISTORY_CHAPTER2_TUR1_6:
+		back_chapter = "history_chapter2.html";
+		tutorial_title = "圆锥曲线论";
+		publisher = "罗老师";
+		src = "https://www.showme.com/sma/embed/?s=Cje9gyu";
+		srcArray = ["history_chapter2_turtorial1-1.html","history_chapter2_turtorial1-2.html","history_chapter2_turtorial1-3.html","history_chapter2_turtorial1-4.html"
+		,"history_chapter2_turtorial1-5.html","javascript:void(0);","history_chapter2_turtorial1-7.html","history_chapter2_turtorial1-8.html"];
+		turtorialArray = ["神秘的学派","公理舞台上起舞的逻辑","三大几何难题","演绎之王","撬动地球的人","圆锥曲线论","托勒密地心说","最后的回光"];
+		tutorial_nav_next = ["",""];
+		break;
+	case MATH_HISTORY_CHAPTER2_TUR1_7:
+		back_chapter = "history_chapter2.html";
+		tutorial_title = "托勒密地心说";
+		publisher = "罗老师";
+		src = "https://www.showme.com/sma/embed/?s=aPvLoUi";
+		srcArray = ["history_chapter2_turtorial1-1.html","history_chapter2_turtorial1-2.html","history_chapter2_turtorial1-3.html","history_chapter2_turtorial1-4.html"
+		,"history_chapter2_turtorial1-5.html","history_chapter2_turtorial1-6.html","javascript:void(0);","history_chapter2_turtorial1-8.html"];
+		turtorialArray = ["神秘的学派","公理舞台上起舞的逻辑","三大几何难题","演绎之王","撬动地球的人","圆锥曲线论","托勒密地心说","最后的回光"];
+		tutorial_nav_next = ["",""];
+		break;
+	case MATH_HISTORY_CHAPTER2_TUR1_8:
+		back_chapter = "history_chapter2.html";
+		tutorial_title = "最后的回光";
+		publisher = "罗老师";
+		src = "https://www.showme.com/sma/embed/?s=YgTwjKq";
+		srcArray = ["history_chapter2_turtorial1-1.html","history_chapter2_turtorial1-2.html","history_chapter2_turtorial1-3.html","history_chapter2_turtorial1-4.html"
+		,"history_chapter2_turtorial1-5.html","history_chapter2_turtorial1-6.html","history_chapter2_turtorial1-7.html","javascript:void(0);"];
+		turtorialArray = ["神秘的学派","公理舞台上起舞的逻辑","三大几何难题","演绎之王","撬动地球的人","圆锥曲线论","托勒密地心说","最后的回光"];
+		tutorial_nav_next = ["",""];
+		break;
+	
+	
+	
+	
 	default:
 		break;
 }
