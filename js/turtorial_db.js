@@ -303,7 +303,7 @@ switch(turId){
 		back_chapter = "history_chapter3.html";
 		tutorial_title = "宋元四大家3";
 		publisher = "罗老师";
-		src = "https://www.showme.com/sma/embed/?s=HV1a3uK";
+		src = "https://www.showme.com/sma/embed/?s=soEsR8q";
 		srcArray = ["history_chapter3_turtorial1-1.html","history_chapter3_turtorial1-2.html","history_chapter3_turtorial1-3.html","history_chapter3_turtorial1-4.html"
 			,"history_chapter3_turtorial1-5.html","history_chapter3_turtorial1-6.html","javascript:void(0);"];
 		turtorialArray = ["周髀算经","九章算术","孙子算经","张邱建算经","宋元四大家","四大家2--秦九韶算法","宋元四大家3"];
