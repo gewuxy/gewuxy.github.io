@@ -313,7 +313,7 @@ switch(turId){
 		back_chapter = "history_chapter4.html";
 		tutorial_title = "黎明前的黑夜";
 		publisher = "罗老师";
-		src = "https://www.showme.com/sma/embed/?s=soEsR8q";
+		src = "https://www.showme.com/sma/embed/?s=7RgUByy";
 		srcArray = ["javascript:void(0);","history_chapter4_turtorial1-2.html","history_chapter4_turtorial1-3.html","history_chapter4_turtorial1-4.html"
 			,"history_chapter4_turtorial1-5.html","history_chapter4_turtorial1-6.html"];
 		turtorialArray = ["黎明前的黑夜","文艺复兴","三次方程的求解与符号体系的建立","透视学与航海图","三角学和天文学","开普勒与行星运动三大定律"];
