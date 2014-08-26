@@ -419,6 +419,56 @@ switch(turId){
 		turtorialArray = ["对数的发明","解析几何的诞生","微积分的诞生","微积分的诞生2--牛顿的流术数","微积分的诞生3--莱布尼茨的微积分"];
 		tutorial_nav_next = ["",""];
 		break;
+	case MATH_HISTORY_CHAPTER6_TUR1_1:
+		back_chapter = "history_chapter6.html";
+		tutorial_title = "伯努利家族";
+		publisher = "罗老师";
+		src = "https://www.educreations.com/lesson/embed/22531163/";
+		srcArray = ["javascript:void(0);","history_chapter6_turtorial1-2.html","history_chapter6_turtorial1-3.html","history_chapter6_turtorial1-4.html"
+			,"history_chapter6_turtorial1-5.html"];
+		turtorialArray = ["伯努利家族","大数学家欧拉","法国3L--拉格朗日","法国3L--拉普拉斯，勒让德","第二次数学危机"];
+		tutorial_nav_next = ["",""];
+		break;
+	case MATH_HISTORY_CHAPTER6_TUR1_2:
+		back_chapter = "history_chapter6.html";
+		tutorial_title = "大数学家欧拉";
+		publisher = "罗老师";
+		src = "https://www.educreations.com/lesson/embed/22529134/";
+		srcArray = ["history_chapter6_turtorial1-1.html","javascript:void(0);","history_chapter6_turtorial1-3.html","history_chapter6_turtorial1-4.html"
+			,"history_chapter6_turtorial1-5.html"];
+		turtorialArray = ["伯努利家族","大数学家欧拉","法国3L--拉格朗日","法国3L--拉普拉斯，勒让德","第二次数学危机"];
+		tutorial_nav_next = ["",""];
+		break;
+	case MATH_HISTORY_CHAPTER6_TUR1_3:
+		back_chapter = "history_chapter6.html";
+		tutorial_title = "法国3L--拉格朗日";
+		publisher = "罗老师";
+		src = "https://www.educreations.com/lesson/embed/22531286/";
+		srcArray = ["history_chapter6_turtorial1-1.html","history_chapter6_turtorial1-2.html","javascript:void(0);","history_chapter6_turtorial1-4.html"
+			,"history_chapter6_turtorial1-5.html"];
+		turtorialArray = ["伯努利家族","大数学家欧拉","法国3L--拉格朗日","法国3L--拉普拉斯，勒让德","第二次数学危机"];
+		tutorial_nav_next = ["",""];
+		break;
+	case MATH_HISTORY_CHAPTER6_TUR1_4:
+		back_chapter = "history_chapter6.html";
+		tutorial_title = "法国3L--拉普拉斯，勒让德";
+		publisher = "罗老师";
+		src = "https://www.educreations.com/lesson/embed/22557629/";
+		srcArray = ["history_chapter6_turtorial1-1.html","history_chapter6_turtorial1-2.html","history_chapter6_turtorial1-3.html","javascript:void(0);"
+			,"history_chapter6_turtorial1-5.html"];
+		turtorialArray = ["伯努利家族","大数学家欧拉","法国3L--拉格朗日","法国3L--拉普拉斯，勒让德","第二次数学危机"];
+		tutorial_nav_next = ["",""];
+		break;
+	case MATH_HISTORY_CHAPTER6_TUR1_5:
+		back_chapter = "history_chapter6.html";
+		tutorial_title = "第二次数学危机";
+		publisher = "罗老师";
+		src = "https://www.educreations.com/lesson/embed/22558909/";
+		srcArray = ["history_chapter6_turtorial1-1.html","history_chapter6_turtorial1-2.html","history_chapter6_turtorial1-3.html"
+			,"history_chapter6_turtorial1-4.html","javascript:void(0);"];
+		turtorialArray = ["伯努利家族","大数学家欧拉","法国3L--拉格朗日","法国3L--拉普拉斯，勒让德","第二次数学危机"];
+		tutorial_nav_next = ["",""];
+		break;
 	
 	
 	default:
