@@ -239,8 +239,26 @@ switch(turId){
 		turtorialArray = ["神秘的学派","公理舞台上起舞的逻辑","三大几何难题","演绎之王","撬动地球的人","圆锥曲线论","托勒密地心说","最后的回光"];
 		tutorial_nav_next = ["",""];
 		break;
-	
-	
+	case MATH_HISTORY_CHAPTER3_TUR1_1:
+		back_chapter = "history_chapter3.html";
+		tutorial_title = "周髀算经";
+		publisher = "罗老师";
+		src = "https://www.showme.com/sma/embed/?s=aosP8Mq";
+		srcArray = ["javascript:void(0);","history_chapter3_turtorial1-2.html","history_chapter3_turtorial1-3.html","history_chapter3_turtorial1-4.html"
+			,"history_chapter3_turtorial1-5.html","history_chapter3_turtorial1-6.html","history_chapter3_turtorial1-7.html"];
+		turtorialArray = ["周髀算经","九章算术","孙子算经","张邱建算经","宋元四大家","四大家2--秦九韶算法","宋元四大家3"];
+		tutorial_nav_next = ["",""];
+		break;
+	case MATH_HISTORY_CHAPTER3_TUR1_2:
+		back_chapter = "history_chapter3.html";
+		tutorial_title = "九章算术";
+		publisher = "罗老师";
+		src = "https://www.showme.com/sma/embed/?s=FaJGUVM";
+		srcArray = ["history_chapter3_turtorial1-1.html","javascript:void(0);","history_chapter3_turtorial1-3.html","history_chapter3_turtorial1-4.html"
+			,"history_chapter3_turtorial1-5.html","history_chapter3_turtorial1-6.html","history_chapter3_turtorial1-7.html"];
+		turtorialArray = ["周髀算经","九章算术","孙子算经","张邱建算经","宋元四大家","四大家2--秦九韶算法","宋元四大家3"];
+		tutorial_nav_next = ["",""];
+		break;
 	
 	
 	default:
