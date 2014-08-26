@@ -309,7 +309,16 @@ switch(turId){
 		turtorialArray = ["周髀算经","九章算术","孙子算经","张邱建算经","宋元四大家","四大家2--秦九韶算法","宋元四大家3"];
 		tutorial_nav_next = ["",""];
 		break;
-	
+	case MATH_HISTORY_CHAPTER4_TUR1_1:
+		back_chapter = "history_chapter4.html";
+		tutorial_title = "黎明前的黑夜";
+		publisher = "罗老师";
+		src = "https://www.showme.com/sma/embed/?s=soEsR8q";
+		srcArray = ["javascript:void(0);","history_chapter4_turtorial1-2.html","history_chapter4_turtorial1-3.html","history_chapter4_turtorial1-4.html"
+			,"history_chapter4_turtorial1-5.html","history_chapter4_turtorial1-6.html"];
+		turtorialArray = ["黎明前的黑夜","文艺复兴","三次方程的求解与符号体系的建立","透视学与航海图","三角学和天文学","开普勒与行星运动三大定律"];
+		tutorial_nav_next = ["",""];
+		break;
 	
 	default:
 		break;
