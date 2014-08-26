@@ -41,10 +41,28 @@ switch(turId){
 		break;
 	case MATH_BIXIU1_CHAPTER1_TUR2_2:
 		back_chapter = "bixiu1_chapter1.html";
-		tutorial_title = "认识函数";
+		tutorial_title = "函数图像";
 		publisher = "罗老师";
 		src = "https://www.educreations.com/lesson/embed/22022856/";
 		srcArray = ["bixiu1_chapter1_turtorial2-1.html","javascript:void(0);","bixiu1_chapter1_turtorial2-3.html","bixiu1_chapter1_turtorial2-4.html"];
+		turtorialArray = ["认识函数","函数图像","单调性","奇偶性"];
+		tutorial_nav_next = ["",""];
+		break;
+	case MATH_BIXIU1_CHAPTER1_TUR2_3:
+		back_chapter = "bixiu1_chapter1.html";
+		tutorial_title = "单调性";
+		publisher = "罗老师";
+		src = "https://www.educreations.com/lesson/embed/22023017/";
+		srcArray = ["bixiu1_chapter1_turtorial2-1.html","bixiu1_chapter1_turtorial2-2.html","javascript:void(0);","bixiu1_chapter1_turtorial2-4.html"];
+		turtorialArray = ["认识函数","函数图像","单调性","奇偶性"];
+		tutorial_nav_next = ["",""];
+		break;
+	case MATH_BIXIU1_CHAPTER1_TUR2_4:
+		back_chapter = "bixiu1_chapter1.html";
+		tutorial_title = "奇偶性";
+		publisher = "罗老师";
+		src = "https://www.educreations.com/lesson/embed/22023247/";
+		srcArray = ["bixiu1_chapter1_turtorial2-1.html","bixiu1_chapter1_turtorial2-2.html","bixiu1_chapter1_turtorial2-3.html","javascript:void(0);"];
 		turtorialArray = ["认识函数","函数图像","单调性","奇偶性"];
 		tutorial_nav_next = ["",""];
 		break;
