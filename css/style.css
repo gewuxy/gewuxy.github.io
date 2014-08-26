@@ -507,6 +507,7 @@ width: 100%;
 li.tutorial-nav-node{
 height:40px;
 line-height:40px;
+text-overflow:ellipsis;
 width:100%;
 }
 li.tutorial-nav-node>span{
