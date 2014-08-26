@@ -102,6 +102,33 @@ switch(turId){
 		turtorialArray = ["认识对数","对数运算","对数运算2","对数函数","对数函数2"];
 		tutorial_nav_next = ["",""];
 		break;
+	case MATH_BIXIU1_CHAPTER2_TUR2_3:
+		back_chapter = "bixiu1_chapter2.html";
+		tutorial_title = "对数运算2";
+		publisher = "罗老师";
+		src = "https://www.educreations.com/lesson/embed/22099808/";
+		srcArray = ["bixiu1_chapter2_turtorial2-1.html","bixiu1_chapter2_turtorial2-2.html","javascript:void(0);","bixiu1_chapter2_turtorial2-4.html","bixiu1_chapter2_turtorial2-5.html"];
+		turtorialArray = ["认识对数","对数运算","对数运算2","对数函数","对数函数2"];
+		tutorial_nav_next = ["",""];
+		break;
+	case MATH_BIXIU1_CHAPTER2_TUR2_4:
+		back_chapter = "bixiu1_chapter2.html";
+		tutorial_title = "对数函数";
+		publisher = "罗老师";
+		src = "https://www.educreations.com/lesson/embed/22100029/";
+		srcArray = ["bixiu1_chapter2_turtorial2-1.html","bixiu1_chapter2_turtorial2-2.html","bixiu1_chapter2_turtorial2-3.html","javascript:void(0);","bixiu1_chapter2_turtorial2-5.html"];
+		turtorialArray = ["认识对数","对数运算","对数运算2","对数函数","对数函数2"];
+		tutorial_nav_next = ["",""];
+		break;
+	case MATH_BIXIU1_CHAPTER2_TUR2_5:
+		back_chapter = "bixiu1_chapter2.html";
+		tutorial_title = "对数函数2";
+		publisher = "罗老师";
+		src = "https://www.educreations.com/lesson/embed/22100239/";
+		srcArray = ["bixiu1_chapter2_turtorial2-1.html","bixiu1_chapter2_turtorial2-2.html","bixiu1_chapter2_turtorial2-3.html","bixiu1_chapter2_turtorial2-5.html","javascript:void(0);"];
+		turtorialArray = ["认识对数","对数运算","对数运算2","对数函数","对数函数2"];
+		tutorial_nav_next = ["",""];
+		break;
 	default:
 		break;
 }
