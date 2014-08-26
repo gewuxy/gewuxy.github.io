@@ -21,6 +21,33 @@ switch(turId){
 		turtorialArray = ["认识集合","集合间的关系","集合运算"];
 		tutorial_nav_next = ["函数篇","bixiu1_chapter1_turtorial2-1.html"];
 		break;
+	case MATH_BIXIU1_CHAPTER1_TUR1_3:
+		back_chapter = "bixiu1_chapter1.html";
+		tutorial_title = "集合运算";
+		publisher = "罗老师";
+		src = "https://www.educreations.com/lesson/embed/21889603/";
+		srcArray = ["bixiu1_chapter1_turtorial1-1.html","bixiu1_chapter1_turtorial1-2.html","javascript:void(0);"];
+		turtorialArray = ["认识集合","集合间的关系","集合运算"];
+		tutorial_nav_next = ["函数篇","bixiu1_chapter1_turtorial2-1.html"];
+		break;
+	case MATH_BIXIU1_CHAPTER1_TUR2_1:
+		back_chapter = "bixiu1_chapter1.html";
+		tutorial_title = "认识函数";
+		publisher = "罗老师";
+		src = "https://www.educreations.com/lesson/embed/21889877/";
+		srcArray = ["javascript:void(0);","bixiu1_chapter1_turtorial2-2.html","bixiu1_chapter1_turtorial2-3.html","bixiu1_chapter1_turtorial2-4.html"];
+		turtorialArray = ["认识函数","函数图像","单调性","奇偶性"];
+		tutorial_nav_next = ["",""];
+		break;
+	case MATH_BIXIU1_CHAPTER1_TUR2_2:
+		back_chapter = "bixiu1_chapter1.html";
+		tutorial_title = "认识函数";
+		publisher = "罗老师";
+		src = "https://www.educreations.com/lesson/embed/22022856/";
+		srcArray = ["bixiu1_chapter1_turtorial2-1.html","javascript:void(0);","bixiu1_chapter1_turtorial2-3.html","bixiu1_chapter1_turtorial2-4.html"];
+		turtorialArray = ["认识函数","函数图像","单调性","奇偶性"];
+		tutorial_nav_next = ["",""];
+		break;
 	default:
 		break;
 }
