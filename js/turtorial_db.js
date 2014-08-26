@@ -319,6 +319,56 @@ switch(turId){
 		turtorialArray = ["黎明前的黑夜","文艺复兴","三次方程的求解与符号体系的建立","透视学与航海图","三角学和天文学","开普勒与行星运动三大定律"];
 		tutorial_nav_next = ["",""];
 		break;
+	case MATH_HISTORY_CHAPTER4_TUR1_2:
+		back_chapter = "history_chapter4.html";
+		tutorial_title = "文艺复兴";
+		publisher = "罗老师";
+		src = "https://www.showme.com/sma/embed/?s=Rz3iPJI";
+		srcArray = ["history_chapter4_turtorial1-1.html","javascript:void(0);","history_chapter4_turtorial1-3.html","history_chapter4_turtorial1-4.html"
+			,"history_chapter4_turtorial1-5.html","history_chapter4_turtorial1-6.html"];
+		turtorialArray = ["黎明前的黑夜","文艺复兴","三次方程的求解与符号体系的建立","透视学与航海图","三角学和天文学","开普勒与行星运动三大定律"];
+		tutorial_nav_next = ["",""];
+		break;
+	case MATH_HISTORY_CHAPTER4_TUR1_3:
+		back_chapter = "history_chapter4.html";
+		tutorial_title = "三次方程的求解与符号体系的建立";
+		publisher = "罗老师";
+		src = "https://www.showme.com/sma/embed/?s=vetzEfI";
+		srcArray = ["history_chapter4_turtorial1-1.html","history_chapter4_turtorial1-2.html","javascript:void(0);","history_chapter4_turtorial1-4.html"
+			,"history_chapter4_turtorial1-5.html","history_chapter4_turtorial1-6.html"];
+		turtorialArray = ["黎明前的黑夜","文艺复兴","三次方程的求解与符号体系的建立","透视学与航海图","三角学和天文学","开普勒与行星运动三大定律"];
+		tutorial_nav_next = ["",""];
+		break;
+	case MATH_HISTORY_CHAPTER4_TUR1_4:
+		back_chapter = "history_chapter4.html";
+		tutorial_title = "透视学与航海图";
+		publisher = "罗老师";
+		src = "https://www.showme.com/sma/embed/?s=245MRzk";
+		srcArray = ["history_chapter4_turtorial1-1.html","history_chapter4_turtorial1-2.html","history_chapter4_turtorial1-3.html","javascript:void(0);"
+			,"history_chapter4_turtorial1-5.html","history_chapter4_turtorial1-6.html"];
+		turtorialArray = ["黎明前的黑夜","文艺复兴","三次方程的求解与符号体系的建立","透视学与航海图","三角学和天文学","开普勒与行星运动三大定律"];
+		tutorial_nav_next = ["",""];
+		break;
+	case MATH_HISTORY_CHAPTER4_TUR1_5:
+		back_chapter = "history_chapter4.html";
+		tutorial_title = "三角学和天文学";
+		publisher = "罗老师";
+		src = "https://www.showme.com/sma/embed/?s=v9eEU9g";
+		srcArray = ["history_chapter4_turtorial1-1.html","history_chapter4_turtorial1-2.html","history_chapter4_turtorial1-3.html","history_chapter4_turtorial1-4.html"
+			,"javascript:void(0);","history_chapter4_turtorial1-6.html"];
+		turtorialArray = ["黎明前的黑夜","文艺复兴","三次方程的求解与符号体系的建立","透视学与航海图","三角学和天文学","开普勒与行星运动三大定律"];
+		tutorial_nav_next = ["",""];
+		break;
+	case MATH_HISTORY_CHAPTER4_TUR1_6:
+		back_chapter = "history_chapter4.html";
+		tutorial_title = "开普勒与行星运动三大定律";
+		publisher = "罗老师";
+		src = "https://www.showme.com/sma/embed/?s=hKlyYXg";
+		srcArray = ["history_chapter4_turtorial1-1.html","history_chapter4_turtorial1-2.html","history_chapter4_turtorial1-3.html","history_chapter4_turtorial1-4.html"
+			,"history_chapter4_turtorial1-5.html","javascript:void(0);"];
+		turtorialArray = ["黎明前的黑夜","文艺复兴","三次方程的求解与符号体系的建立","透视学与航海图","三角学和天文学","开普勒与行星运动三大定律"];
+		tutorial_nav_next = ["",""];
+		break;
 	
 	default:
 		break;
