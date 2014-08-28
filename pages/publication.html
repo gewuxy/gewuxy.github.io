@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>我要投稿-格物学院</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+<link href="../css/style.css" rel="stylesheet">
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<link href="../css/style.css" rel="stylesheet">
+<script>
+$(document).ready(function(){
+$.get("../header.html",function(data){
+$("#header").html(data);
+});
+$.get("../footer.html",function(data){
+$("#footer").html(data);
+});
+});
+</script>
+</head>
+
+<body>
+<div class="container">
+     <div class="clearfix">
+	<div id="header" class="col-md-12 column"></div>
+  </div>
+  <div class="body-wrapper">
+    <div class="body-content-wrapper">
+	  <div class="sidebar">
+		  <ul class="nav nav-pills nav-stacked">
+		    <li class="tab-about-us">
+			  <a href="about.html">关于我们</a>
+			</li>
+			<li class="tab-join-us">
+			 <a href="join-us.html">加入我们</a>
+			</li>
+			<li class="tab-faq">
+			  <a href="faq.html">常见问题</a>
+			</li>
+			<li class="tab-publication active">
+			  <a href="javascript:;">我要投稿</a>
+			</li>
+			<li class="tab-advise">
+			  <a href="advise.html">给我们建议</a>
+			</li>
+		  </ul>
+	  </div>
+	<div id="publication">
+	  <div style="font-size:1.2em;">
+		<div style="padding-bottom:10px;">感谢老师对我们工作的支持^_^</div>
+        如果您是在educreations或者showme等白板制作工具上制作的课件，那么您可以把视频的分享链接发送到：hr@gewuxy.com，<br/>
+		邮件标题使用以下规范：“[投稿][科目（如数学）][年级/课本（如高一/必修一）][章（如集合与函数概念）][节（标题自定）]”；<br/>
+		如何得到视频的分享链接，请看以下步骤（以educreations为例）：
+		<ol>
+		  <li>登录educreations.com</li>
+		  <li>找到并且打开自己的视频</li>
+		  <li>如果在右下角可以看到“Embed on the Web”字样，点击，在弹出的对话框中，src=“”引号内的链接即是视频的分享链接</li>
+		  <li>如果在右下角看不到“Embed on the Web”，那么点击右上角的“Edit Lesson”，把Privacy设置为Visible to all，返回页面即可看到“Embed on the Web”</li>
+		</ol>
+		如果视频不在educreations/showme上，只要视频有嵌入到网页的地址，也同样可以投稿哦。
+		投稿的课件经过审核后，两天内将出现在对应的课程目录下。
+      </div>
+	</div>
+	</div>
+	<div style="clear:both;"></div>
+  </div>
+</div>
+	<div style="clear:both;width:100%;">
+		<div style="margin-top:0px;">
+			<div id="footer"></div>
+		</div>
+	</div> 
+</body>
+</html>
