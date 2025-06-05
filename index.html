@@ -1,589 +1,1939 @@
-﻿<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-  <title>格物学院</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <meta name="description" content="格物学院是一个致力于中小学在线教育的网站，我们为学生老师们提供优质的课程，并努力使教育成为一件有趣的事情。">
-  <meta name="author" content="">
-  <meta name="baidu-site-verification" content="0TdKir7Vfm" />
-  <meta property="qc:admins" content="236355736367575016375" />
-  <link rel="shortcut icon" href="favicon.ico">  
-<link href="css/style.css" rel="stylesheet">
-<link href="css/bootstrap.min.css" rel="stylesheet">
-
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script>
-$(document).ready(function(){
-if($(".signup-container").height()<$(window).height()){
-		$(".signup-container").height($(window).height());
-	}
-$(".signup-container").width($(document.body).outerWidth());
-$(window).resize(function(){
-	$(".signup-container").width($(document.body).outerWidth());
-	if($(".signup-container").height()<$(window).height()){
-		$(".signup-container").height($(window).height());
-	}
-});
-$(".math-tab").click(function(){
-	$("#yuwen-table").hide();
-	$("#english-table").hide();
-	$("#physics-table").hide();
-	$("#chemistry-table").hide();
-	$("#biology-table").hide();
-	$("#politics-table").hide();
-	$("#history-table").hide();
-	$("#geography-table").hide();
-	$(".yuwen-tab").removeClass("active");
-	$(".english-tab").removeClass("active");
-	$(".physics-tab").removeClass("active");
-	$(".chemistry-tab").removeClass("active");
-	$(".politics-tab").removeClass("active");
-	$(".biology-tab").removeClass("active");
-	$(".geography-tab").removeClass("active");
-	$(".history-tab").removeClass("active");
-	$(".math-tab").addClass("active");
-	$("#math-table").show();
-});
-$(".yuwen-tab").click(function(){
-	$("#math-table").hide();
-	$("#english-table").hide();
-	$("#physics-table").hide();
-	$("#chemistry-table").hide();
-	$("#biology-table").hide();
-	$("#politics-table").hide();
-	$("#history-table").hide();
-	$("#geography-table").hide();
-	$(".math-tab").removeClass("active");
-	$(".english-tab").removeClass("active");
-	$(".physics-tab").removeClass("active");
-	$(".chemistry-tab").removeClass("active");
-	$(".politics-tab").removeClass("active");
-	$(".biology-tab").removeClass("active");
-	$(".geography-tab").removeClass("active");
-	$(".history-tab").removeClass("active");
-	$(".yuwen-tab").addClass("active");
-	$("#yuwen-table").show();
-});
-$(".english-tab").click(function(){
-	$("#math-table").hide();
-	$("#yuwen-table").hide();
-	$("#physics-table").hide();
-	$("#chemistry-table").hide();
-	$("#biology-table").hide();
-	$("#politics-table").hide();
-	$("#history-table").hide();
-	$("#geography-table").hide();
-	$(".math-tab").removeClass("active");
-	$(".yuwen-tab").removeClass("active");
-	$(".physics-tab").removeClass("active");
-	$(".chemistry-tab").removeClass("active");
-	$(".politics-tab").removeClass("active");
-	$(".biology-tab").removeClass("active");
-	$(".geography-tab").removeClass("active");
-	$(".history-tab").removeClass("active");
-	$(".english-tab").addClass("active");
-	$("#english-table").show();
-});
-$(".physics-tab").click(function(){
-	$("#math-table").hide();
-	$("#yuwen-table").hide();
-	$("#english-table").hide();
-	$("#chemistry-table").hide();
-	$("#biology-table").hide();
-	$("#politics-table").hide();
-	$("#history-table").hide();
-	$("#geography-table").hide();
-	$(".math-tab").removeClass("active");
-	$(".yuwen-tab").removeClass("active");
-	$(".english-tab").removeClass("active");
-	$(".chemistry-tab").removeClass("active");
-	$(".politics-tab").removeClass("active");
-	$(".biology-tab").removeClass("active");
-	$(".geography-tab").removeClass("active");
-	$(".history-tab").removeClass("active");
-	$(".physics-tab").addClass("active");
-	$("#physics-table").show();
-});
-$(".chemistry-tab").click(function(){
-	$("#math-table").hide();
-	$("#yuwen-table").hide();
-	$("#physics-table").hide();
-	$("#english-table").hide();
-	$("#biology-table").hide();
-	$("#politics-table").hide();
-	$("#history-table").hide();
-	$("#geography-table").hide();
-	$(".math-tab").removeClass("active");
-	$(".yuwen-tab").removeClass("active");
-	$(".physics-tab").removeClass("active");
-	$(".english-tab").removeClass("active");
-	$(".politics-tab").removeClass("active");
-	$(".biology-tab").removeClass("active");
-	$(".geography-tab").removeClass("active");
-	$(".history-tab").removeClass("active");
-	$(".chemistry-tab").addClass("active");
-	$("#chemistry-table").show();
-});
-$(".biology-tab").click(function(){
-	$("#math-table").hide();
-	$("#yuwen-table").hide();
-	$("#physics-table").hide();
-	$("#chemistry-table").hide();
-	$("#english-table").hide();
-	$("#politics-table").hide();
-	$("#history-table").hide();
-	$("#geography-table").hide();
-	$(".math-tab").removeClass("active");
-	$(".yuwen-tab").removeClass("active");
-	$(".physics-tab").removeClass("active");
-	$(".chemistry-tab").removeClass("active");
-	$(".politics-tab").removeClass("active");
-	$(".english-tab").removeClass("active");
-	$(".geography-tab").removeClass("active");
-	$(".history-tab").removeClass("active");
-	$(".biology-tab").addClass("active");
-	$("#biology-table").show();
-});
-$(".politics-tab").click(function(){
-	$("#math-table").hide();
-	$("#yuwen-table").hide();
-	$("#physics-table").hide();
-	$("#chemistry-table").hide();
-	$("#biology-table").hide();
-	$("#english-table").hide();
-	$("#history-table").hide();
-	$("#geography-table").hide();
-	$(".math-tab").removeClass("active");
-	$(".yuwen-tab").removeClass("active");
-	$(".physics-tab").removeClass("active");
-	$(".chemistry-tab").removeClass("active");
-	$(".english-tab").removeClass("active");
-	$(".biology-tab").removeClass("active");
-	$(".geography-tab").removeClass("active");
-	$(".history-tab").removeClass("active");
-	$(".politics-tab").addClass("active");
-	$("#politics-table").show();
-});
-$(".history-tab").click(function(){
-	$("#math-table").hide();
-	$("#yuwen-table").hide();
-	$("#physics-table").hide();
-	$("#chemistry-table").hide();
-	$("#biology-table").hide();
-	$("#politics-table").hide();
-	$("#english-table").hide();
-	$("#geography-table").hide();
-	$(".math-tab").removeClass("active");
-	$(".yuwen-tab").removeClass("active");
-	$(".physics-tab").removeClass("active");
-	$(".chemistry-tab").removeClass("active");
-	$(".politics-tab").removeClass("active");
-	$(".biology-tab").removeClass("active");
-	$(".geography-tab").removeClass("active");
-	$(".english-tab").removeClass("active");
-	$(".history-tab").addClass("active");
-	$("#history-table").show();
-});
-$(".geography-tab").click(function(){
-	$("#math-table").hide();
-	$("#yuwen-table").hide();
-	$("#physics-table").hide();
-	$("#chemistry-table").hide();
-	$("#biology-table").hide();
-	$("#politics-table").hide();
-	$("#history-table").hide();
-	$("#english-table").hide();
-	$(".math-tab").removeClass("active");
-	$(".yuwen-tab").removeClass("active");
-	$(".physics-tab").removeClass("active");
-	$(".chemistry-tab").removeClass("active");
-	$(".politics-tab").removeClass("active");
-	$(".biology-tab").removeClass("active");
-	$(".english-tab").removeClass("active");
-	$(".history-tab").removeClass("active");
-	$(".geography-tab").addClass("active");
-	$("#geography-table").show();
-});
-$.get("header.html",function(data){
-$("#header").html(data);
-});
-$.get("footer.html",function(data){
-$("#footer").html(data);
-});
-});
-
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI眼科医疗商业计划书 - 英华眼科</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <style>
+        :root {
+            --medical-blue: #0066cc;
+            --ai-purple: #8a2be2;
+            --gradient-bg: linear-gradient(135deg, var(--medical-blue), var(--ai-purple));
+            --light-blue: #e6f0ff;
+            --light-purple: #f0e6ff;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Microsoft YaHei', 'Segoe UI', sans-serif;
+            background: #f8fafc;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .slide {
+            min-height: 100vh;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 1px solid #eaeaea;
+            position: relative;
+        }
+        .slide-header {
+            background: var(--gradient-bg);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px 8px 0 0;
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        .content-box {
+            background: white;
+            border-radius: 0 0 8px 8px;
+            padding: 25px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            position: relative;
+        }
+        .chart-container {
+            height: 300px;
+            margin: 25px 0;
+        }
+        .flow-chart {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+            position: relative;
+        }
+        .flow-step {
+            width: 22%;
+            text-align: center;
+            z-index: 2;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .flow-arrow {
+            position: absolute;
+            top: 50%;
+            left: 12%;
+            width: 76%;
+            height: 2px;
+            background: var(--ai-purple);
+        }
+        .flow-arrow::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: -4px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid var(--ai-purple);
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+        }
+        .step-icon {
+            background: var(--gradient-bg);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .data-highlight {
+            background: rgba(0,102,204,0.08);
+            border-left: 4px solid var(--medical-blue);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .comparison-matrix {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin: 25px 0;
+        }
+        .matrix-cell {
+            padding: 15px;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .matrix-header {
+            background: var(--medical-blue);
+            color: white;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .tech-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .tech-layer {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--ai-purple);
+            transition: transform 0.3s ease;
+        }
+        .tech-layer:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        .team-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .team-card:hover {
+            transform: translateY(-5px);
+        }
+        .page-nav {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            z-index: 100;
+        }
+        .nav-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #ccc;
+            margin: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .nav-dot.active {
+            background: var(--ai-purple);
+            transform: scale(1.2);
+        }
+        .section-title {
+            position: relative;
+            padding-left: 15px;
+            margin-top: 0;
+        }
+        .section-title::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 5px;
+            background: var(--ai-purple);
+            border-radius: 3px;
+        }
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: #f0f4f8;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .timeline {
+            position: relative;
+            margin: 40px 0;
+            padding-left: 30px;
+        }
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 7px;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: var(--ai-purple);
+        }
+        .timeline-item {
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -33px;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--medical-blue);
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px var(--medical-blue);
+        }
+        .timeline-date {
+            font-weight: bold;
+            color: var(--medical-blue);
+            margin-bottom: 5px;
+        }
+        .tech-tag {
+            display: inline-block;
+            background: var(--light-blue);
+            color: var(--medical-blue);
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin: 5px 5px 5px 0;
+            font-size: 0.85rem;
+        }
+        .gradient-text {
+            background: var(--gradient-bg);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
+        .stat-box {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 10px 0;
+            background: var(--gradient-bg);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        @media (max-width: 768px) {
+            .grid-2col {
+                grid-template-columns: 1fr;
+            }
+            .slide {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-<div>
-  <div class="clearfix">
-			<div id="header" class="col-md-12 column">
-			</div>
-	</div>
-<div class="page-content">
-  <div class="signup-container-outer">
-  <div class="signup-container">
-    <div class="signup-wrapper">
-      <div class="study-quotes">
-        <div class="student-signup">
-          <p style="text-align:center;font-size:2em;color:white;">不管你是学霸，学渣，还是来自火星的外星人，这里都是适合你学习的地方</p>
-		  <p style="text-align:center;font-size:1.2em;color:white;">同学，学习点什么？</p>
-		</div>
-		<ul class="nav nav-tabs nav-justified" role="tablist">
-		  <li role="presentation" class="math-tab active"><a href="#" class="course-tab">数学</a></li>
-		  <li role="presentation" class="yuwen-tab"><a href="#" class="course-tab">语文</a></li>
-		  <li role="presentation" class="english-tab"><a href="#" class="course-tab">英语</a></li>
-		  <li role="presentation" class="physics-tab"><a href="#" class="course-tab">物理</a></li>
-		  <li role="presentation" class="chemistry-tab"><a href="#" class="course-tab">化学</a></li>
-		  <li role="presentation" class="biology-tab"><a href="#" class="course-tab">生物</a></li>
-		  <li role="presentation" class="politics-tab"><a href="#" class="course-tab">政治</a></li>
-		  <li role="presentation" class="history-tab"><a href="#" class="course-tab">历史</a></li>
-		  <li role="presentation" class="geography-tab"><a href="#" class="course-tab">地理</a></li>
-		</ul>
-	<div id="math-table" class="table-responsive course-table">
-      <table class="table table-bordered">
-        <tbody>
-          <tr>
-            <td>小学</td>
-            <td><a href="pages/course/Math/grade1.html">一年级</a></td>
-            <td><a href="pages/course/Math/grade2.html">二年级</a></td>
-            <td><a href="pages/course/Math/grade3.html">三年级</a></td>
-            <td><a href="pages/course/Math/grade4.html">四年级</a></td>
-            <td><a href="pages/course/Math/grade5.html">五年级</a></td>
-            <td><a href="pages/course/Math/grade6.html">六年级</a></td>
-          </tr>
-          <tr>
-            <td>初中</td>
-            <td><a href="pages/course/Math/grade7.html">七年级</a></td>
-            <td><a href="pages/course/Math/grade8.html">八年级</a></td>
-            <td><a href="pages/course/Math/grade9.html">九年级</a></td>
-          </tr>
-          <tr>
-            <td rowspan="2" >高中</td>
-            <td><a href="pages/course/Math/bixiu1.html" style="color:#ff3;">必修一</a></td>
-            <td><a href="pages/course/Math/bixiu2.html">必修二</a></td>
-            <td><a href="pages/course/Math/bixiu3.html">必修三</a></td>
-            <td><a href="pages/course/Math/bixiu4.html">必修四</a></td>
-            <td><a href="pages/course/Math/bixiu5.html">必修五</a></td>
-          </tr>
-		  <tr>
-            <td style="font-weight:normal;font-size:1em;"><a href="pages/course/Math/xuanxiu1-1.html">选修1-1</a></td>
-            <td><a href="pages/course/Math/xuanxiu1-2.html">选修1-2</a></td>
-            <td><a href="pages/course/Math/xuanxiu2-1.html">选修2-1</a></td>
-            <td><a href="pages/course/Math/xuanxiu2-2.html">选修2-2</a></td>
-            <td><a href="pages/course/Math/xuanxiu2-3.html">选修2-3</a></td>
-            <td><a href="pages/course/Math/xuanxiu4-1.html">选修4-1</a></td>
-          </tr>
-		  <tr>
-            <td>其他</td>
-            <td><a href="pages/course/Math/history.html" style="color:#ff3;">数学简史</a></td>
-          </tr>
-        </tbody>
-      </table>
+    <!-- 页面导航点 -->
+    <div class="page-nav" id="pageNav">
+        <!-- JS动态生成 -->
     </div>
-	
-	<div id="yuwen-table" class="table-responsive course-table" style="display:none;">
-      <table class="table table-bordered">
-        <tbody>
-          <tr>
-            <td>小学</td>
-            <td><a href="pages/course/Yuwen/grade1.html">一年级</a></td>
-            <td><a href="pages/course/Yuwen/grade2.html">二年级</a></td>
-            <td><a href="pages/course/Yuwen/grade3.html">三年级</a></td>
-            <td><a href="pages/course/Yuwen/grade4.html">四年级</a></td>
-            <td><a href="pages/course/Yuwen/grade5.html">五年级</a></td>
-            <td><a href="pages/course/Yuwen/grade6.html">六年级</a></td>
-          </tr>
-          <tr>
-            <td>初中</td>
-            <td><a href="pages/course/Yuwen/grade7.html">七年级</a></td>
-            <td><a href="pages/course/Yuwen/grade8.html">八年级</a></td>
-            <td><a href="pages/course/Yuwen/grade9.html">九年级</a></td>
-          </tr>
-          <tr>
-            <td rowspan="2" >高中</td>
-            <td><a href="pages/course/Yuwen/bixiu1.html">必修一</a></td>
-            <td><a href="pages/course/Yuwen/bixiu2.html">必修二</a></td>
-            <td><a href="pages/course/Yuwen/bixiu3.html">必修三</a></td>
-            <td><a href="pages/course/Yuwen/bixiu4.html">必修四</a></td>
-            <td><a href="pages/course/Yuwen/bixiu5.html">必修五</a></td>
-          </tr>
-		  <tr>
-            <!--td ><a href="#">中外传记作品选读</a></td>
-            <td><a href="#">外国小说欣赏</a></td>
-            <td><a href="#">中国古代诗歌散文欣赏</a></td>
-            <td><a href="#">中国现代诗歌散文欣赏</a></td-->
-            <td style="font-weight:normal;font-size:1em;"><a href="pages/course/Yuwen/yuyanwenzi.html">语言文字应用</a></td>
-            <td><a href="pages/course/Yuwen/xianqinzhuzi.html">先秦诸子选读</a></td>
-			<td><a href="pages/course/Yuwen/xiezuo.html">文章写作与修改</a></td>
-			<td><a href="pages/course/Yuwen/yingshi.html" >影视名作欣赏</a></td>
-			<td><a href="pages/course/Yuwen/xiju.html" >中外戏剧名作欣赏</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-	
-	<div id="english-table" class="table-responsive course-table" style="display:none;">
-      <table class="table table-bordered">
-        <tbody>
-          <tr>
-            <td>小学</td>
-            <td><a href="pages/course/English/grade3.html">三年级</a></td>
-            <td><a href="pages/course/English/grade4.html">四年级</a></td>
-            <td><a href="pages/course/English/grade5.html">五年级</a></td>
-            <td><a href="pages/course/English/grade6.html">六年级</a></td>
-          </tr>
-          <tr>
-            <td>初中</td>
-            <td><a href="pages/course/English/grade7.html">七年级</a></td>
-            <td><a href="pages/course/English/grade8.html">八年级</a></td>
-            <td><a href="pages/course/English/grade9.html">九年级</a></td>
-          </tr>
-          <tr>
-            <td rowspan="3" >高中</td>
-            <td><a href="pages/course/English/bixiu1.html">必修一</a></td>
-            <td><a href="pages/course/English/bixiu2.html">必修二</a></td>
-            <td><a href="pages/course/English/bixiu3.html">必修三</a></td>
-            <td><a href="pages/course/English/bixiu4.html">必修四</a></td>
-            <td><a href="pages/course/English/bixiu5.html">必修五</a></td>
-          </tr>
-		  <tr>
-            <td style="font-weight:normal;font-size:1em;"><a href="pages/course/English/xuanxiu6.html">选修六</a></td>
-            <td><a href="pages/course/English/xuanxiu7.html">选修七</a></td>
-            <td><a href="pages/course/English/xuanxiu8.html">选修八</a></td>
-            <td><a href="pages/course/English/xuanxiu9.html">选修九</a></td>
-            <td><a href="pages/course/English/xuanxiu10.html">选修十</a></td>
-            <td><a href="pages/course/English/xuanxiu11.html">选修十一</a></td>
-          </tr>
-		  <tr>
-            <td style="font-weight:normal;font-size:1em;"><a href="pages/course/English/writing.html" >英语写作</a></td>
-            <td><a href="pages/course/English/computer-english.html" >计算机英语</a></td>
-            <td><a href="pages/course/English/yufacihui.html" >高中英语语法与词汇</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-	
-	<div id="physics-table" class="table-responsive course-table" style="display:none;">
-      <table class="table table-bordered">
-        <tbody>
-          <tr>
-            <td>初中</td>
-            <td><a href="pages/course/Physics/grade8.html">八年级</a></td>
-            <td><a href="pages/course/Physics/grade9.html">九年级</a></td>
-          </tr>
-          <tr>
-            <td rowspan="2" >高中</td>
-            <td><a href="pages/course/Physics/bixiu1.html">必修一</a></td>
-            <td><a href="pages/course/Physics/bixiu2.html">必修二</a></td>
-            <td><a href="pages/course/Physics/xuanxiu1-1.html">选修1-1</a></td>
-            <td><a href="pages/course/Physics/xuanxiu1-2.html">选修1-2</a></td>
-            <td><a href="pages/course/Physics/xuanxiu2-1.html">选修2-1</a></td>
-			<td><a href="pages/course/Physics/xuanxiu2-2.html">选修2-2</a></td>
-          </tr>
-		  <tr>
-            <td style="font-weight:normal;font-size:1em;"><a href="pages/course/Physics/xuanxiu2-3.html">选修2-3</a></td>
-            <td><a href="pages/course/Physics/xuanxiu3-1.html">选修3-1</a></td>
-            <td><a href="pages/course/Physics/xuanxiu3-2.html">选修3-2</a></td>
-            <td><a href="pages/course/Physics/xuanxiu3-3.html">选修3-3</a></td>
-            <td><a href="pages/course/Physics/xuanxiu3-4.html">选修3-4</a></td>
-            <td><a href="pages/course/Physics/xuanxiu3-5.html">选修3-5</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-	
-	<div id="chemistry-table" class="table-responsive course-table" style="display:none;">
-      <table class="table table-bordered">
-        <tbody>
-          <tr>
-            <td>初中</td>
-            <td><a href="pages/course/Chemistry/grade9.html">九年级</a></td>
-          </tr>
-          <tr>
-            <td rowspan="2" >高中</td>
-            <td><a href="pages/course/Chemistry/bixiu1.html">必修一</a></td>
-            <td><a href="pages/course/Chemistry/bixiu2.html">必修二</a></td>
-            <td><a href="pages/course/Chemistry/xuanxiu1.html">选修一</a></td>
-            <td><a href="pages/course/Chemistry/xuanxiu2.html">选修二</a></td>
-          </tr>
-		  <tr>
-            <td style="font-weight:normal;font-size:1em;"><a href="pages/course/Chemistry/xuanxiu3.html">选修三</a></td>
-            <td><a href="pages/course/Chemistry/xuanxiu4.html">选修四</a></td>
-            <td><a href="pages/course/Chemistry/xuanxiu5.html">选修五</a></td>
-            <td><a href="pages/course/Chemistry/xuanxiu6.html">选修六</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-	
-	<div id="biology-table" class="table-responsive course-table" style="display:none;">
-      <table class="table table-bordered">
-        <tbody>
-          <tr>
-            <td>初中</td>
-            <td><a href="pages/course/Biology/grade7.html">七年级</a></td>
-            <td><a href="pages/course/Biology/grade8.html">八年级</a></td>
-          </tr>
-          <tr>
-            <td>高中</td>
-            <td><a href="pages/course/Biology/bixiu1.html">必修一</a></td>
-            <td><a href="pages/course/Biology/bixiu2.html">必修二</a></td>
-            <td><a href="pages/course/Biology/bixiu3.html">必修三</a></td>
-            <td><a href="pages/course/Biology/xuanxiu1.html">选修一</a></td>
-            <td><a href="pages/course/Biology/xuanxiu2.html">选修二</a></td>
-			<td><a href="pages/course/Biology/xuanxiu3.html">选修三</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-	
-	<div id="politics-table" class="table-responsive course-table" style="display:none;">
-      <table class="table table-bordered">
-        <tbody>
-          <tr>
-            <td>初中</td>
-            <td><a href="pages/course/Politics/grade7.html">七年级</a></td>
-            <td><a href="pages/course/Politics/grade8.html">八年级</a></td>
-			<td><a href="pages/course/Politics/grade9.html">九年级</a></td>
-          </tr>
-          <tr>
-            <td rowspan="2" >高中</td>
-            <td><a href="pages/course/Politics/bixiu1.html">必修一</a></td>
-            <td><a href="pages/course/Politics/bixiu2.html">必修二</a></td>
-            <td><a href="pages/course/Politics/bixiu3.html">必修三</a></td>
-			<td><a href="pages/course/Politics/bixiu4.html">必修四</a></td>
-            <td><a href="pages/course/Politics/xuanxiu1.html">选修一</a></td>
-          </tr>
-		  <tr>
-            <td style="font-weight:normal;font-size:1em;"><a href="pages/course/Politics/xuanxiu2.html">选修二</a></td>
-			<td><a href="pages/course/Politics/xuanxiu3.html">选修三</a></td>
-            <td><a href="pages/course/Politics/xuanxiu4.html">选修四</a></td>
-            <td><a href="pages/course/Politics/xuanxiu5.html">选修五</a></td>
-            <td><a href="pages/course/Politics/xuanxiu6.html">选修六</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-	
-	<div id="history-table" class="table-responsive course-table" style="display:none;">
-      <table class="table table-bordered">
-        <tbody>
-          <tr>
-            <td>初中</td>
-            <td><a href="pages/course/History/grade7.html">七年级</a></td>
-            <td><a href="pages/course/History/grade8.html">八年级</a></td>
-			<td><a href="pages/course/History/grade9.html">九年级</a></td>
-          </tr>
-          <tr>
-            <td rowspan="2" >高中</td>
-            <td><a href="pages/course/History/bixiu1.html">必修一</a></td>
-            <td><a href="pages/course/History/bixiu2.html">必修二</a></td>
-            <td><a href="pages/course/History/bixiu3.html">必修三</a></td>
-            <td><a href="pages/course/History/xuanxiu1.html">选修一</a></td>
-            <td><a href="pages/course/History/xuanxiu2.html">选修二</a></td>
-          </tr>
-		  <tr>
-            <td style="font-weight:normal;font-size:1em;"><a href="pages/course/History/xuanxiu3.html">选修三</a></td>
-            <td><a href="pages/course/History/xuanxiu4.html">选修四</a></td>
-            <td><a href="pages/course/History/xuanxiu5.html">选修五</a></td>
-            <td><a href="pages/course/History/xuanxiu6.html">选修六</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-	
-	<div id="geography-table" class="table-responsive course-table" style="display:none;">
-      <table class="table table-bordered">
-        <tbody>
-          <tr>
-            <td>初中</td>
-            <td><a href="pages/course/Geography/grade7.html">七年级</a></td>
-            <td><a href="pages/course/Geography/grade8.html">八年级</a></td>
-          </tr>
-          <tr>
-            <td rowspan="2" >高中</td>
-            <td><a href="pages/course/Geography/bixiu1.html">必修一</a></td>
-            <td><a href="pages/course/Geography/bixiu2.html">必修二</a></td>
-            <td><a href="pages/course/Geography/bixiu3.html">必修三</a></td>
-            <td><a href="pages/course/Geography/xuanxiu1.html">选修一</a></td>
-            <td><a href="pages/course/Geography/xuanxiu2.html">选修二</a></td>
-          </tr>
-		  <tr>
-            <td style="font-weight:normal;font-size:1em;"><a href="pages/course/Geography/xuanxiu3.html">选修三</a></td>
-            <td><a href="pages/course/Geography/xuanxiu4.html">选修四</a></td>
-            <td><a href="pages/course/Geography/xuanxiu5.html">选修五</a></td>
-            <td><a href="pages/course/Geography/xuanxiu6.html">选修六</a></td>
-			<td><a href="pages/course/Geography/xuanxiu7.html">选修七</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-      </div>
-    </div>
-  </div>
-  </div>
-  <div class="container" id="introduction-container">
-	<div class="row student-introduction-container">
-		<div class="col-xs-6 student-anim">
-		  <img src="img/student.png" alt="我是学生" class="student-img">
-		</div>
-		<div class="col-xs-6 student-intro">
-			<h1 style="font-weight:bold;">自主学习</h1>
-			<p class="student-intro-text">
-			  <ul>
-				<li>选择喜欢的课程，按自己的进度学习；</li>
-				<li>和各地的同学讨论知识，分享知识；</li>
-				<li>随时随地提问，夯实加深对知识的理解。</li>
-			  </ul>
-			</p>
-		</div>
-	</div>
-	<hr class="hr-gradient">
 
-	<div class="row teacher-introduction-container">
-		<div class="col-xs-6 teacher-intro">
-			<h1 style="font-weight:bold;">新时代，新老师</h1>
-			<p class="teacher-intro-text">
-			  <ul>
-			    <li>优质资源，你我共享；</li>
-				<li>尊重学生多样个性，改善传统无聊课堂；</li>
-				<li>融合线上线下教育方式，提高教学效率。</li>
-			  </ul>
-			</p>
-		</div>
-		<div class="col-xs-6 teacher-anim" id="">
-			<div class="tracks-anim">
-				<img class="teacher-img" src="img/teacher.jpg" alt="我是老师">	
-			</div>
-		</div>
-	</div>
+    <!-- 封面 -->
+    <div class="slide" id="slide1" style="background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1920&q=80'); background-size: cover;">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <h1 style="font-size: 3rem; color: var(--medical-blue); margin-bottom: 10px;">AI赋能眼科医疗服务体系</h1>
+            <h2 style="font-size: 1.8rem; color: var(--ai-purple); margin-top: 0;">商业计划书</h2>
+            <div style="margin: 40px 0;">
+                <div style="display: inline-block; background: var(--gradient-bg); color: white; padding: 15px 40px; border-radius: 30px; font-size: 1.3rem; font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                    眼科智能医疗云 · 2025
+                </div>
+            </div>
+            <div style="display: flex; justify-content: center; gap: 30px; margin-top: 50px;">
+                <div class="stat-box" style="width: 200px;">
+                    <div>降低获客成本</div>
+                    <div class="stat-value">50%</div>
+                </div>
+                <div class="stat-box" style="width: 200px;">
+                    <div>提升患者LTV</div>
+                    <div class="stat-value">3倍</div>
+                </div>
+                <div class="stat-box" style="width: 200px;">
+                    <div>提高复购率</div>
+                    <div class="stat-value">30%</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-	<hr class="hr-gradient">
+    <!-- 执行摘要 -->
+    <div class="slide" id="slide2">
+        <h2 class="slide-header">执行摘要</h2>
+        <div class="content-box">
+            <div class="data-highlight">
+                <strong>市场机遇：</strong> 中国近视患者6.6亿 | 屈光手术市场规模200亿，年增长25% | 潜在手术需求人群1245万
+            </div>
+            
+            <div class="comparison-matrix">
+                <div class="matrix-cell matrix-header">患者痛点</div>
+                <div class="matrix-cell matrix-header">医院痛点</div>
+                <div class="matrix-cell matrix-header">AI解决方案</div>
+                
+                <div class="matrix-cell">信息混乱难以决策</div>
+                <div class="matrix-cell">获客成本高（3000元/人）</div>
+                <div class="matrix-cell">医生数字人分身，用户身边的眼科医生</div>
+                
+                <div class="matrix-cell">咨询等待时间长，回答质量低</div>
+                <div class="matrix-cell">销售离职带走客户</div>
+                <div class="matrix-cell">AI原生CRM系统</div>
+                
+                <div class="matrix-cell">术后随访缺失</div>
+                <div class="matrix-cell">数据孤岛无法分析</div>
+                <div class="matrix-cell">智能医疗云</div>
+            </div>
+            
+            <div class="grid-2col">
+                <div>
+                    <h3 class="section-title">核心优势</h3>
+                    <ul>
+                        <li>唯一实现"引流获客+智能咨询+AI CRM+HIS"全链路打通</li>
+                        <li>眼科专用LLM模型</li>
+                        <li>动态知识库每日更新</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="section-title">融资需求</h3>
+                    <div style="text-align: center; margin-top: 15px;">
+                        <div style="font-size: 2rem; font-weight: bold; color: var(--ai-purple);">200万元</div>
+                        <div>天使轮融资 · 出让15%股权</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-	<div class="row parent-introduction-container">
-		<div class="col-xs-6 parent-anim" id="">
-		  <img src="img/parent.png" alt="我是家长" class="parent-img">
-		</div>
-		<div class="col-xs-6 parent-intro">
-			<h1 style="font-weight:bold;">家长的自我修养</h1>
-			<p class="parent-intro-text">
-			  <ul>
-				<li>在这里陪同孩子学习，详实了解孩子的学习情况；</li>
-				<li>和老师一同为孩子答疑解惑；</li>
-				<li>消除与孩子、老师的隔阂。</li>
-			  </ul>
-			</p>
-		</div>
-	</div>
-</div>
-	<div class="clearfix">
-		<div class="col-md-12 column">
-			<div id="footer"></div>
-		</div>
-	</div>
-</div>
-</div>
+    <!-- 市场痛点 -->
+    <div class="slide" id="slide3">
+        <h2 class="slide-header">市场痛点深度分析</h2>
+        <div class="content-box">
+            <div class="grid-2col">
+                <div class="card">
+                    <h3 class="section-title" style="color: var(--medical-blue);">患者侧痛点</h3>
+                    <ul>
+                        <li>85%的家庭对近视认知不足，缺少有效了解渠道</li>
+                        <li>销售（咨询医生）的回复多数时候比较生硬，回复不及时</li>
+                        <li>难以选择合适的医院和医生</li>
+                        <li>术后随访率不足30%</li>
+                    </ul>
+                    <div id="patientPainChart" class="chart-container"></div>
+                </div>
+                <div class="card">
+                    <h3 class="section-title" style="color: var(--medical-blue);">医院侧痛点</h3>
+                    <ul>
+                        <li>获客成本高达3000元/人</li>
+                        <li>销售离职带走全部客户</li>
+                        <li>数据分散在5+系统中</li>
+                        <li>人工录入耗时易出错</li>
+                    </ul>
+                    <div id="hospitalPainChart" class="chart-container"></div>
+                </div>
+            </div>
+            
+            <div class="data-highlight">
+                <strong>流失客户价值：</strong> 年门诊量10万 * 年流失率30% * CRM可避免流失率65% * 客单价1000 = 1950万元
+            </div>
+        </div>
+    </div>
+
+    <!-- 市场规模 -->
+    <div class="slide" id="slide4">
+        <h2 class="slide-header">市场规模分析</h2>
+        <div class="content-box">
+            <div class="grid-2col">
+                <div>
+                    <h3 class="section-title">B端市场（2024年）</h3>
+                    <div id="bMarketChart" class="chart-container"></div>
+                    <p><small>数据来源：爱尔、华厦、普瑞、何氏眼科2024年财报</small></p>
+                </div>
+                <div>
+                    <h3 class="section-title">C端潜在用户画像</h3>
+                    <div id="cUserChart" class="chart-container"></div>
+                    <div class="data-highlight">
+                        <strong>计算逻辑：</strong> 18-50岁人口5.64亿 × 近视率40% × 中高度近视比例46% × 手术意愿比例12% = 1245万潜在用户
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="section-title">市场增长驱动因素</h3>
+            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                <div class="tech-tag">青少年近视率居高不下</div>
+                <div class="tech-tag">消费医疗升级</div>
+                <div class="tech-tag">AI技术成熟</div>
+                <div class="tech-tag">政策支持</div>
+                <div class="tech-tag">健康意识提升</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 解决方案总览 -->
+    <div class="slide" id="slide5">
+        <h2 class="slide-header">解决方案总览</h2>
+        <div class="content-box">
+            <div class="flow-chart">
+                <div class="flow-arrow"></div>
+                <div class="flow-step">
+                    <div class="step-icon">1</div>
+                    <h3>AI科普获客</h3>
+                    <p>热点抓取+内容生成</p>
+                    <small>点击率↑60%</small>
+                </div>
+                <div class="flow-step">
+                    <div class="step-icon">2</div>
+                    <h3>智能咨询</h3>
+                    <p>24h ESFP人格化应答</p>
+                    <small>响应<5秒</small>
+                </div>
+                <div class="flow-step">
+                    <div class="step-icon">3</div>
+                    <h3>CRM提效</h3>
+                    <p>统一数据中台</p>
+                    <small>留存率↑45%</small>
+                </div>
+                <div class="flow-step">
+                    <div class="step-icon">4</div>
+                    <h3>智能随访</h3>
+                    <p>自动化需求挖掘</p>
+                    <small>复购率↑30%</small>
+                </div>
+            </div>
+            
+            <div id="solutionFlowChart" class="chart-container"></div>
+            
+            <div class="grid-2col">
+                <div>
+                    <h3 class="section-title">关键创新</h3>
+                    <ul>
+                        <li><span class="gradient-text">人格化AI咨询</span>：ESFP性格设计增强信任</li>
+                        <li><span class="gradient-text">智能知识库</span>：实时更新医疗知识</li>
+                        <li><span class="gradient-text">全渠道整合</span>：微信/HIS/美团无缝对接</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="section-title">试点成果</h3>
+                    <ul>
+                        <li>术前转化周期从14天缩短至7天</li>
+                        <li>客诉率下降35%</li>
+                        <li>单客户获取成本降至1200元</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 产品演示：智能科普 -->
+    <div class="slide" id="slide6">
+        <h2 class="slide-header">产品演示 - 智能科普系统</h2>
+        <div class="content-box">
+            <div class="grid-2col">
+                <div>
+                    <h3 class="section-title">工作流程</h3>
+                    <ol>
+                        <li>爬取各平台热点问题（如"全飞秒后遗症"）</li>
+                        <li>AI生成权威科普内容（医生数字分身）</li>
+                        <li>自动匹配平台风格分发</li>
+                        <li>数据回传CRM系统</li>
+                    </ol>
+                    
+                    <div class="data-highlight">
+                        <strong>预计数据：</strong> 内容生产效率提升8倍，获客成本降低至1200元/人
+                    </div>
+                    
+                    <h3 class="section-title">平台适配策略</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                        <div class="tech-tag">小红书：口语化+表情包</div>
+                        <div class="tech-tag">知乎：学术化+文献引用</div>
+                        <div class="tech-tag">微信公众号：深度长文</div>
+                        <div class="tech-tag">抖音：短视频脚本</div>
+                    </div>
+                </div>
+                <div>
+                    <div id="contentGenChart" class="chart-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 技术架构 -->
+    <div class="slide" id="slide7">
+        <h2 class="slide-header">技术架构</h2>
+        <div class="content-box">
+            <div class="tech-stack">
+                <div class="tech-layer">
+                    <h3>应用层</h3>
+                    <p>微信/HIS/美团API对接 · 10家医院已验证</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px;">
+                        <span class="tech-tag">RESTful API</span>
+                        <span class="tech-tag">WebSocket</span>
+                        <span class="tech-tag">OAuth 2.0</span>
+                    </div>
+                </div>
+                <div class="tech-layer">
+                    <h3>中间层</h3>
+                    <p>动态知识库 · 每日更新100+QA · 准确率92%</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px;">
+                        <span class="tech-tag">Neo4j</span>
+                        <span class="tech-tag">ElasticSearch</span>
+                        <span class="tech-tag">Redis</span>
+                        <span class="tech-tag">RabbitMQ</span>
+                    </div>
+                </div>
+                <div class="tech-layer">
+                    <h3>底层</h3>
+                    <p>眼科专用LLM · 100亿token训练 · 测试集F1=0.89</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px;">
+                        <span class="tech-tag">LLaMA-2</span>
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">Hugging Face</span>
+                        <span class="tech-tag">BERT</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="techArchChart" class="chart-container"></div>
+            
+            <div class="grid-2col">
+                <div>
+                    <h3 class="section-title">技术壁垒</h3>
+                    <ul>
+                        <li>百万级眼科医学对话数据集</li>
+                        <li>动态知识库自动更新系统</li>
+                        <li>多模态数据融合技术</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="section-title">知识产权</h3>
+                    <ul>
+                        <li>2项发明专利（受理中）</li>
+                        <li>5项软件著作权</li>
+                        <li>眼科知识图谱数据库</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 商业模式 -->
+    <div class="slide" id="slide8">
+        <h2 class="slide-header">商业模式</h2>
+        <div class="content-box">
+            <div class="grid-2col">
+                <div>
+                    <h3 class="section-title">收入来源</h3>
+                    <div style="margin-bottom: 20px;">
+                        <div class="data-highlight">
+                            <strong>SaaS订阅：</strong> 基础版9899元/年 · 高级版24990元/年
+                        </div>
+                        <div class="data-highlight">
+                            <strong>广告分成：</strong> CPA模式（1000-2000元/有效咨询）
+                        </div>
+                        <div class="data-highlight">
+                            <strong>增值服务：</strong> 个性化定制、数据分析与咨询服务等（客单价28000元）
+                        </div>
+                    </div>
+                    
+                    <h3 class="section-title">定价策略</h3>
+                    <ul>
+                        <li>渗透定价：首年7折优惠</li>
+                        <li>分基础套餐/高级版套餐收费</li>
+                        <li>按咨询量阶梯定价</li>
+                    </ul>
+                </div>
+                <div>
+                    <div id="revenueModelChart" class="chart-container"></div>
+                    <div class="data-highlight">
+                        <strong>LTV计算：</strong> 平均客户年收入10万 * 生命周期10年 → 单医院LTV=100万元
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="section-title">成本结构</h3>
+            <div id="costStructureChart" class="chart-container"></div>
+        </div>
+    </div>
+
+    <!-- 竞争分析 -->
+    <div class="slide" id="slide9">
+        <h2 class="slide-header">竞争分析</h2>
+        <div class="content-box">
+            <div id="competitionChart" class="chart-container"></div>
+            
+            <div class="grid-2col" style="margin-top: 20px;">
+                <div>
+                    <h3 class="section-title">竞争优势</h3>
+                    <ul>
+                        <li>唯一垂直眼科AI解决方案</li>
+                        <li>全流程闭环服务能力</li>
+                        <li>动态知识库实时更新</li>
+                        <li>医院数据深度整合</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="section-title">竞争策略</h3>
+                    <ul>
+                        <li>聚焦民营眼科专科医院</li>
+                        <li>与设备商建立生态合作</li>
+                        <li>打造区域标杆案例</li>
+                        <li>构建数据网络效应</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 运营计划 -->
+    <div class="slide" id="slide10">
+        <h2 class="slide-header">短期运营计划</h2>
+        <div class="content-box">
+            <div id="roadmapChart" class="chart-container"></div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2025 Q4</div>
+                    <div>完成10家标杆医院部署</div>
+                    <div>AI咨询准确率>90%，客户流失率降低20%</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026 Q1</div>
+                    <div>完成数字营销系统</div>
+                    <div>内容生产效率提升6倍，获客成本降低30%</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026 Q2</div>
+                    <div>AI CRM客户管理系统上线</div>
+                    <div>用户突破5万人，客户流失率降低30%</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026 Q3</div>
+                    <div>完成30家医院部署</div>
+                    <div>客户好评率90%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 财务预测 -->
+    <div class="slide" id="slide11" style="display: none;">
+        <h2 class="slide-header">三年财务预测</h2>
+        <div class="content-box">
+            <div id="financialChart" class="chart-container"></div>
+            
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; margin-top: 20px; min-width: 600px;">
+                    <thead>
+                        <tr style="background: var(--medical-blue); color: white;">
+                            <th style="padding: 12px; text-align: left;">指标</th>
+                            <th style="padding: 12px; text-align: right;">2025</th>
+                            <th style="padding: 12px; text-align: right;">2026</th>
+                            <th style="padding: 12px; text-align: right;">2027</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 12px; border-bottom: 1px solid #eee; font-weight: bold;">营收(万元)</td>
+                            <td style="padding: 12px; border-bottom: 1px solid #eee; text-align: right;">1,500</td>
+                            <td style="padding: 12px; border-bottom: 1px solid #eee; text-align: right;">6,000</td>
+                            <td style="padding: 12px; border-bottom: 1px solid #eee; text-align: right;">15,000</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border-bottom: 1px solid #eee; font-weight: bold;">毛利率</td>
+                            <td style="padding: 12px; border-bottom: 1px solid #eee; text-align: right;">65%</td>
+                            <td style="padding: 12px; border-bottom: 1px solid #eee; text-align: right;">70%</td>
+                            <td style="padding: 12px; border-bottom: 1px solid #eee; text-align: right;">75%</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border-bottom: 1px solid #eee; font-weight: bold;">付费医院数</td>
+                            <td style="padding: 12px; border-bottom: 1px solid #eee; text-align: right;">50</td>
+                            <td style="padding: 12px; border-bottom: 1px solid #eee; text-align: right;">200</td>
+                            <td style="padding: 12px; border-bottom: 1px solid #eee; text-align: right;">500</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; font-weight: bold;">单院年收入(万元)</td>
+                            <td style="padding: 12px; text-align: right;">30</td>
+                            <td style="padding: 12px; text-align: right;">30</td>
+                            <td style="padding: 12px; text-align: right;">30</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="data-highlight" style="margin-top: 20px;">
+                <strong>盈亏平衡点：</strong> 第18个月 | <strong>投资回收期：</strong> 24个月 | <strong>目标估值：</strong> 2025年达10亿元
+            </div>
+        </div>
+    </div>
+
+    <!-- 团队介绍 -->
+    <div class="slide" id="slide12">
+        <h2 class="slide-header">核心团队</h2>
+        <div class="content-box">
+            <div class="team-grid">
+                <div class="team-card">
+                    <div style="width: 100px; height: 100px; border-radius: 50%; background: var(--gradient-bg); margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">罗</div>
+                    <h3>罗泽贤 CEO</h3>
+                    <p>前药师帮产品总监</p>
+                    <p style="color: var(--ai-purple); font-weight: bold;">带队实现年增长200%</p>
+                    <div style="margin-top: 15px; font-size: 0.9rem;">
+                        10年科技行业经验，成功运营用户超500万
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div style="width: 100px; height: 100px; border-radius: 50%; background: var(--gradient-bg); margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">谢</div>
+                    <h3>谢纵宇 CTO</h3>
+                    <p>阿里健康NLP实验室专家</p>
+                    <p style="color: var(--ai-purple); font-weight: bold;">专利ZL2023XXXXXX</p>
+                    <div style="margin-top: 15px; font-size: 0.9rem;">
+                        主导开发3个医疗AI产品，用户超200万
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div style="width: 100px; height: 100px; border-radius: 50%; background: var(--gradient-bg); margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">何</div>
+                    <h3>何亚军 销售总监</h3>
+                    <p>前英华眼科执行院长</p>
+                    <p style="color: var(--ai-purple); font-weight: bold;">10年屈光行业增长经验</p>
+                    <div style="margin-top: 15px; font-size: 0.9rem;">
+                        10年眼科医疗行业经验，成功运营用户超100万
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="section-title" style="margin-top: 20px;">顾问团队</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 15px;">
+                <div class="tech-tag">陈教授 - 中山眼科中心主任</div>
+                <div class="tech-tag">刘博士 - 卫健委视光专家</div>
+                <div class="tech-tag">张总 - 红杉资本医疗投资总监</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 融资计划 -->
+    <div class="slide" id="slide13">
+        <h2 class="slide-header">融资计划</h2>
+        <div class="content-box">
+            <div class="grid-2col">
+                <div>
+                    <h3 class="section-title">资金需求</h3>
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <div style="font-size: 2.5rem; font-weight: bold; color: var(--ai-purple);">200万元</div>
+                        <div>天使轮融资 · 出让15%股权</div>
+                    </div>
+                    
+                    <h3 class="section-title">资金用途</h3>
+                    <div id="fundUsageChart" class="chart-container"></div>
+                </div>
+                <div>
+                    <h3 class="section-title">退出机制</h3>
+                    <div style="margin-top: 20px;">
+                        <div style="display: flex; align-items: flex-start; margin-bottom: 25px;">
+                            <div style="width: 30px; height: 30px; background: var(--medical-blue); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">1</div>
+                            <div>
+                                <div style="font-weight: bold; margin-bottom: 5px;">战略收购</div>
+                                <div>3-5年内被爱尔眼科等产业资本收购</div>
+                                <div style="color: #666; font-size: 0.9rem; margin-top: 5px;">参照案例：平安健康收购同类企业PS 8-10倍</div>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: flex-start;">
+                            <div style="width: 30px; height: 30px; background: var(--medical-blue); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">2</div>
+                            <div>
+                                <div style="font-weight: bold; margin-bottom: 5px;">独立IPO</div>
+                                <div>5-7年科创板上市</div>
+                                <div style="color: #666; font-size: 0.9rem; margin-top: 5px;">参照案例：医渡科技上市估值120亿</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 30px;">
+                        <h3 class="section-title">估值依据</h3>
+                        <ul>
+                            <li>市销率(PS) 8-10倍（参照平安健康）</li>
+                            <li>2024年预测营收1500万元 → 估值1.2-1.5亿元</li>
+                            <li>2025年预测营收6000万元 → 估值5-6亿元</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 风险控制 -->
+    <div class="slide" id="slide14">
+        <h2 class="slide-header">风险控制</h2>
+        <div class="content-box">
+            <div id="riskMatrixChart" class="chart-container"></div>
+            
+            <div class="grid-2col" style="margin-top: 20px;">
+                <div>
+                    <h3 class="section-title">主要风险</h3>
+                    <ul>
+                        <li><span class="gradient-text">政策风险</span>：医疗AI监管政策变化</li>
+                        <li><span class="gradient-text">数据安全</span>：患者隐私保护挑战</li>
+                        <li><span class="gradient-text">技术风险</span>：系统稳定性风险</li>
+                        <li><span class="gradient-text">市场风险</span>：巨头入场竞争</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="section-title">应对策略</h3>
+                    <ul>
+                        <li>严格区分健康咨询与医疗诊断</li>
+                        <li>通过等保三级认证+溯源系统</li>
+                        <li>建立AI可解释性系统</li>
+                        <li>专注垂直领域建立专业壁垒</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 技术路线图 -->
+    <div class="slide" id="slide15" style="display: none;">
+        <h2 class="slide-header">技术路线图</h2>
+        <div class="content-box">
+            <div id="techRoadmapChart" class="chart-container"></div>
+            
+            <div class="grid-2col">
+                <div>
+                    <h3 class="section-title">短期目标 (1年内)</h3>
+                    <ul>
+                        <li>完成基础AI模型训练</li>
+                        <li>实现10+系统对接</li>
+                        <li>建立动态知识库</li>
+                        <li>开发术后随访系统</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="section-title">长期规划 (3-5年)</h3>
+                    <ul>
+                        <li>开发AI辅助诊断功能</li>
+                        <li>构建眼科健康大数据平台</li>
+                        <li>拓展海外市场</li>
+                        <li>申请CFDA二类医疗器械认证</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 客户案例 -->
+    <div class="slide" id="slide16" style="display: none;">
+        <h2 class="slide-header">客户案例</h2>
+        <div class="content-box">
+            <div class="grid-2col">
+                <div class="card">
+                    <h3 class="section-title">明视眼科医院</h3>
+                    <div class="data-highlight">
+                        <strong>背景：</strong> 华东地区连锁眼科机构，年手术量3000例
+                    </div>
+                    <ul>
+                        <li>部署前：获客成本3800元/人，咨询转化率18%</li>
+                        <li>部署后：获客成本降至1500元/人，转化率提升至32%</li>
+                        <li>客户留存率从45%提升至78%</li>
+                    </ul>
+                    <div style="margin-top: 20px;">
+                        <div style="font-style: italic; color: #555;">"AI系统使我们的咨询效率提升3倍，客户满意度达到历史最高水平"</div>
+                        <div style="text-align: right; margin-top: 10px; font-weight: bold;">—— 王院长</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3 class="section-title">新视界眼科诊所</h3>
+                    <div class="data-highlight">
+                        <strong>背景：</strong> 高端私立眼科诊所，专注屈光手术
+                    </div>
+                    <ul>
+                        <li>部署前：销售离职导致客户流失率35%</li>
+                        <li>部署后：客户资源统一管理，流失率降至8%</li>
+                        <li>复购率从12%提升至28%</li>
+                    </ul>
+                    <div style="margin-top: 20px;">
+                        <div style="font-style: italic; color: #555;">"CRM系统彻底解决了客户资源归属问题，医生可以更专注于医疗服务"</div>
+                        <div style="text-align: right; margin-top: 10px; font-weight: bold;">—— 李主任</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="caseStudyChart" class="chart-container"></div>
+        </div>
+    </div>
+
+    <!-- 社会价值 -->
+    <div class="slide" id="slide17">
+        <h2 class="slide-header">社会价值</h2>
+        <div class="content-box">
+            <div class="grid-2col">
+                <div>
+                    <h3 class="section-title">医疗普惠</h3>
+                    <ul>
+                        <li>降低高端眼科服务门槛</li>
+                        <li>提升基层医疗服务质量</li>
+                        <li>缓解优质医疗资源不足</li>
+                    </ul>
+                    
+                    <h3 class="section-title">行业价值</h3>
+                    <ul>
+                        <li>推动眼科医疗服务标准化</li>
+                        <li>建立眼科健康大数据平台</li>
+                        <li>促进医疗AI技术发展</li>
+                    </ul>
+                </div>
+                <div>
+                    <div id="socialValueChart" class="chart-container"></div>
+                </div>
+            </div>
+            
+            <div class="data-highlight">
+                <strong>社会效益：</strong> 预计3年内服务100万患者，节省社会医疗成本超2亿元
+            </div>
+        </div>
+    </div>
+
+    <!-- 未来展望 -->
+    <div class="slide" id="slide18" style="display: none;">
+        <h2 class="slide-header">未来展望</h2>
+        <div class="content-box">
+            <div id="futureVisionChart" class="chart-container"></div>
+            
+            <div class="grid-2col">
+                <div>
+                    <h3 class="section-title">产品拓展</h3>
+                    <ul>
+                        <li>AI辅助诊断系统</li>
+                        <li>远程眼科诊疗平台</li>
+                        <li>青少年近视防控AI助手</li>
+                        <li>眼科手术机器人</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="section-title">战略布局</h3>
+                    <ul>
+                        <li>构建眼科健康生态系统</li>
+                        <li>与保险机构深度合作</li>
+                        <li>拓展东南亚市场</li>
+                        <li>建立AI眼科研究所</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 附录 -->
+    <div class="slide" id="slide19" style="display: none;">
+        <h2 class="slide-header">数据附录</h2>
+        <div class="content-box">
+            <h3 class="section-title">关键数据来源</h3>
+            <ul>
+                <li>国家卫健委《2023中国眼健康白皮书》P46</li>
+                <li>弗若斯特沙利文《中国眼科医疗服务市场报告》2023.6</li>
+                <li>英华眼科用户调研 N=1,232（2023.8）</li>
+                <li>《国民视觉健康调研报告》2023版</li>
+                <li>试点医院运营数据（2023.1-2023.9）</li>
+            </ul>
+            
+            <h3 class="section-title" style="margin-top: 30px;">试点医院关键指标</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 15px;">
+                <div class="stat-box">
+                    <div>咨询转化周期</div>
+                    <div class="stat-value">-50%</div>
+                    <div>14天 → 7天</div>
+                </div>
+                <div class="stat-box">
+                    <div>客诉率</div>
+                    <div class="stat-value">-35%</div>
+                    <div>标准化服务流程</div>
+                </div>
+                <div class="stat-box">
+                    <div>获客成本</div>
+                    <div class="stat-value">-60%</div>
+                    <div>3800元 → 1500元</div>
+                </div>
+                <div class="stat-box">
+                    <div>复购率</div>
+                    <div class="stat-value">+133%</div>
+                    <div>12% → 28%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 结束页 -->
+    <div class="slide" id="slide20" style="background: linear-gradient(135deg, var(--medical-blue), var(--ai-purple)); color: white; text-align: center; justify-content: center;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h1 style="font-size: 2.8rem; margin-bottom: 20px;">开启眼科医疗AI新时代</h1>
+            <div style="font-size: 1.4rem; margin-bottom: 40px;">降低50%获客成本 · 提升3倍患者价值</div>
+            
+            <div style="display: none; background: rgba(255,255,255,0.2); padding: 25px; border-radius: 15px; backdrop-filter: blur(5px);">
+                <div style="font-size: 1.2rem; margin-bottom: 20px;">联系我们获取完整方案</div>
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+                    <div>
+                        <div style="font-weight: bold;">罗泽贤 CEO</div>
+                        <div>lzx2548038@126.com</div>
+                        <div>138--XXXX</div>
+                    </div>
+                    <div>
+                        <div style="font-weight: bold;">融资合作</div>
+                        <div>investment@yinghua.com</div>
+                        <div>021-XXXXXXXX</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 50px; font-size: 0.9rem; opacity: 0.8;">
+                © 2025 眼科智能医疗云 | 数据保密文件
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        本商业计划书包含机密信息，未经授权禁止复制或传播
+    </div>
+
+    <script>
+        // 初始化所有图表
+        document.addEventListener('DOMContentLoaded', function() {
+            // 患者痛点图表
+            new Chart(
+                document.getElementById('patientPainChart'),
+                {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['信息混乱 78%', '等待时间长 65%', '随访缺失 70%', '医生匹配难 55%'],
+                        datasets: [{
+                            data: [78, 65, 70, 55],
+                            backgroundColor: [
+                                '#0077b6',
+                                '#0096c7',
+                                '#00b4d8',
+                                '#48cae4'
+                            ]
+                        }]
+                    },
+                    options: {
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: '患者痛点分布(%)',
+                                font: {
+                                    size: 16
+                                }
+                            },
+                            legend: {
+                                position: 'bottom'
+                            }
+                        }
+                    }
+                }
+            );
+
+            // 医院痛点图表
+            new Chart(
+                document.getElementById('hospitalPainChart'),
+                {
+                    type: 'bar',
+                    data: {
+                        labels: ['获客成本 3000元', '客户流失 30%', '数据孤岛 15+系统', '录入错误 18%'],
+                        datasets: [{
+                            label: '痛点严重程度',
+                            data: [3000, 30, 15, 18],
+                            backgroundColor: '#8a2be2'
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: '数值'
+                                }
+                        }
+                        },
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: '医院运营痛点',
+                                font: {
+                                    size: 16
+                                }
+                            }
+                        }
+                    }
+                }
+            );
+
+            // B端市场图表
+            const bMarketChart = echarts.init(document.getElementById('bMarketChart'));
+            bMarketChart.setOption({
+                tooltip: {
+                    trigger: 'item',
+                    formatter: '{a} <br/>{b}: {c}亿元 ({d}%)'
+                },
+                legend: {
+                    orient: 'vertical',
+                    right: 10,
+                    top: 'center'
+                },
+                series: [
+                    {
+                        name: '市场构成',
+                        type: 'pie',
+                        radius: ['40%', '70%'],
+                        center: ['40%', '50%'],
+                        data: [
+                            { value: 103.2, name: '屈光手术' },
+                            { value: 50.9, name: '白内障' },
+                            { value: 71, name: '视光服务' },
+                            { value: 18.57, name: '其他' }
+                        ],
+                        color: ['#0077b6', '#8a2be2', '#00b4d8', '#48cae4'],
+                        emphasis: {
+                            itemStyle: {
+                                shadowBlur: 10,
+                                shadowOffsetX: 0,
+                                shadowColor: 'rgba(0, 0, 0, 0.5)'
+                            }
+                        }
+                    }
+                ]
+            });
+
+            // C端用户图表
+            const cUserChart = echarts.init(document.getElementById('cUserChart'));
+            cUserChart.setOption({
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'shadow'
+                    }
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'value',
+                    name: '近视率(%)'
+                },
+                yAxis: {
+                    type: 'category',
+                    data: ['小学', '初中', '高中', '大学']
+                },
+                series: [
+                    {
+                        name: '近视率',
+                        type: 'bar',
+                        data: [36.7, 71.4, 81.2, 90],
+                        itemStyle: {
+                            color: function(params) {
+                                const colorList = ['#0077b6', '#0096c7', '#00b4d8', '#48cae4'];
+                                return colorList[params.dataIndex];
+                            }
+                        },
+                        label: {
+                            show: true,
+                            position: 'right'
+                        }
+                    }
+                ]
+            });
+
+            // 解决方案流程图
+            const solutionFlowChart = echarts.init(document.getElementById('solutionFlowChart'));
+            solutionFlowChart.setOption({
+                tooltip: {
+                    trigger: 'item',
+                    triggerOn: 'mousemove'
+                },
+                series: [
+                    {
+                        type: 'sankey',
+                        layout: 'none',
+                        data: [
+                            { name: '潜在患者' },
+                            { name: 'AI科普触达' },
+                            { name: '智能咨询' },
+                            { name: '到院转化' },
+                            { name: '术后随访' },
+                            { name: '复购/转介绍' }
+                        ],
+                        links: [
+                            { source: '潜在患者', target: 'AI科普触达', value: 1000 },
+                            { source: 'AI科普触达', target: '智能咨询', value: 600 },
+                            { source: '智能咨询', target: '到院转化', value: 300 },
+                            { source: '到院转化', target: '术后随访', value: 280 },
+                            { source: '术后随访', target: '复购/转介绍', value: 140 }
+                        ],
+                        emphasis: {
+                            focus: 'adjacency'
+                        },
+                        levels: [
+                            {
+                                depth: 0,
+                                itemStyle: {
+                                    color: '#8a2be2'
+                                }
+                            },
+                            {
+                                depth: 1,
+                                itemStyle: {
+                                    color: '#0077b6'
+                                }
+                            },
+                            {
+                                depth: 2,
+                                itemStyle: {
+                                    color: '#0096c7'
+                                }
+                            }
+                        ],
+                        lineStyle: {
+                            color: 'gradient',
+                            curveness: 0.5
+                        }
+                    }
+                ]
+            });
+
+            // 内容生成图表
+            new Chart(
+                document.getElementById('contentGenChart'),
+                {
+                    type: 'radar',
+                    data: {
+                        labels: ['生产效率', '内容质量', '平台适配', '转化率', '合规性'],
+                        datasets: [
+                            {
+                                label: 'AI生成',
+                                data: [95, 88, 90, 85, 92],
+                                backgroundColor: 'rgba(0, 119, 182, 0.2)',
+                                borderColor: 'rgba(0, 119, 182, 1)',
+                                pointBackgroundColor: 'rgba(0, 119, 182, 1)',
+                                pointBorderColor: '#fff',
+                                pointHoverBackgroundColor: '#fff',
+                                pointHoverBorderColor: 'rgba(0, 119, 182, 1)'
+                            },
+                            {
+                                label: '人工创作',
+                                data: [30, 85, 40, 60, 75],
+                                backgroundColor: 'rgba(138, 43, 226, 0.2)',
+                                borderColor: 'rgba(138, 43, 226, 1)',
+                                pointBackgroundColor: 'rgba(138, 43, 226, 1)',
+                                pointBorderColor: '#fff',
+                                pointHoverBackgroundColor: '#fff',
+                                pointHoverBorderColor: 'rgba(138, 43, 226, 1)'
+                            }
+                        ]
+                    },
+                    options: {
+                        scales: {
+                            r: {
+                                angleLines: {
+                                    display: true
+                                },
+                                suggestedMin: 0,
+                                suggestedMax: 100,
+                                ticks: {
+                                    stepSize: 20
+                                }
+                            }
+                        }
+                    }
+                }
+            );
+
+            // 技术架构图
+            const techArchChart = echarts.init(document.getElementById('techArchChart'));
+            techArchChart.setOption({
+                tooltip: {
+                    trigger: 'item',
+                    formatter: '{a} <br/>{b}: {c}%'
+                },
+                legend: {
+                    bottom: 10,
+                    data: ['应用层', '中间层', '底层', '基础设施']
+                },
+                series: [
+                    {
+                        name: '技术架构',
+                        type: 'pie',
+                        radius: ['30%', '60%'],
+                        center: ['50%', '45%'],
+                        avoidLabelOverlap: false,
+                        itemStyle: {
+                            borderRadius: 6,
+                            borderColor: '#fff',
+                            borderWidth: 2
+                        },
+                        label: {
+                            show: true,
+                            formatter: '{b}: {c}%'
+                        },
+                        emphasis: {
+                            label: {
+                                show: true,
+                                fontSize: '16',
+                                fontWeight: 'bold'
+                            }
+                        },
+                        labelLine: {
+                            show: true
+                        },
+                        data: [
+                            { value: 35, name: '应用层' },
+                            { value: 30, name: '中间层' },
+                            { value: 25, name: '底层' },
+                            { value: 10, name: '基础设施' }
+                        ],
+                        color: ['#0077b6', '#8a2be2', '#0096c7', '#00b4d8']
+                    }
+                ]
+            });
+
+            // 商业模式图表
+            const revenueModelChart = echarts.init(document.getElementById('revenueModelChart'));
+            revenueModelChart.setOption({
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'shadow'
+                    }
+                },
+                legend: {
+                    data: ['收入', '成本', '毛利']
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'category',
+                    data: ['SaaS订阅', '广告分成', '增值服务']
+                },
+                yAxis: {
+                    type: 'value',
+                    name: '金额（万元）'
+                },
+                series: [
+                    {
+                        name: '收入',
+                        type: 'bar',
+                        data: [60, 25, 15],
+                        color: '#0077b6'
+                    },
+                    {
+                        name: '成本',
+                        type: 'bar',
+                        data: [21, 10, 4.5],
+                        color: '#8a2be2'
+                    },
+                    {
+                        name: '毛利',
+                        type: 'bar',
+                        data: [39, 15, 10.5],
+                        color: '#00b4d8'
+                    }
+                ]
+            });
+
+            // 成本结构图
+            const costStructureChart = echarts.init(document.getElementById('costStructureChart'));
+            costStructureChart.setOption({
+                tooltip: {
+                    trigger: 'item',
+                    formatter: '{a} <br/>{b}: {c}%'
+                },
+                series: [
+                    {
+                        name: '成本结构',
+                        type: 'pie',
+                        radius: '70%',
+                        center: ['50%', '50%'],
+                        data: [
+                            { value: 45, name: '研发成本' },
+                            { value: 25, name: '人力成本' },
+                            { value: 15, name: '市场推广' },
+                            { value: 10, name: '服务器费用' },
+                            { value: 5, name: '其他' }
+                        ],
+                        color: ['#0077b6', '#8a2be2', '#0096c7', '#00b4d8', '#48cae4'],
+                        emphasis: {
+                            itemStyle: {
+                                shadowBlur: 10,
+                                shadowOffsetX: 0,
+                                shadowColor: 'rgba(0, 0, 0, 0.5)'
+                            }
+                        }
+                    }
+                ]
+            });
+
+            // 竞争分析图
+            const competitionChart = echarts.init(document.getElementById('competitionChart'));
+            competitionChart.setOption({
+                tooltip: {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data: ['功能完整性', '专业深度', '易用性', '数据整合']
+                },
+                radar: {
+                    indicator: [
+                        { name: '功能完整性', max: 100 },
+                        { name: '专业深度', max: 100 },
+                        { name: '易用性', max: 100 },
+                        { name: '数据整合', max: 100 },
+                        { name: 'AI能力', max: 100 }
+                    ]
+                },
+                series: [
+                    {
+                        type: 'radar',
+                        data: [
+                            {
+                                value: [95, 90, 85, 92, 90],
+                                name: '英华眼科',
+                                areaStyle: {
+                                    color: 'rgba(0, 119, 182, 0.3)'
+                                },
+                                lineStyle: {
+                                    color: '#0077b6'
+                                }
+                            },
+                            {
+                                value: [80, 75, 90, 65, 70],
+                                name: '平安好医生',
+                                areaStyle: {
+                                    color: 'rgba(138, 43, 226, 0.3)'
+                                },
+                                lineStyle: {
+                                    color: '#8a2be2'
+                                }
+                            },
+                            {
+                                value: [70, 65, 80, 60, 65],
+                                name: '阿里健康',
+                                areaStyle: {
+                                    color: 'rgba(0, 180, 216, 0.3)'
+                                },
+                                lineStyle: {
+                                    color: '#00b4d8'
+                                }
+                            }
+                        ]
+                    }
+                ]
+            });
+
+            // 运营路线图
+            const roadmapChart = echarts.init(document.getElementById('roadmapChart'));
+            roadmapChart.setOption({
+                tooltip: {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data: ['产品开发', '市场拓展', '收入']
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: ['2025Q4', '2026Q1', '2026Q2', '2026Q3', '2026Q4']
+                },
+                yAxis: {
+                    type: 'value'
+                },
+                series: [
+                    {
+                        name: '产品开发',
+                        type: 'line',
+                        stack: '总量',
+                        data: [15, 30, 50, 70, 90],
+                        lineStyle: {
+                            color: '#0077b6',
+                            width: 3
+                        },
+                        symbol: 'circle',
+                        symbolSize: 8
+                    },
+                    {
+                        name: '市场拓展',
+                        type: 'line',
+                        stack: '总量',
+                        data: [10, 30, 60, 80, 95],
+                        lineStyle: {
+                            color: '#8a2be2',
+                            width: 3
+                        },
+                        symbol: 'circle',
+                        symbolSize: 8
+                    },
+                    {
+                        name: '收入',
+                        type: 'line',
+                        stack: '总量',
+                        data: [5, 10, 20, 40, 90],
+                        lineStyle: {
+                            color: '#00b4d8',
+                            width: 3
+                        },
+                        symbol: 'circle',
+                        symbolSize: 8
+                    }
+                ]
+            });
+
+            // 财务预测图
+            const financialChart = echarts.init(document.getElementById('financialChart'));
+            financialChart.setOption({
+                tooltip: {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data: ['营收', '毛利润', '付费医院数']
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'category',
+                    data: ['2024', '2025', '2026']
+                },
+                yAxis: [
+                    {
+                        type: 'value',
+                        name: '金额（万元）',
+                        position: 'left'
+                    },
+                    {
+                        type: 'value',
+                        name: '医院数量',
+                        position: 'right'
+                    }
+                ],
+                series: [
+                    {
+                        name: '营收',
+                        type: 'bar',
+                        data: [1500, 6000, 15000],
+                        color: '#0077b6',
+                        barWidth: '30%'
+                    },
+                    {
+                        name: '毛利润',
+                        type: 'bar',
+                        data: [975, 4200, 11250],
+                        color: '#0096c7',
+                        barWidth: '30%'
+                    },
+                    {
+                        name: '付费医院数',
+                        type: 'line',
+                        yAxisIndex: 1,
+                        data: [50, 200, 500],
+                        color: '#8a2be2',
+                        symbol: 'circle',
+                        symbolSize: 8,
+                        lineStyle: {
+                            width: 3
+                        }
+                    }
+                ]
+            });
+
+            // 资金用途图
+            const fundUsageChart = echarts.init(document.getElementById('fundUsageChart'));
+            fundUsageChart.setOption({
+                tooltip: {
+                    trigger: 'item',
+                    formatter: '{a} <br/>{b}: {c}万元 ({d}%)'
+                },
+                series: [
+                    {
+                        name: '资金用途',
+                        type: 'pie',
+                        radius: ['40%', '70%'],
+                        avoidLabelOverlap: false,
+                        itemStyle: {
+                            borderRadius: 6,
+                            borderColor: '#fff',
+                            borderWidth: 2
+                        },
+                        label: {
+                            show: true,
+                            formatter: '{b}: {d}%'
+                        },
+                        emphasis: {
+                            label: {
+                                show: true,
+                                fontSize: '16',
+                                fontWeight: 'bold'
+                            }
+                        },
+                        labelLine: {
+                            show: true
+                        },
+                        data: [
+                            { value: 1000, name: 'AI研发' },
+                            { value: 600, name: '市场推广' },
+                            { value: 400, name: '团队建设' }
+                        ],
+                        color: ['#0077b6', '#8a2be2', '#00b4d8']
+                    }
+                ]
+            });
+
+            // 风险矩阵图
+            const riskMatrixChart = echarts.init(document.getElementById('riskMatrixChart'));
+            riskMatrixChart.setOption({
+                tooltip: {
+                    formatter: function(params) {
+                        return params.data[2] + ': ' + params.data[3];
+                    }
+                },
+                grid: {
+                    left: '3%',
+                    right: '7%',
+                    bottom: '10%',
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'value',
+                    name: '发生概率',
+                    min: 0,
+                    max: 50
+                },
+                yAxis: {
+                    type: 'value',
+                    name: '影响程度',
+                    min: 0,
+                    max: 100
+                },
+                series: [
+                    {
+                        type: 'scatter',
+                        symbolSize: function(data) {
+                            return Math.sqrt(data[3]) * 5;
+                        },
+                        data: [
+                            [15, 80, '政策风险', 85],
+                            [20, 70, '数据安全', 75],
+                            [26, 50, '技术风险', 60],
+                            [40, 30, '市场风险', 45]
+                        ],
+                        itemStyle: {
+                            color: function(params) {
+                                const value = params.data[3];
+                                if (value > 70) return '#ff6b6b';
+                                if (value > 50) return '#ffd166';
+                                return '#06d6a0';
+                            }
+                        },
+                        label: {
+                            show: true,
+                            formatter: '{@[2]}',
+                            position: 'top'
+                        }
+                    }
+                ]
+            });
+
+            // 技术路线图
+            const techRoadmapChart = echarts.init(document.getElementById('techRoadmapChart'));
+            techRoadmapChart.setOption({
+                tooltip: {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data: ['AI模型', '系统对接', '知识库', '辅助诊断']
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'category',
+                    data: ['2023Q4', '2024Q1', '2024Q2', '2024Q3', '2024Q4', '2025']
+                },
+                yAxis: {
+                    type: 'value',
+                    max: 100
+                },
+                series: [
+                    {
+                        name: 'AI模型',
+                        type: 'line',
+                        data: [30, 60, 80, 90, 95, 100],
+                        lineStyle: {
+                            color: '#0077b6',
+                            width: 3
+                        }
+                    },
+                    {
+                        name: '系统对接',
+                        type: 'line',
+                        data: [20, 50, 80, 90, 95, 100],
+                        lineStyle: {
+                            color: '#8a2be2',
+                            width: 3
+                        }
+                    },
+                    {
+                        name: '知识库',
+                        type: 'line',
+                        data: [40, 70, 85, 95, 100, 100],
+                        lineStyle: {
+                            color: '#00b4d8',
+                            width: 3
+                        }
+                    },
+                    {
+                        name: '辅助诊断',
+                        type: 'line',
+                        data: [0, 10, 30, 60, 80, 100],
+                        lineStyle: {
+                            color: '#06d6a0',
+                            width: 3
+                        }
+                    }
+                ]
+            });
+
+            // 案例研究图
+            const caseStudyChart = echarts.init(document.getElementById('caseStudyChart'));
+            caseStudyChart.setOption({
+                tooltip: {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data: ['明视眼科', '新视界眼科']
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'category',
+                    data: ['获客成本', '转化率', '留存率', '复购率']
+                },
+                yAxis: {
+                    type: 'value',
+                    axisLabel: {
+                        formatter: '{value}%'
+                    }
+                },
+                series: [
+                    {
+                        name: '明视眼科',
+                        type: 'bar',
+                        data: [50, 78, 74, 120],
+                        color: '#0077b6'
+                    },
+                    {
+                        name: '新视界眼科',
+                        type: 'bar',
+                        data: [60, 133, 122, 133],
+                        color: '#8a2be2'
+                    }
+                ]
+            });
+
+            // 社会价值图
+            const socialValueChart = echarts.init(document.getElementById('socialValueChart'));
+            socialValueChart.setOption({
+                tooltip: {
+                    trigger: 'item',
+                    formatter: '{a} <br/>{b}: {c}%'
+                },
+                series: [
+                    {
+                        name: '社会价值',
+                        type: 'pie',
+                        radius: '70%',
+                        data: [
+                            { value: 40, name: '提升医疗可及性' },
+                            { value: 25, name: '降低医疗成本' },
+                            { value: 20, name: '提高服务质量' },
+                            { value: 15, name: '促进行业发展' }
+                        ],
+                        color: ['#0077b6', '#8a2be2', '#00b4d8', '#06d6a0'],
+                        emphasis: {
+                            itemStyle: {
+                                shadowBlur: 10,
+                                shadowOffsetX: 0,
+                                shadowColor: 'rgba(0, 0, 0, 0.5)'
+                            }
+                        }
+                    }
+                ]
+            });
+
+            // 未来展望图
+            const futureVisionChart = echarts.init(document.getElementById('futureVisionChart'));
+            futureVisionChart.setOption({
+                tooltip: {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data: ['AI模型', '系统对接', '知识库', '辅助诊断']
+                },
+                radar: {
+                    indicator: [
+                        { name: '当前', max: 100 },
+                        { name: '1年后', max: 100 },
+                        { name: '3年后', max: 100 },
+                        { name: '5年后', max: 100 }
+                    ]
+                },
+                series: [
+                    {
+                        type: 'radar',
+                        data: [
+                            {
+                                value: [30, 60, 80, 95],
+                                name: '技术深度',
+                                areaStyle: {
+                                    color: 'rgba(0, 119, 182, 0.3)'
+                                },
+                                lineStyle: {
+                                    color: '#0077b6'
+                                }
+                            },
+                            {
+                                value: [20, 50, 80, 100],
+                                name: '市场覆盖',
+                                areaStyle: {
+                                    color: 'rgba(138, 43, 226, 0.3)'
+                                },
+                                lineStyle: {
+                                    color: '#8a2be2'
+                                }
+                            },
+                            {
+                                value: [10, 40, 70, 100],
+                                name: '收入规模',
+                                areaStyle: {
+                                    color: 'rgba(0, 180, 216, 0.3)'
+                                },
+                                lineStyle: {
+                                    color: '#00b4d8'
+                                }
+                            }
+                        ]
+                    }
+                ]
+            });
+
+            // 生成页面导航点
+            const slideCount = 20;
+            const navContainer = document.getElementById('pageNav');
+            for (let i = 1; i <= slideCount; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'nav-dot';
+                dot.dataset.target = `slide${i}`;
+                dot.addEventListener('click', function() {
+                    document.getElementById(this.dataset.target).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+                navContainer.appendChild(dot);
+            }
+
+            // 设置当前活动导航点
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const slideId = entry.target.id;
+                        document.querySelectorAll('.nav-dot').forEach(dot => {
+                            dot.classList.toggle('active', dot.dataset.target === slideId);
+                        });
+                    }
+                });
+            }, {
+                threshold: 0.5
+            });
+
+            for (let i = 1; i <= slideCount; i++) {
+                observer.observe(document.getElementById(`slide${i}`));
+            }
+        });
+    </script>
 </body>
 </html>
